@@ -29,53 +29,71 @@
     </form>
 
 
-    <!-- <input type="checkbox" id="module1" value="module1" />
+    <!-- <input type="checkbox" id="module1" value="module1" name="studyTopic"
+    v-model="studyTopic" />
     <label for="module1"> Module 1 </label>
-    <input type="checkbox" id="module2" value="module2" />
+    <input type="checkbox" id="module2" value="module2" name="studyTopic" 
+    v-model="studyTopic"/>
     <label for="module2"> Module 2 </label>
-    <input type="checkbox" id="module3" value="module3" />
+    <input type="checkbox" id="module3" value="module3" name="studyTopic"
+    v-model="studyTopic"/>
     <label for="module3"> Module 3 </label>
-    <input type="checkbox" id="module4" value="module4" />
+    <input type="checkbox" id="module4" value="module4" name="studyTopic"
+    v-model="studyTopic" />
     <label for="module4"> Module 4 </label>
 
     <p>
-      <input type="checkbox" id="java" value="java" />
+      <input type="checkbox" id="java" value="java" name="studyTopic"
+      v-model="studyTopic" />
       <label for="java"> Java </label>
-      <input type="checkbox" id="mvc" value="mvc" />
+      <input type="checkbox" id="mvc" value="mvc" name="studyTopic"
+      v-model="studyTopic"/>
       <label for="mvc"> MVC </label>
-      <input type="checkbox" id="html" value="html" />
+      <input type="checkbox" id="html" value="html" name="studyTopic"
+      v-model="studyTopic" />
       <label for="html"> HTML </label>
-      <input type="checkbox" id="resume" value="resume" />
+      <input type="checkbox" id="resume" value="resume" name="studyTopic"
+      v-model="studyTopic" />
       <label for="resume"> Resume </label>
     </p>
 
     <p>
-      <input type="checkbox" id="git" value="git" />
+      <input type="checkbox" id="git" value="git" name="studyTopic"
+      v-model="studyTopic" />
       <label for="git"> Git </label>
-      <input type="checkbox" id="sql" value="sql" />
+      <input type="checkbox" id="sql" value="sql" name="studyTopic"
+      v-model="studyTopic"/>
       <label for="sql"> SQL </label>
-      <input type="checkbox" id="http" value="http" />
+      <input type="checkbox" id="http" value="http" name="studyTopic"
+      v-model="studyTopic" />
       <label for="http"> HTTP </label>
-      <input type="checkbox" id="api" value="api" />
+      <input type="checkbox" id="api" value="api" name="studyTopic"
+      v-model="studyTopic"/>
       <label for="api"> API </label>
     </p>
 
     <p>
       
-      <input type="checkbox" id="css" value="css" />
+      <input type="checkbox" id="css" value="css" name="studyTopic"
+      v-model="studyTopic"/>
       <label for="css"> CSS </label>
-      <input type="checkbox" id="javascript" value="javascript" />
+      <input type="checkbox" id="javascript" value="javascript" name="studyTopic"
+      v-model="studyTopic"/>
       <label for="javascript"> JavaScript </label>
-      <input type="checkbox" id="dom" value="dom" />
+      <input type="checkbox" id="dom" value="dom" name="studyTopic"
+      v-model="studyTopic" />
       <label for="dom"> DOM </label>
-      <input type="checkbox" id="vue" value="vue" />
+      <input type="checkbox" id="vue" value="vue" name="studyTopic"
+      v-model="studyTopic" />
       <label for="vue"> VUE </label>
     </p>
 
     <p>
-      <input type="checkbox" id="interview" value="interview" />
+      <input type="checkbox" id="interview" value="interview" name="studyTopic"
+      v-model="studyTopic" />
       <label for="interview"> Interview </label>
-      <input type="checkbox" id="LinkedIn" value="LinkedIn" />
+      <input type="checkbox" id="LinkedIn" value="LinkedIn" name="studyTopic"
+      v-model="studyTopic" />
       <label for="LinkedIn"> LinkedIn </label>
 
       ===== Creator is a blanket case for the multiple "Creators" which will exist later =====
@@ -97,18 +115,27 @@
       
       <form> 
         <label for="question"> Question: </label> <br>
-        <input type="text" id="question" name="question" value="Insert Question Here"><br>
+        <textarea type="text" id="question" name="question" placeholder="Insert Question Here"/><br>
 
         <label for="answer"> Answer: </label> <br>
-        <input type="text" id="answer" name ="question" value="Insert Answer Here"><br>
+        <textarea type="text" id="answer" name ="question" placeholder="Insert Answer Here"/><br>
 
         <label for="creator"> Card Creator's Name: </label> <br>
-        <input type="text" id="creator" name="creator" value="Who Are You?"><br>
+        <input type="text" id="creator" name="creator" placeholder="Who Are You?"><br>
 
       <!-- Form for New Card should appear after new card is selected? -->
 
-        <button id="createCard" type="button">Create New Card</button>
+        <button id="createCard" type="button">Create New Card</button> <br>
 
+       
+
+        <label for="newDeckName">New Deck's Name: </label><br>
+        <input type="text" id="newDeckName" name="newDeckName" placeholder="Insert New Deck Name"> <br>
+
+        <label for="newTopic"> New Deck's Topic / Tag: </label><br>
+        <textarea id="newTopic" name="newTopic" placeholder="Insert New Deck's Topic / Tag"/><br>
+        
+        <button id="createNewDeck" type="button"> Create New Deck</button> <br>
       <!-- Create New Card needs v-bind and logic to add a new card to the selected module
       AND ONLY the selected module.
  crossover with Study Session would be perfect on this occasion -->
@@ -125,9 +152,6 @@ export default {
   // methods:(){
   // },
 
-  // computed section for retrieving/adding cards
-  // computed:() {
-  // },
 };
 </script>
 
