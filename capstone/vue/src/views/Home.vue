@@ -77,6 +77,10 @@
       <label for="interview"> Interview </label>
       <input type="checkbox" id="LinkedIn" value="LinkedIn" />
       <label for="LinkedIn"> LinkedIn </label>
+
+      ===== Creator is a blanket case for the multiple "Creators" which will exist later =====
+      <input type="checkbox" id="creator" value="creator" />
+      <label for="creator"> Creator </label>
     </p> -->
 
     <!-- When a new tag is added, should a new button be added?  Or should it just be forced

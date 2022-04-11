@@ -20,6 +20,9 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
+
+    // Addition of a filter for searching
+    // Do we need to add a blank flashcard?
     flashcards: [
         {
         Module: 3,
@@ -120,7 +123,7 @@ export default new Vuex.Store({
           Module: 1,
           Creator: 'A',
           Tag: 'Java',
-          Question: 'What are the three Prinicples of Object Oriented Programming?',
+          Question: 'What are the three Principles of Object Oriented Programming?',
           Answer: 'Polymorphism, Encapsulation, and Inheritance',
         },
           {
@@ -277,7 +280,7 @@ export default new Vuex.Store({
           Module: 3,
           Creator: 'U',
           Tag: 'CSS',
-          Question: 'What is Resonsive Web Design?',
+          Question: 'What is Responsive Web Design?',
           Answer: 'Responsive web design is a set of practices that allows pages to alter their layout and appearance to suit different screen sizes and resolutions',
           },
           
@@ -313,6 +316,12 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    ADD_CARD(state, flashcards) {
+      state.flashcards.unshift(flashcards)
     }
+
+    // Is this how the whole card will be added to the store or do we need to specify ID etc.
+
   }
 })
