@@ -1,6 +1,6 @@
 <template>
   <div class="flashcard-container">
-      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in $store.state.flashcards" v-bind:key="flashcards.id"/>
+      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in $store.state.flashcards" v-bind:key="flashcard.id"/>
   </div>
 </template>
 
