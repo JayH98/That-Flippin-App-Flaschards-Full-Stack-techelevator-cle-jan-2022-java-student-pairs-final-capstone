@@ -14,7 +14,7 @@
       </div>
       <div id="form-fillout">
         <div id="username-box">
-          <label for="username" class="sr-only">Username: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="username" class="sr-only">Username: </label> &nbsp;&nbsp;&nbsp;&nbsp;
           <input
             type="text"
             id="username"
@@ -27,20 +27,19 @@
         </div>
         <br />
         <div id="password-box">
-        <label for="password" class="sr-only">Password: </label>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;&nbsp; 
         <input
           type="password"
           id="password"
           class="form-control"
           placeholder="Password"
           v-model="user.password"
-          required
-        
+          required        
         />
         </div>
         <br />
         <div id="account-box">
-          <router-link :to="{ name: 'register' }">Need an account?</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+          <router-link :to="{ name: 'register' }">Need an account?</router-link> &nbsp;&nbsp;&nbsp;&nbsp;
           <button type="submit">Sign in</button>
         </div>
       </div>
@@ -105,4 +104,5 @@ export default {
 html {
   background-color: #87ceeb;
 }
+
 </style>

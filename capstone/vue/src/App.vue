@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <ul>
-      <img id="te-logo" src="./assets/TechElevator.png" alt="Tech Elevator Logo">
+      <img id="te-logo" src="./assets/vector_long_logo_dark.png" alt="Tech Elevator Logo">
       <li id="home-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'home' }">HOME</router-link>&nbsp;&nbsp;</li>
       <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li> -->
 
@@ -21,13 +21,25 @@ img {
 
 #nav ul {
   font-family: Arial, Helvetica, sans-serif;
-    /* background-color: #87CEEB; */
-    display: flex;
-    /* justify-content: space-between; */
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
+  /* background-color: #87CEEB; */
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
 }
+
+#nav ul img {
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav ul li {
+  padding: 10px;
+  margin: 50px;
+}
+
 
 #home-button, #logout-button {
     font-weight: bold;
