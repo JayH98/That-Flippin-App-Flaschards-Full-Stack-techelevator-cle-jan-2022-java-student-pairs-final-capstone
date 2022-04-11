@@ -2,10 +2,9 @@
   <div id="app">
     <div id="nav">
       <ul>
-
       <img id="te-logo" src="./assets/TechElevator.png" alt="Tech Elevator Logo">
-      <li><router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;</li>
-      <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li>
+      <li id="home-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'home' }">HOME</router-link>&nbsp;&nbsp;</li>
+      <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li> -->
 
       </ul>
     </div>
@@ -17,12 +16,12 @@
 
 img {
   height: 4rem;
-  border: 10px solid red;
+  
 }
 
 #nav ul {
   font-family: Arial, Helvetica, sans-serif;
-    background-color: #87CEEB;
+    /* background-color: #87CEEB; */
     display: flex;
     /* justify-content: space-between; */
     flex-direction: row;
@@ -30,16 +29,28 @@ img {
     list-style: none;
 }
 
-#nav li {
-    text-transform: uppercase;
+#home-button, #logout-button {
     font-weight: bold;
     list-style: none;
-    width: 30%;
+    width: 20%;
     background-color: #00afef;
+    color: #000000;
     border-radius: 5px;
     text-align: center;
     line-height: 50px;
+    padding: 10px;
+  
 }
+
+#app {
+  background-color: rgb(189, 189, 189);
+}
+
+footer {
+    grid-area: footer;
+}
+
+
 
 
 
