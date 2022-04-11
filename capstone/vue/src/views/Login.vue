@@ -95,14 +95,31 @@ export default {
   
 } */
 
+.form-signin {
+  margin: 10%;
+}
+
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
+#account-box button {
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 html {
   background-color: #87ceeb;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
+
 
 </style>
