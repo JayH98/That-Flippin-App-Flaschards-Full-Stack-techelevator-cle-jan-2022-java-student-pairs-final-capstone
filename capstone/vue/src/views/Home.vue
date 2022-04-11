@@ -2,8 +2,34 @@
   <div class="home">
     <h1>Home</h1>
     <p>Select A Deck or Topic Tag</p>
+    
+    <form>
+      <input  list="options" multiple/>
+    <datalist id="options">
+      <option value="Module 1"/>
+        <option value="Module 2"/>
+        <option value="Module 3"/>
+        <option value="Module 4"/>
+        <option value="Java"/>
+        <option value="MVC"/>
+        <option value="HTML"/>
+        <option value="Resume"/>
+        <option value="Git"/>
+        <option value="SQL"/>
+        <option value="HTTP"/>
+        <option value="API"/>
+        <option value="CSS"/>
+        <option value="JavaScript"/>
+        <option value="DOM"/>
+        <option value="Vue"/>
+        <option value="Interview"/>
+        <option value="LinkedIn"/>
+          </datalist>
+        
+    </form>
 
-    <input type="checkbox" id="module1" value="module1" />
+
+    <!-- <input type="checkbox" id="module1" value="module1" />
     <label for="module1"> Module 1 </label>
     <input type="checkbox" id="module2" value="module2" />
     <label for="module2"> Module 2 </label>
@@ -51,7 +77,7 @@
       <label for="interview"> Interview </label>
       <input type="checkbox" id="LinkedIn" value="LinkedIn" />
       <label for="LinkedIn"> LinkedIn </label>
-    </p>
+    </p> -->
 
     <!-- When a new tag is added, should a new button be added?  Or should it just be forced
     into a specific module? -->
@@ -63,10 +89,26 @@
     </section>
 
     <section>
-      <button id="createCard" type="button">Create New Card</button>
+      
+      
+      <form> 
+        <label for="question"> Question: </label> <br>
+        <input type="text" id="question" name="question" value="Insert Question Here"><br>
 
-      <!-- Create New Card needs v-bind and logic to add a new card to the selected module.
+        <label for="answer"> Answer: </label> <br>
+        <input type="text" id="answer" name ="question" value="Insert Answer Here"><br>
+
+        <label for="creator"> Card Creator's Name: </label> <br>
+        <input type="text" id="creator" name="creator" value="Who Are You?"><br>
+
+      <!-- Form for New Card should appear after new card is selected? -->
+
+        <button id="createCard" type="button">Create New Card</button>
+
+      <!-- Create New Card needs v-bind and logic to add a new card to the selected module
+      AND ONLY the selected module.
  crossover with Study Session would be perfect on this occasion -->
+      </form>
     </section>
   </div>
 </template>
