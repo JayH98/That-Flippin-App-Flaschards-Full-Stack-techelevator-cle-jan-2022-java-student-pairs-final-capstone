@@ -10,3 +10,9 @@ export default {
   name: "home"
 };
 </script>
+
+<style>
+
+
+
+</style>
