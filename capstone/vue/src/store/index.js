@@ -23,8 +23,11 @@ export default new Vuex.Store({
 
     // Addition of a filter for searching
     // Do we need to add a blank flashcard?
+
+    
     flashcards: [
         {
+        id:1,
         Module: 3,
         Creator: "X",
         Tag: "DOM",
@@ -33,6 +36,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:2,
         Module: 3,
         Creator: "Y",
         Tag: "DOM",
@@ -41,6 +45,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:3,
         Module: 3,
         Creator: 'Z',
         Tag: 'Vue',
@@ -49,6 +54,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:4,
         Module: 3,
         Creator: 'AA',
         Tag: 'VUE',
@@ -57,6 +63,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:5,
         Module: 4,
         Creator: 'BB',
         Tag: 'Interview',
@@ -65,6 +72,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:6,
         Module: 4,
         Creator: 'CC',
         Tag: 'Interview',
@@ -73,6 +81,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:7,
         Module: 4,
         Creator: 'DD',
         Tag: 'Interview',
@@ -81,6 +90,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:8,
         Module: 4,
         Creator: 'EE',
         Tag: 'Resume',
@@ -89,6 +99,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:9,
         Module: 4,
         Creator: 'FF',
         Tag: 'Resume',
@@ -97,6 +108,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:10,
         Module: 4,
         Creator: 'GG',
         Tag: 'LinkedIn',
@@ -105,6 +117,7 @@ export default new Vuex.Store({
         },
         
         {
+        id:11,
         Module: 4,
         Creator: 'HH',
         Tag: 'LinkedIn',
@@ -113,27 +126,34 @@ export default new Vuex.Store({
         },
         
         {
+        id:12,
         Module: 4,
         Creator: 'II',
         Tag: 'LinkedIn',
         Question: 'True or False: LinkedIn will not help you find a job',
         Answer: 'False',
         },
+
         {
+          id:13,
           Module: 1,
           Creator: 'A',
           Tag: 'Java',
           Question: 'What are the three Principles of Object Oriented Programming?',
           Answer: 'Polymorphism, Encapsulation, and Inheritance',
         },
+
           {
+          id:14,
           Module: 2,
           Creator: 'B',
           Tag: 'MVC',
           Question: 'What does MVC Stand for?',
           Answer: 'Model, View, Controller',
           },
+
           {
+          id:35,
           Module: 3,
           Creator: 'C',
           Tag: 'HTML',
@@ -142,13 +162,16 @@ export default new Vuex.Store({
           },
           
           {
+          id:15,
           Module: 4,
           Creator: "D",
           Tag:"Resume",
           Question: "How long, ideally, should your resume be?",
           Answer: "1 Page",
           },
+
           {
+          id:16,
           Module: 1,
           Creator:"E",
           Tag: 'Git',
@@ -157,6 +180,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:17,
           Module: 1,
           Creator:"F",
           Tag: "Git",
@@ -165,6 +189,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:18,
           Module: 1,
           Creator: 'G',
           Tag: 'Java',
@@ -173,6 +198,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:19,
           Module: 1,
           Creator: 'H',
           Tag: 'Java',
@@ -181,6 +207,7 @@ export default new Vuex.Store({
         },
           
           {
+          id:20,
           Module: 1,
           Creator: 'I',
           Tag: 'Java',
@@ -189,6 +216,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:21,
           Module: 1,
           Creator: 'J',
           Tag: 'Java',
@@ -197,6 +225,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:22,
           Module: 2,
           Creator: 'K',
           Tag: 'SQL',
@@ -206,6 +235,7 @@ export default new Vuex.Store({
           
           
           {
+          id:23,
           Module: 2,
           Creator: 'L',
           Tag: 'SQL',
@@ -214,6 +244,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:24,
           Module: 2,
           Creator: 'M',
           Tag: 'SQL',
@@ -222,6 +253,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:25,
           Module: 2,
           Creator: 'N',
           Tag: 'HTTP',
@@ -230,13 +262,16 @@ export default new Vuex.Store({
           },
           
           {
+          id:26,
           Module: 2,
           Creator: 'O',
           Tag: 'HTTP',
           Question: '.com, .org, and .gov are examples of what URL part?',
           Answer: 'Top Level Domain',
           },
+        
           {
+          id:27,
           Module: 2,
           Creator: 'P',
           Tag: 'API',
@@ -245,6 +280,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:28,
           Module: 2,
           Creator: 'Q',
           Tag: 'API',
@@ -253,6 +289,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:29,
           Module: 2,
           Creator: 'R',
           Tag: 'API',
@@ -261,6 +298,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:30,
           Module: 3,
           Creator: 'S',
           Tag: 'CSS' ,
@@ -269,6 +307,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:31,
           Module: 3,
           Creator: 'T',
           Tag: 'CSS',
@@ -277,6 +316,7 @@ export default new Vuex.Store({
           },
           
           {
+          id:32,
           Module: 3,
           Creator: 'U',
           Tag: 'CSS',
@@ -285,13 +325,16 @@ export default new Vuex.Store({
           },
           
           {
+          id:33,
           Module: 3,
           Creator: 'V',
           Tag: 'JavaScript',
           Question: 'What does NaN stand for?',
           Answer: 'Not a Number',
           },
+
           {
+          id:34,
           Module: 3,
           Creator: 'W',
           Tag: 'JavaScript',
