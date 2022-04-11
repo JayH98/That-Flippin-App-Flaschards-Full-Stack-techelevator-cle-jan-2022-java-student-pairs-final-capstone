@@ -2,7 +2,8 @@
   <div class="home">
     <h1>Home</h1>
     <p>Select A Deck or Topic Tag</p>
-    
+    <add-flash-card />
+
     <form>
       <input  list="options" multiple/>
     <datalist id="options">
@@ -118,7 +119,10 @@
 </template>
 
 <script>
+import AddFlashCard from '../components/AddFlashCard.vue';
+
 export default {
+  components: { AddFlashCard },
   name: "home",
 
   // Created methods section in case needed later
