@@ -147,15 +147,20 @@
  crossover with Study Session would be perfect on this occasion -->
       </form>
     </section>
+
+    <flashcard-list/>
+    
   </div>
 </template>
 
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
+import FlashcardList from '../components/FlashcardList.vue';
+
 
 export default {
-  components: { AddFlashCard, AddNewDeck},
+  components: { AddFlashCard, AddNewDeck, FlashcardList},
   name: "home",
 
   // Created methods section in case needed later
