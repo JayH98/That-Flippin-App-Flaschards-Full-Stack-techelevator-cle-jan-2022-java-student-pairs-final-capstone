@@ -148,7 +148,7 @@
       </form>
     </section>
 
-    <flashcard-list/>
+    <flash-card-list/>
     
   </div>
 </template>
@@ -156,11 +156,11 @@
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
-import FlashcardList from '../components/FlashcardList.vue';
+import FlashCardList from '../components/FlashCardList.vue';
 
 
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashcardList},
+  components: { AddFlashCard, AddNewDeck, FlashCardList},
   name: "home",
 
   // Created methods section in case needed later
