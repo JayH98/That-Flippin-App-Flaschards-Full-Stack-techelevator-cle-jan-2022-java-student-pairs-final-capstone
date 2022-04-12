@@ -167,6 +167,103 @@ export default {
 
 <style>
 
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "ul ul"
+  "#home #home"
+  ;              
+}
+
+ul {
+  display: flex;
+}
+
+.home {
+  display: grid;
+  
+}
+
+h1, p, #beginStudy {
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+
+form {
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+#beginStudy {
+  padding: 5px;
+  padding-left: 50px;
+}
+
+/* copy from login */
+
+/* #account-box button {
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+} */
+
+html {
+  background-color: #87ceeb;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+/* copy from register */
+
+#test-box {
+  display: flex;
+  border: 10px lightgrey;
+  width: 300px;
+}
+
+
+/* copy from App */
+img {
+  height: 4rem;
+  margin-left: -50px;
+  
+}
+
+/* #nav ul {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 50px;
+} */
+
+#home-button, #logout-button {
+    font-weight: bold;
+    list-style: none;
+    width: 20%;
+    background-color: #00afef;
+    color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    padding: 10px;
+    margin: 20px -10px 20px 20px;
+  
+}
+
+#app {
+  background-color: rgb(189, 189, 189);
+}
+
 
 
 </style>
