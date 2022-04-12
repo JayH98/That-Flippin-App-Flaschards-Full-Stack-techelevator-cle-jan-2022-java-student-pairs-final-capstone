@@ -27,7 +27,7 @@ export default new Vuex.Store({
     
     flashcards: [
         {
-        id:1,
+        id: 1,
         Module: 3,
         Creator: "X",
         Tag: "DOM",
@@ -360,9 +360,9 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    ADD_CARD(state, flashcard) {
-      state.flashcards.unshift(flashcard);
-    },
+    ADD_CARD(state, flashcards) {
+      state.flashcards.unshift(flashcards)
+    }
 
     // Is this how the whole card will be added to the store or do we need to specify ID etc.
 

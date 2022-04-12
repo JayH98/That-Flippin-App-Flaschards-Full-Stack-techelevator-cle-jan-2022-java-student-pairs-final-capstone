@@ -1,5 +1,5 @@
 <template>
-  <div class = "flashcard">
+  <div class = "flashcard" @click="flipCard=!flipCard">
       <h1>{{flashcard.module}} / {{flashcard.tag}}</h1>
       
       <section>{{flashcard.question}}</section>
@@ -20,6 +20,11 @@ export default {
     props: ['flashcard'],
     components: {
         
+    },
+    data() {
+        return {
+            flipCard: false,
+        }
     }
 }
 </script>
