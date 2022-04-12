@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <h2>Home</h2>
     <p>Select A Deck or Topic Tag</p>
     <add-flash-card />
 
@@ -185,7 +185,7 @@ ul {
   
 }
 
-h1, p, #beginStudy {
+h2, p, #beginStudy {
   padding-bottom: 10px;
   padding-left: 50px;
 }
