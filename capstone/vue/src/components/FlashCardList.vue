@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FlashCard from '@component/FlashCard.vue'
+import FlashCard from '@/components/FlashCard.vue'
 
 export default {
     name: 'flashcard-list',
@@ -21,5 +21,6 @@ export default {
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    border: 5px solid brown;
 }
 </style>

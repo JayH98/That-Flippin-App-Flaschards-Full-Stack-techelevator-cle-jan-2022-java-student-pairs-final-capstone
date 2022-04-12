@@ -113,7 +113,7 @@
     <!-- needs v-bind to tie to the modules selected in the store -->
 
     <section>
-      <button id="beginStudy" type="button">Begin Study Session</button>
+      <button id="beginStudyBtn" type="button">Begin Study Session</button>
     </section>
 
     <section>
@@ -147,15 +147,20 @@
  crossover with Study Session would be perfect on this occasion -->
       </form>
     </section>
+
+    <flashcard-list/>
+    
   </div>
 </template>
 
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
+import FlashcardList from '../components/FlashcardList.vue';
+
 
 export default {
-  components: { AddFlashCard, AddNewDeck},
+  components: { AddFlashCard, AddNewDeck, FlashcardList},
   name: "home",
 
   // Created methods section in case needed later
@@ -195,75 +200,18 @@ form {
   padding-bottom: 50px;
 }
 
-#beginStudy {
+#beginStudyBtn {
   padding: 5px;
   padding-left: 50px;
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
-
-/* copy from login */
-
-/* #account-box button {
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    color: #000000;
-    background-color: #00afef;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-} */
-
-html {
-  background-color: #87ceeb;
-  /* font-family: Arial, Helvetica, sans-serif; */
-}
-
-
-/* copy from register */
-
-#test-box {
-  display: flex;
-  border: 10px lightgrey;
-  width: 300px;
-}
-
-
-/* copy from App */
-img {
-  height: 4rem;
-  margin-left: -50px;
-  
-}
-
-/* #nav ul {
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  justify-content: space-around;
-  padding: 10px;
-  margin: 50px;
-} */
-
-#home-button, #logout-button {
-    font-weight: bold;
-    list-style: none;
-    width: 20%;
-    background-color: #00afef;
-    color: #000000;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 50px;
-    padding: 10px;
-    margin: 20px -10px 20px 20px;
-  
-}
-
-#app {
-  background-color: rgb(189, 189, 189);
-}
-
 
 
 </style>

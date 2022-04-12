@@ -32,7 +32,7 @@ export default new Vuex.Store({
     
     flashcards: [
         {
-        id:1,
+        id: 1,
         Module: 3,
         Creator: "X",
         Tag: "DOM",

@@ -29,8 +29,8 @@
         />
       </div>
 
-      <input type="submit" value="Save" v-on:click.prevent="addNewDeck" />
-      <input type="button" value="Cancel" v-on:click.prevent="resetForm" />
+      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewDeck" />
+      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />
     </form>
   </div>
 </template>
@@ -60,4 +60,18 @@ export default {
 </script>
 
 <style>
+
+input.saveBtn,
+input.cancelBtn {
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
 </style>

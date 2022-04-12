@@ -87,6 +87,14 @@ img {
   grid-area: img;
 }
 
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "img img #home-button #logout-button";
+}
+
 h1 {
  grid-area: h1;
  padding-left: 10px;
