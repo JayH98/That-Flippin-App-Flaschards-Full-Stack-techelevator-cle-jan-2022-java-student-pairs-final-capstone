@@ -62,5 +62,12 @@ export default {
 </script>
 
 <style>
+a {
+  padding-left: 50px;
+  
+}
+
+
+
 
 </style>
