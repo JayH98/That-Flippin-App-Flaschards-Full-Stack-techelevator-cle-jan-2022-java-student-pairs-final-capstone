@@ -104,6 +104,7 @@ export default {
 
 .form-register {
   margin: 10%;
+  padding: 50px;
   
 }
 

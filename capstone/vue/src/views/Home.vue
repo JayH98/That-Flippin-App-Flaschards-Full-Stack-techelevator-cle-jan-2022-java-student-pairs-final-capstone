@@ -113,7 +113,7 @@
     <!-- needs v-bind to tie to the modules selected in the store -->
 
     <section>
-      <button id="beginStudy" type="button">Begin Study Session</button>
+      <button id="beginStudyBtn" type="button">Begin Study Session</button>
     </section>
 
     <section>
@@ -172,6 +172,28 @@ export default {
 
 <style>
 
+h1, p, #beginStudy {
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+
+form {
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+#beginStudyBtn {
+  padding: 5px;
+  padding-left: 50px;
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 
 </style>

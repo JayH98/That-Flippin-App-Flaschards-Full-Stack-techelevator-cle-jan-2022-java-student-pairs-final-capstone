@@ -97,13 +97,14 @@ export default {
 
 .form-signin {
   margin: 10%;
+  padding: 50px;
 }
 
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 50px;
+  
 }
 
 #account-box button {

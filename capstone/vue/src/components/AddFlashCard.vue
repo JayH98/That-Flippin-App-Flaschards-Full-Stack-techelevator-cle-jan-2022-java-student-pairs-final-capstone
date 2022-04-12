@@ -24,8 +24,8 @@
         <label for="answer">Answer:</label>
         <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.Answer" />
       </div>
-      <input type="submit" value="Save" v-on:click.prevent="addNewCard"/>
-      <input type="button" value="Cancel" v-on:click.prevent="resetForm" />      
+      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
+      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
 
   </form>
 </div>   
@@ -63,5 +63,24 @@ export default {
 </script>
 
 <style>
+a {
+  padding-left: 50px;
+  
+}
+
+/* below is unNeeded due to being in component AddNewDeck */
+/* input.saveBtn,
+input.cancelBtn {
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+
 
 </style>
