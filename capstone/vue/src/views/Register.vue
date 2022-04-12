@@ -18,8 +18,9 @@
             autofocus
           />
         </div>
+        <br />
         <div id="password-box">
-          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;
           <input
             type="password"
             id="password"
@@ -37,6 +38,7 @@
             required
           />
         </div>
+        <br />
         <div id="accountExists-box">
           <router-link :to="{ name: 'login' }">Have an account?</router-link> &nbsp;&nbsp;
           <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -99,11 +101,37 @@ export default {
 </script>
 
 <style>
-/* 
+
+.form-register {
+  margin: 10%;
+  
+}
+
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
-} */
+  
+}
+
+#accountExists-box button {
+
+
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#test-box {
+  display: flex;
+  border: 10px lightgrey;
+  width: 300px;
+}
+
 
 </style>

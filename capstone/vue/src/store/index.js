@@ -23,7 +23,12 @@ export default new Vuex.Store({
 
     // Addition of a filter for searching
     // Do we need to add a blank flashcard?
-
+    deck: [
+      {
+        Name: "",
+        Creator:"",
+      },
+    ],
     
     flashcards: [
         {
@@ -33,6 +38,7 @@ export default new Vuex.Store({
         Tag: "DOM",
         Question: "What does DOM stand for?",
         Answer: "Document Object Model",
+        Deck: "",
         },
         
         {
@@ -42,6 +48,7 @@ export default new Vuex.Store({
         Tag: "DOM",
         Question: 'What type of tools in a web browser are used to inspect a DOM?',
         Answer: 'Developer Tools',
+        Deck:"",
         },
         
         {
@@ -51,6 +58,7 @@ export default new Vuex.Store({
         Tag: 'Vue',
         Question: 'What three programming languages can you use simultaneously in a Vue document?',
         Answer: 'HTML, CSS, and JavaScript',
+        Deck:"",
         },
         
         {
@@ -60,6 +68,7 @@ export default new Vuex.Store({
         Tag: 'VUE',
         Question: 'If a Vue router is not found, which error code is returned?',
         Answer: '404',
+        Deck:"",
         },
         
         {
@@ -69,6 +78,7 @@ export default new Vuex.Store({
         Tag: 'Interview',
         Question: 'True or False: Dirty laundry in the background of a video interview is okay',
         Answer: 'False',
+        Deck:"",
         },
         
         {
@@ -78,6 +88,7 @@ export default new Vuex.Store({
         Tag: 'Interview',
         Question: 'What does the STAR in STAR questions stand for?',
         Answer: 'Situation, Task, Action, Result',
+        Deck:"",
         },
         
         {
@@ -87,6 +98,7 @@ export default new Vuex.Store({
         Tag: 'Interview',
         Question: 'True or False:  When introducing yourself during a technical interview you should tailor your pitch to the more technical audience',
         Answer: 'True',
+        Deck:"",
         },
         
         {
@@ -96,6 +108,7 @@ export default new Vuex.Store({
         Tag: 'Resume',
         Question: 'True or False:  Having your full address on your resume is always helpful',
         Answer: 'false',
+        Deck:"",
         },
         
         {
@@ -105,6 +118,7 @@ export default new Vuex.Store({
         Tag: 'Resume',
         Question: 'True or False:  A brightly colored resume is always the best',
         Answer: 'False',
+        Deck:"",
         },
         
         {
@@ -114,6 +128,7 @@ export default new Vuex.Store({
         Tag: 'LinkedIn',
         Question: 'True or False:  Recruiters don’t use LinkedIn to find potential employees',
         Answer: 'False',
+        Deck:"",
         },
         
         {
@@ -123,6 +138,7 @@ export default new Vuex.Store({
         Tag: 'LinkedIn',
         Question: 'True or False:  Posing with my dog in my LinkedIn profile picture is acceptable',
         Answer: 'False',
+        Deck:"",
         },
         
         {
@@ -132,6 +148,7 @@ export default new Vuex.Store({
         Tag: 'LinkedIn',
         Question: 'True or False: LinkedIn will not help you find a job',
         Answer: 'False',
+        Deck:"",
         },
 
         {
@@ -141,6 +158,7 @@ export default new Vuex.Store({
           Tag: 'Java',
           Question: 'What are the three Principles of Object Oriented Programming?',
           Answer: 'Polymorphism, Encapsulation, and Inheritance',
+          Deck:"",
         },
 
           {
@@ -150,6 +168,7 @@ export default new Vuex.Store({
           Tag: 'MVC',
           Question: 'What does MVC Stand for?',
           Answer: 'Model, View, Controller',
+          Deck:"",
           },
 
           {
@@ -159,6 +178,7 @@ export default new Vuex.Store({
           Tag: 'HTML',
           Question: 'What does HTML stand for?',
           Answer: 'Hyper Text Markup Language',
+          Deck:"",
           },
           
           {
@@ -168,6 +188,7 @@ export default new Vuex.Store({
           Tag:"Resume",
           Question: "How long, ideally, should your resume be?",
           Answer: "1 Page",
+          Deck:"",
           },
 
           {
@@ -177,6 +198,7 @@ export default new Vuex.Store({
           Tag: 'Git',
           Question: "What is version control?",
           Answer: "Version control is software used to help keep track of changes over time to a codebase",
+          Deck:"",
           },
           
           {
@@ -186,6 +208,7 @@ export default new Vuex.Store({
           Tag: "Git",
           Question: 'What two steps must you take in Git before pushing your work?',
           Answer: 'Add and Commit',
+          Deck:"",
           },
           
           {
@@ -195,6 +218,7 @@ export default new Vuex.Store({
           Tag: 'Java',
           Question: 'In a Map, a value is paired with what?',
           Answer: 'A Key',
+          Deck:"",
           },
           
           {
@@ -204,6 +228,7 @@ export default new Vuex.Store({
           Tag: 'Java',
           Question: 'What is Polymorphism?',
           Answer: 'The ability of different objects to respond in a unique way to the same message',
+          Deck:"",
         },
           
           {
@@ -213,6 +238,7 @@ export default new Vuex.Store({
           Tag: 'Java',
           Question: 'What command is used to end the iteration of a loop?',
           Answer: 'Break',
+          Deck:"",
           },
           
           {
@@ -222,6 +248,7 @@ export default new Vuex.Store({
           Tag: 'Java',
           Question: 'What expression deals with True and False?',
           Answer: 'Boolean',
+          Deck:"",
           },
           
           {
@@ -231,6 +258,7 @@ export default new Vuex.Store({
           Tag: 'SQL',
           Question: 'What does SQL stand for?',
           Answer: 'Structured Query Language',
+          Deck:"",
           },
           
           
@@ -241,6 +269,7 @@ export default new Vuex.Store({
           Tag: 'SQL',
           Question: 'If I wanted to select all rows in a table, what symbol would I use?',
           Answer: '*',
+          Deck:"",
           },
           
           {
@@ -250,6 +279,7 @@ export default new Vuex.Store({
           Tag: 'SQL',
           Question: 'What term would you use to connect two separate tables?',
           Answer: 'Join',
+          Deck:"",
           },
           
           {
@@ -259,6 +289,7 @@ export default new Vuex.Store({
           Tag: 'HTTP',
           Question: 'What is the difference between HTTP and HTTPS?',
           Answer: 'HTTPS is secured/encrypted',
+          Deck:"",
           },
           
           {
@@ -268,6 +299,7 @@ export default new Vuex.Store({
           Tag: 'HTTP',
           Question: '.com, .org, and .gov are examples of what URL part?',
           Answer: 'Top Level Domain',
+          Deck:"",
           },
         
           {
@@ -277,6 +309,7 @@ export default new Vuex.Store({
           Tag: 'API',
           Question: 'What does API stand for?',
           Answer: 'Application Programming Interface',
+          Deck:"",
           },
           
           {
@@ -286,6 +319,7 @@ export default new Vuex.Store({
           Tag: 'API',
           Question: 'What does JSON stand for?',
           Answer: 'JavaScript Object Notation',
+          Deck:"",
           },
           
           {
@@ -295,6 +329,7 @@ export default new Vuex.Store({
           Tag: 'API',
           Question: 'What term is used to send an update request to an API?',
           Answer: 'PUT',
+          Deck:"",
           },
           
           {
@@ -304,6 +339,7 @@ export default new Vuex.Store({
           Tag: 'CSS' ,
           Question:  'True or False: An ID assigned to more than one element in CSS',
           Answer: 'False',
+          Deck:"",
           },
           
           {
@@ -313,6 +349,7 @@ export default new Vuex.Store({
           Tag: 'CSS',
           Question: 'px is an example of what kind of length unit?',
           Answer: 'Absolute',
+          Deck:"",
           },
           
           {
@@ -322,6 +359,7 @@ export default new Vuex.Store({
           Tag: 'CSS',
           Question: 'What is Responsive Web Design?',
           Answer: 'Responsive web design is a set of practices that allows pages to alter their layout and appearance to suit different screen sizes and resolutions',
+          Deck:"",
           },
           
           {
@@ -331,6 +369,7 @@ export default new Vuex.Store({
           Tag: 'JavaScript',
           Question: 'What does NaN stand for?',
           Answer: 'Not a Number',
+          Deck:"",
           },
 
           {
@@ -340,6 +379,7 @@ export default new Vuex.Store({
           Tag: 'JavaScript',
           Question: 'What is the boolean value of “!null”',
           Answer: 'True',
+          Deck:"",
           },
         ],
   },
@@ -360,8 +400,11 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    ADD_CARD(state, flashcards) {
-      state.flashcards.unshift(flashcards)
+    ADD_CARD(state, flashcard) {
+      state.flashcards.unshift(flashcard);
+    },
+    ADD_DECK(state, deck) {
+      state.deck.push(deck);
     }
 
     // Is this how the whole card will be added to the store or do we need to specify ID etc.

@@ -10,19 +10,19 @@
   <form v-on:submit.prevent v-if="showForm === true">
       <div class="form-element">
         <label for="creator">Creator:</label>
-        <input id="creator" type="text" v-model="newCard.Creator" />
+        <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.Creator" />
       </div>
       <div class="form-element">
         <label for="tag">Tag:</label>
-        <input id="tag" type="text" v-model="newCard.Tag" />
+        <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.Tag" />
       </div>  
       <div class="form-element">
         <label for="question">Question:</label>
-        <input id="question" type="text" v-model="newCard.Question" />
+        <textarea id="question" type="text" placeholder="Insert Question Here" v-model="newCard.Question" />
       </div>  
       <div class="form-element">
         <label for="answer">Answer:</label>
-        <input id="answer" type="text" v-model="newCard.Answer" />
+        <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.Answer" />
       </div>
       <input type="submit" value="Save" v-on:click.prevent="addNewCard"/>
       <input type="button" value="Cancel" v-on:click.prevent="resetForm" />      
@@ -44,6 +44,7 @@ export default {
                 Tag : "",
                 Question : "",
                 Answer : "",
+                Deck: "",
             }
         }
     },

@@ -27,7 +27,7 @@
         </div>
         <br />
         <div id="password-box">
-        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;&nbsp; 
+        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;
         <input
           type="password"
           id="password"
@@ -95,14 +95,32 @@ export default {
   
 } */
 
+.form-signin {
+  margin: 10%;
+}
+
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
+  padding: 50px;
+}
+
+#account-box button {
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 html {
   background-color: #87ceeb;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
+
 
 </style>
