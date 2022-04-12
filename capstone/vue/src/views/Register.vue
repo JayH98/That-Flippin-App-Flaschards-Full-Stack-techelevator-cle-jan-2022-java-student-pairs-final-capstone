@@ -20,7 +20,7 @@
         </div>
         <br />
         <div id="password-box">
-          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;
           <input
             type="password"
             id="password"
@@ -104,12 +104,14 @@ export default {
 
 .form-register {
   margin: 10%;
+  
 }
 
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
+  
 }
 
 #accountExists-box button {
@@ -123,6 +125,12 @@ export default {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+}
+
+#test-box {
+  display: flex;
+  border: 10px lightgrey;
+  width: 300px;
 }
 
 

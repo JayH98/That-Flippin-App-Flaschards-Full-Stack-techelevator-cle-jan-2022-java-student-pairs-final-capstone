@@ -27,7 +27,7 @@
         </div>
         <br />
         <div id="password-box">
-        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;&nbsp; 
+        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;
         <input
           type="password"
           id="password"
@@ -103,6 +103,7 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: left;
+  padding: 50px;
 }
 
 #account-box button {
