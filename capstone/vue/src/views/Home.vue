@@ -4,6 +4,11 @@
     <p>Select A Deck or Topic Tag</p>
     <add-flash-card />
 
+    <add-new-deck />
+    
+    
+
+
     <form>
       <input  list="options" multiple/>
     <datalist id="options">
@@ -115,28 +120,28 @@
       
       
       <form> 
-        <label for="question"> Question: </label> <br>
+        <!-- <label for="question"> Question: </label> <br>
         <textarea type="text" id="question" name="question" placeholder="Insert Question Here"/><br>
 
         <label for="answer"> Answer: </label> <br>
         <textarea type="text" id="answer" name ="question" placeholder="Insert Answer Here"/><br>
 
         <label for="creator"> Card Creator's Name: </label> <br>
-        <input type="text" id="creator" name="creator" placeholder="Who Are You?"><br>
+        <input type="text" id="creator" name="creator" placeholder="Who Are You?"><br> -->
 
       <!-- Form for New Card should appear after new card is selected? -->
 
-        <button id="createCard" type="button">Create New Card</button> <br>
+        <!-- <button id="createCard" type="button">Create New Card</button> <br> -->
 
        
 
-        <label for="newDeckName">New Deck's Name: </label><br>
+        <!-- <label for="newDeckName">New Deck's Name: </label><br>
         <input type="text" id="newDeckName" name="newDeckName" placeholder="Insert New Deck Name"> <br>
 
         <label for="newTopic"> New Deck's Topic / Tag: </label><br>
         <textarea id="newTopic" name="newTopic" placeholder="Insert New Deck's Topic / Tag"/><br>
         
-        <button id="createNewDeck" type="button"> Create New Deck</button> <br>
+        <button id="createNewDeck" type="button"> Create New Deck</button> <br> -->
       <!-- Create New Card needs v-bind and logic to add a new card to the selected module
       AND ONLY the selected module.
  crossover with Study Session would be perfect on this occasion -->
@@ -147,9 +152,10 @@
 
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
+import AddNewDeck from '../components/AddNewDeck.vue';
 
 export default {
-  components: { AddFlashCard },
+  components: { AddFlashCard, AddNewDeck},
   name: "home",
 
   // Created methods section in case needed later
