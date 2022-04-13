@@ -24,6 +24,10 @@
         <label for="answer">Answer:</label>
         <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.Answer" />
       </div>
+      <div class="form-element">
+        <label for="deck">Deck:</label>
+        <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.Deck" />
+      </div>
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
       <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
 

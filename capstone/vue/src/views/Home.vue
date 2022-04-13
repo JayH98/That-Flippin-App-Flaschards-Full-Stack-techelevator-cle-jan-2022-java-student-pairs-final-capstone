@@ -5,6 +5,8 @@
     <add-flash-card />
 
     <add-new-deck />
+
+    <deck-list />
     
 
 
@@ -29,6 +31,7 @@
         <option value="Vue"/>
         <option value="Interview"/>
         <option value="LinkedIn"/>
+        <option value="Tech Elevator"/>
           </datalist>
         
     </form>
