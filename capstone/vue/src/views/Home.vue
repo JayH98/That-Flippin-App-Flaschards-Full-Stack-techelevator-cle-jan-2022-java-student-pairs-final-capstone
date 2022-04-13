@@ -6,7 +6,6 @@
 
     <add-new-deck />
     
-    
 
 
     <form>
@@ -148,6 +147,8 @@
       </form>
     </section>
 
+    <deck-list/>
+
     <flash-card-list/>
     
   </div>
@@ -156,11 +157,12 @@
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
+import DeckList from '../components/DeckList.vue';
 import FlashCardList from '../components/FlashCardList.vue';
 
 
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashCardList},
+  components: { AddFlashCard, AddNewDeck, FlashCardList, DeckList},
   name: "home",
 
   // Created methods section in case needed later

@@ -1,11 +1,8 @@
-
-
-
 <template>
   <div class = "Deck">
-      <h1>{{Deck.name}}</h1>
+      <h1>{{deck.Name}}</h1>
       
-      <section>Created by:{{Deck.creator}}</section>
+      <section>Created by:{{deck.Creator}}</section>
         
       <button type="button">Study This Deck</button>
       
