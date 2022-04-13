@@ -1,10 +1,10 @@
 <template>
-  <div class = "deck" id="deck-container">
+  <div class = "deck">
       <h1>{{deck.Name}}</h1>
       
-      <section>Created by:{{deck.Creator}}</section>
+      <section>Created by: {{deck.Creator}}</section>
         
-      <!-- <button type="button">Study This Deck</button> -->
+      <button type="button" class = "study-button">Study This Deck</button>
       
   </div>
 
@@ -26,10 +26,26 @@ export default {
 
 <style>
 .deck {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgb(0,111,121);
+    background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%);
+    border: 5px solid royalblue;
+    width: 30%;
+}
+
+.deck > h1, .deck section {
+    color: brown;
+}
+
+.study-button {
+    box-sizing: border-box;
+    background-color: white;
+    min-width: 100px;
+    width: 20%;
+    height: 35px;
+    align-self: flex-end;
 }
 
 

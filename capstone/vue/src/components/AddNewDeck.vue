@@ -50,10 +50,11 @@ export default {
   methods: {
     addNewDeck() {
       this.$store.commit("ADD_DECK", this.newDeck);
+      this.resetForm();
     },
     resetForm() {
       this.showForm = false;
-      this.newDeck;
+      this.newDeck = {};
     },
   },
 };

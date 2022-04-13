@@ -54,11 +54,20 @@ export default {
     },
     methods: {
         addNewCard(){
-            this.$store.commit("ADD_CARD", this.newCard)
+            this.$store.commit("ADD_CARD", this.newCard);
+            this.resetForm;
         },
         resetForm(){
             this.showForm = false;
-            this.newCard;
+            this.newCard = {
+                id : 0,
+                Module : 0,
+                Creator : "",
+                Tag : "",
+                Question : "",
+                Answer : "",
+                Deck: "",
+            };
         }
     }
 }
