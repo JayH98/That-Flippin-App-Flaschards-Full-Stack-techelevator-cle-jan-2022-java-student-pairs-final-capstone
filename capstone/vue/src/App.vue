@@ -3,6 +3,7 @@
 
     <header>
       <img id="te-logo" src="./assets/vector_long_logo_dark.png" alt="Tech Elevator Logo">
+      <!-- <img id="te-logo" src="./assets/TechElevator.png" alt="Tech Elevator Logo"> -->
       <h1>Full Stack Flashcards</h1>
     </header>  
 
@@ -14,8 +15,8 @@
 
       <nav>
         <ul>
-          <li><router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }">HOME</router-link> <li> &nbsp;&nbsp;
-          <li><router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link></li>
+          <router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }">HOME</router-link>  &nbsp;&nbsp;
+          <router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link>
         </ul>
       </nav>
   
@@ -30,15 +31,13 @@ header img {
   margin-left: -50px;
   
 }
-
+ 
 nav ul {
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #87CEEB; */
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style: none;
-  /* justify-content: space-between; */
   justify-content: space-between;
   padding: 10px;
   margin: 50px;
@@ -49,7 +48,7 @@ nav ul {
 #home-button, #logout-button {
     font-weight: bold;
     list-style: none;
-    width: 20%;
+    width: 40%;
     background-color: #00afef;
     color: #000000;
     border-radius: 5px;
@@ -113,7 +112,7 @@ header img {
   width: auto;
   padding-left: 60px;
   padding-top: 10px;
-}
+} 
 
 
 </style>
