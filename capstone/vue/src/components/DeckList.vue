@@ -1,8 +1,6 @@
 <template>
-  <div class="deck-container" v-show='$store.state.deck.length > 0'>
-      <deck v-bind:deck="deck" v-for="deck in $store.state.deck" v-bind:key="deck.Name"/>
-      <h2> {{deck.Name}} </h2>
-      <p> {{deck.Creator}} </p>
+  <div class="deck-container" v-show="$store.state.decks.length > 0">
+      <deck v-bind:deck="deck" v-for="deck in $store.state.decks" v-bind:key="deck.Name"/>
   </div>
 </template>
 

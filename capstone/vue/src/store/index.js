@@ -23,11 +23,7 @@ export default new Vuex.Store({
 
     // Addition of a filter for searching
     // Do we need to add a blank flashcard?
-    deck: [
-      {
-        Name: "Tech Elevator",
-      Creator: "Tech Elevator"
-    }
+    decks: [
       
     ],
     
