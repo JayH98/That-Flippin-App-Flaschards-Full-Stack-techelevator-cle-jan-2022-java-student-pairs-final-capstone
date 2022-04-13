@@ -84,6 +84,16 @@ public class JdbcCardDao {
                 } return null;
             }
 
+                public Card editCard(String tag, String question, String answer) {
+                Card newCard = new Card();
+                String cardSearchSql = "UPDATE card_table"+
+                                        "SET id, module, creator, ?, ?, ?, deck;";
+
+                    SqlRowSet editedCard = jdbcTemplate.queryForRowSet(cardSearchSql, tag, question, answer);
+
+                    return newCard;
+                }
+
 
 
 

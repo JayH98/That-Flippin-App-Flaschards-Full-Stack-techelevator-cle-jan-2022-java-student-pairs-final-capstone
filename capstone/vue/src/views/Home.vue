@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <h2>Home</h2>
     <p>Select A Deck or Topic Tag</p>
     <add-flash-card />
 
@@ -148,7 +148,7 @@
       </form>
     </section>
 
-    <flashcard-list/>
+    <flash-card-list/>
     
   </div>
 </template>
@@ -156,11 +156,11 @@
 <script>
 import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
-import FlashcardList from '../components/FlashcardList.vue';
+import FlashCardList from '../components/FlashCardList.vue';
 
 
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashcardList},
+  components: { AddFlashCard, AddNewDeck, FlashCardList},
   name: "home",
 
   // Created methods section in case needed later
@@ -172,7 +172,25 @@ export default {
 
 <style>
 
-h1, p, #beginStudy {
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "ul ul"
+  "#home #home"
+  ;              
+}
+
+ul {
+  display: flex;
+}
+
+.home {
+  display: grid;
+  
+}
+
+h2, p, #beginStudy {
   padding-bottom: 10px;
   padding-left: 50px;
 }
