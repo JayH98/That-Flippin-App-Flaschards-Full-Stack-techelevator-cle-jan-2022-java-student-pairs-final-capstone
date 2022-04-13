@@ -22,6 +22,5 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 10px;
-    border: 5px solid brown;
 }
 </style>

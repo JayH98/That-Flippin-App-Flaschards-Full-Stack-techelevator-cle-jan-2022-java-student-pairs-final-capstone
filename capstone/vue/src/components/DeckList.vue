@@ -21,6 +21,8 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 10px;
-    border: 5px solid royalblue;
+    /* background: rgb(0,111,121);
+    background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%);
+    border: 5px solid royalblue; */
 }
 </style>
