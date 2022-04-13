@@ -1,10 +1,10 @@
 <template>
-  <div class = "Deck">
+  <div class = "deck" id="deck-container">
       <h1>{{deck.Name}}</h1>
       
       <section>Created by:{{deck.Creator}}</section>
         
-      <button type="button">Study This Deck</button>
+      <!-- <button type="button">Study This Deck</button> -->
       
   </div>
 
@@ -25,10 +25,11 @@ export default {
 </script>
 
 <style>
-.deck-container {
+.deck {
     display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 
