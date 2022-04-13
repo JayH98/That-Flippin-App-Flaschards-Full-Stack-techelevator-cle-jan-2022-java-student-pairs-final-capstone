@@ -18,9 +18,10 @@ export default {
 
 <style>
 .flashcard-container {
-    display:flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    row-gap: 10px;
     border: 5px solid brown;
 }
 </style>
