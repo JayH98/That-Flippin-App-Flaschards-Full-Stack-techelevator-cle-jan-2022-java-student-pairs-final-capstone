@@ -46,15 +46,16 @@ export default {
   height: 300px;
   transform-style:preserve-3d;
   transition: 250ms;
-  margin-bottom: 10px;
   background-color: rgb(212, 206, 206);
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
-  transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+  translateY(var(--translate-y, 0));
 }
 
 .flashcard:hover {
+  --translate-y: -2px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .6);
 }
 
