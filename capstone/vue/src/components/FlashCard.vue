@@ -2,20 +2,21 @@
   <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
     <div class="flashcard-front">
         <div class = 'box'>
-      <h1>{{ flashcard.Module }} / {{ flashcard.tag }}</h1>
-      <section>{{ flashcard.Question }}</section>
-      <p>{{ flashcard.id }}</p>
+      <h1>{{ flashcard.Module }} /{{ flashcard.Tag }}</h1>
+      <section>Q: {{ flashcard.Question }}</section>
+      <p>ID: {{ flashcard.id }}</p>
       <!-- TE_Logo_right image above here or as object to go forward instead of "See Answer" -->
-      <button type="button">See Answer</button>
+      <!-- <button type="button">See Answer</button> -->
         </div>
     </div>
 
     <div class="flashcard-back">
         <div class = 'box'>
-      <h1>{{ flashcard.Module }} / {{ flashcard.tag }}</h1>
-      <p>{{flashcard.Answer}}</p>
-      <p>{{flashcard.Creator}}</p>
-      <button type="button">See Question</button>
+      <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
+      <p>A: {{flashcard.Answer}}</p>
+      <p>Created By:{{flashcard.Creator}}</p>
+      <p>Deck:{{flashcard.Deck}}</p>
+      <!-- <button type="button">See Question</button> -->
         </div>
     </div>
 

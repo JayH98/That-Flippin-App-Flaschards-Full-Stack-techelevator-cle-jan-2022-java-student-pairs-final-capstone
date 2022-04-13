@@ -17,29 +17,29 @@ public class CardController {
         this.cardDao = card;
     }
 
-    @RequestMapping(path = "/flashcard/tag", method = RequestMethod.GET)
+    @RequestMapping(path = "/flashcard/{tag}", method = RequestMethod.GET)
     public Card findCardByTag(@Valid @PathVariable String tag) {
             return cardDao.findCardByTag(tag);
         }
 
 
-    @RequestMapping(path = "/flashcard/module", method = RequestMethod.GET)
+    @RequestMapping(path = "/flashcard/{module}", method = RequestMethod.GET)
     public Card findCardByModule(@Valid @PathVariable int module) {
         return cardDao.findCardByModule(module);
     }
 
-    @RequestMapping(path = "/flashcard/creator", method = RequestMethod.GET)
+    @RequestMapping(path = "/flashcard/{creator}", method = RequestMethod.GET)
     public Card findCardByCreator(@Valid @PathVariable String creator) {
         return cardDao.findCardByCreator(creator);
     }
 
-    @RequestMapping(path = "/flashcard/deck", method = RequestMethod.GET)
+    @RequestMapping(path = "/flashcard/{deck}", method = RequestMethod.GET)
     public Card findCardByDeck(@Valid @PathVariable String deck) {
         return cardDao.findCardByDeck(deck);
 
     }
 
-    @RequestMapping(path = "/flashcard/createcard", method = RequestMethod.POST)
+    @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
     public String CreateCard(@PathVariable @Valid int module, String creator, String tag,
                              String question, String answer, String deck ) {
         return "Card Was Created";
