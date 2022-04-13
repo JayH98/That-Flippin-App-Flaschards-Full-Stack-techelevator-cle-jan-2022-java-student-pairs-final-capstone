@@ -2,7 +2,7 @@
   <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
     <div class="flashcard-front">
         <div class = 'box'>
-      <h1>{{ flashcard.Module }} / {{ flashcard.tag }}</h1>
+      <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
       <section>{{ flashcard.Question }}</section>
       <p>{{ flashcard.id }}</p>
       <!-- TE_Logo_right image above here or as object to go forward instead of "See Answer" -->

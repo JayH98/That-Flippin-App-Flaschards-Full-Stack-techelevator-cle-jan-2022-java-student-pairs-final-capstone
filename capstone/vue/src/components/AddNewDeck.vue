@@ -29,7 +29,7 @@
         />
       </div>
 
-      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewDeck" />
+      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewDeck"/>
       <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />
     </form>
   </div>
