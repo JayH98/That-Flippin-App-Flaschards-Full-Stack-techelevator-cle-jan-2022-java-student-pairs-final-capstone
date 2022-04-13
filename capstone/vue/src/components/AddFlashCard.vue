@@ -7,7 +7,7 @@
       v-on:click.prevent="showForm = true"
     >Create A Flashcard</a>
 
-  <form v-on:submit.prevent v-if="showForm === true">
+  <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
       <div class="form-element">
         <label for="creator">Creator:</label>
         <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.Creator" />

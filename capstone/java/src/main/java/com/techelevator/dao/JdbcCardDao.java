@@ -7,19 +7,18 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 @Component
-public class JdbcCardDao {
+public class JdbcCardDao implements CardDao{
 
     private JdbcTemplate jdbcTemplate;
 
     public JdbcCardDao(DataSource datasource) { this.jdbcTemplate = new JdbcTemplate(datasource);}
 
-    public boolean createCard(int module, String creator, String tag, String deck) {
+    public boolean createCard(int module, String creator, String tag, String question, String answer, String deck) {
 
         String sql= "BEGIN; " +
                 "INSERT INTO card_table" +
                 "(id, module, creator, tag, question, answer, deck)" +
-                "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?);" +
-                "COMMIT;";
+                "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?);";
 
                 return true;}
 
@@ -44,7 +43,7 @@ public class JdbcCardDao {
     public Card findCardByTag(String tag) {
         String sql = "SELECT module, creator, question, answer, deck" +
                 "FROM card_table"+
-                "WHERE tag =?;";
+                "WHERE tag = ?;";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, tag);
         if (rowSet.next()) {
             return mapRowToCard(rowSet);
@@ -88,6 +87,7 @@ public class JdbcCardDao {
                 Card newCard = new Card();
                 String cardSearchSql = "UPDATE card_table"+
                                         "SET id, module, creator, ?, ?, ?, deck;";
+                                        // WHERE will be on card during edit selection (BY ID)
 
                     SqlRowSet editedCard = jdbcTemplate.queryForRowSet(cardSearchSql, tag, question, answer);
 
