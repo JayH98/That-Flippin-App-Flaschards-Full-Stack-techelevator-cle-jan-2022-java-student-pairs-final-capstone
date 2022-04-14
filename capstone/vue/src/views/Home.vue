@@ -6,7 +6,7 @@
 
     <add-new-deck />
 
-    <deck-list />
+    
     
 
 
