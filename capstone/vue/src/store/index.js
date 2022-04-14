@@ -405,6 +405,9 @@ export default new Vuex.Store({
     },
     ADD_DECK(state, deck) {
       state.decks.push(deck);
+    },
+    EDIT_CARD(state, updatedCard) {
+      state.flashcards.unshift(updatedCard);
     }
 
     // Is this how the whole card will be added to the store or do we need to specify ID etc.

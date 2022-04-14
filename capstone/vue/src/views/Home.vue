@@ -6,6 +6,12 @@
 
     <add-new-deck />
 
+    <edit-flash-card />
+
+    <edit-deck />
+
+    
+
     
     
 
@@ -162,10 +168,13 @@ import AddFlashCard from '../components/AddFlashCard.vue';
 import AddNewDeck from '../components/AddNewDeck.vue';
 import DeckList from '../components/DeckList.vue';
 import FlashCardList from '../components/FlashCardList.vue';
+import EditDeck from '../components/EditDeck.vue';
+import EditFlashCard from '../components/EditFlashCard.vue';
+
 
 
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashCardList, DeckList},
+  components: { AddFlashCard, AddNewDeck, FlashCardList, DeckList, EditDeck, EditFlashCard},
   name: "home",
 
   // Created methods section in case needed later

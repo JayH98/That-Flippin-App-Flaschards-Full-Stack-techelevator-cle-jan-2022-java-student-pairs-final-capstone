@@ -1,7 +1,6 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Card;
-import com.techelevator.model.Deck;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -14,14 +13,16 @@ public class JdbcCardDao implements CardDao{
 
     public JdbcCardDao(DataSource datasource) { this.jdbcTemplate = new JdbcTemplate(datasource);}
 
-    public boolean createCard(int module, String creator, String tag, String question, String answer, String deck) {
+    public String createCard(int module, String creator, String tag, String question, String answer, String deck) {
 
-        String sql= "BEGIN; " +
-                "INSERT INTO card_table" +
-                "(id, module, creator, tag, question, answer, deck)" +
-                "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?);";
+        String sql=
+                "INSERT INTO card_table " +
+                "(module, creator, tag, question, answer, deck) " +
+                "VALUES (?, ?, ?, ?, ?, ?);";
+//        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, module, creator, tag, question, answer, deck);
+        return "Card was created";
 
-                return true;}
+    }
 
 
 
@@ -42,9 +43,9 @@ public class JdbcCardDao implements CardDao{
 
 
     public Card findCardByTag(String tag) {
-        String sql = "SELECT module, creator, question, answer, deck" +
-                "FROM card_table"+
-                "WHERE tag = ?;";
+        String sql = "SELECT id, module, creator, tag, question, answer, deck " +
+                "FROM card_table "+
+                "WHERE tag = ?; ";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, tag);
         if (rowSet.next()) {
             return mapRowToCard(rowSet);
@@ -53,9 +54,9 @@ public class JdbcCardDao implements CardDao{
 
 
         public Card findCardByModule(int module) {
-            String moduleSql = "SELECT creator, tag, question, answer, deck" +
-                    "FROM card_table"+
-                    "WHERE module =?;";
+            String moduleSql = "SELECT id, creator, tag, question, answer, deck " +
+                    "FROM card_table "+
+                    "WHERE module =?; ";
             SqlRowSet moduleRowSet = jdbcTemplate.queryForRowSet(moduleSql, module);
             if (moduleRowSet.next()) {
                 return mapRowToCard(moduleRowSet);
@@ -64,9 +65,9 @@ public class JdbcCardDao implements CardDao{
 
 
             public Card findCardByCreator(String creator){
-                String creatorSql = "SELECT module, tag, question, answer, deck" +
-                        "FROM card_table" +
-                        "WHERE creator =?;";
+                String creatorSql = "SELECT id, module, creator, tag, question, answer, deck " +
+                        "FROM card_table " +
+                        "WHERE creator = ?; ";
                 SqlRowSet creatorRowSet = jdbcTemplate.queryForRowSet(creatorSql, creator);
                 if (creatorRowSet.next()) {
                     return mapRowToCard(creatorRowSet);
@@ -75,9 +76,9 @@ public class JdbcCardDao implements CardDao{
 
 
                 public Card findCardByDeck(String deck){
-                String deckSql = "SELECT module, creator, tag, question, answer" +
-                        "FROM card_table" +
-                        "WHERE deck =?;";
+                String deckSql = "SELECT id, module, creator, tag, question, answer " +
+                        "FROM card_table " +
+                        "WHERE deck =?; ";
                 SqlRowSet deckRowSet = jdbcTemplate.queryForRowSet(deckSql, deck);
                 if (deckRowSet.next()) {
                     return mapRowToCard(deckRowSet);
@@ -86,8 +87,8 @@ public class JdbcCardDao implements CardDao{
 
                 public Card editCard(String tag, String question, String answer) {
                 Card newCard = new Card();
-                String cardSearchSql = "UPDATE card_table"+
-                                        "SET id, module, creator, ?, ?, ?, deck;";
+                String cardSearchSql = "UPDATE card_table "+
+                                        "SET id, module, creator, ?, ?, ?, deck; ";
                                         // WHERE will be on card during edit selection (BY ID)
 
                     SqlRowSet editedCard = jdbcTemplate.queryForRowSet(cardSearchSql, tag, question, answer);

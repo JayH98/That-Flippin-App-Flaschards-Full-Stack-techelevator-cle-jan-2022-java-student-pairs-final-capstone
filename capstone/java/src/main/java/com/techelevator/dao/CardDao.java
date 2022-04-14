@@ -9,6 +9,7 @@ public interface CardDao {
         public Card findCardByModule(int module);
         public Card findCardByDeck(String deck);
         public Card editCard(String tag, String question, String answer);
+        public String createCard(int module, String creator, String tag, String question, String answer, String deck);
 
 
 }
