@@ -1,14 +1,7 @@
 <template>
   <div>
-    <a
-      id="show-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-      >Create A New Deck</a
-    >
 
-    <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
+    <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
         <label for="deckName">Deck Name:</label>
         <input
@@ -76,3 +69,5 @@ input.cancelBtn {
 
 
 </style>
+
+ <!-- <a>Create A New Deck</a> -->
