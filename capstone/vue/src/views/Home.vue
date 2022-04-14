@@ -1,15 +1,10 @@
 <template>
   <div class="home">
     <h2>Home</h2>
-    <p>Select A Deck or Topic Tag</p>
-    <add-flash-card />
-
-    <add-new-deck />
+    <p>Search A Deck or Topic Tag</p>
 
     <deck-list />
     
-
-
     <form>
       <input  list="options" multiple/>
     <datalist id="options">
@@ -158,14 +153,12 @@
 </template>
 
 <script>
-import AddFlashCard from '../components/AddFlashCard.vue';
-import AddNewDeck from '../components/AddNewDeck.vue';
 import DeckList from '../components/DeckList.vue';
 import FlashCardList from '../components/FlashCardList.vue';
 
 
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashCardList, DeckList},
+  components: { FlashCardList, DeckList},
   name: "home",
 
   // Created methods section in case needed later
