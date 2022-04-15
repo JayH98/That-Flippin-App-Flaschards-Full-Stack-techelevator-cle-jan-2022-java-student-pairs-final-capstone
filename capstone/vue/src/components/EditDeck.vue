@@ -1,13 +1,7 @@
 <template>
 <div>
-<a
-      id="show-Edit-Deck-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-    >Edit A Deck</a>
 
-  <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
+  <form v-on:submit.prevent autocomplete="off">
      
       <div class="form-element">
         <label for="tag">Tag:</label>
@@ -27,7 +21,7 @@
 
 <script>
 export default {
-    name: "edit-deck",
+    name: 'edit-deck',
     data() {
         return {
             showForm: false,
@@ -64,7 +58,14 @@ export default {
 </script>
 
 <style>
-a {
-  padding-left: 50px;
-  
+  input.saveBtn,
+input.cancelBtn {
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }

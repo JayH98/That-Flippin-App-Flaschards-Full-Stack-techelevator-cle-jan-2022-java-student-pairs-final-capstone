@@ -89,7 +89,7 @@ nav ul {
 
 
 
-#home-button, #logout-button, #create-deck {
+#home-button, #logout-button, #create-deck, #edit {
     font-weight: bold;
     list-style: none;
     width: 40%;
