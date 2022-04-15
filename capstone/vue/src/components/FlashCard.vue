@@ -30,9 +30,7 @@
 
       <!-- needs logic and might change anyways -->
 
-          <section>
-            <button id="edit-card"> Edit Card</button>
-          </section>
+          
           
       
 
