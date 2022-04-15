@@ -2,9 +2,18 @@
   <div id="app">
 
     <header>
-      <img id="te-logo" src="./assets/vector_long_logo_dark.png" alt="Tech Elevator Logo">
+      <div class = "header-left-content">
+        <img id="te-logo" src="./assets/vector_long_logo_dark.png" alt="Tech Elevator Logo">
       <!-- <img id="te-logo" src="./assets/TechElevator.png" alt="Tech Elevator Logo"> -->
-      <h1>Full Stack Flashcards</h1>
+      </div>
+      <div class = "header-right-content">
+        <nav class = "header-buttons">
+          <ul>
+            <router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }"><button class = "home-button">HOME</button></router-link>  &nbsp;&nbsp;
+            <router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
+         </ul>
+        </nav>
+      </div>
     </header>  
 
     
@@ -13,20 +22,55 @@
       <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li> -->
       <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }">Logout</router-link></li> -->
 
-      <nav>
-        <ul>
-          <router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }">HOME</router-link>  &nbsp;&nbsp;
-          <router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link>
-        </ul>
-      </nav>
+      
   
     <router-view />
   </div>
 </template>
 
-<style>
+<style> 
+body {
+  display: block;
+  min-height: 600px;
+  /* width: 100vw; */
+  background-color: rgb(189, 189, 189);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 header img {
+  width: 600px;
+  height: auto;
+}
+
+.home-button, .logout-button {
+  background-color: #00ADEE;
+  border-radius: 5px;
+  height: 30px;
+  width: 90px;
+}
+
+
+
+</style>
+
+<style scoped>
+
+
+
+#app {
+  height: 100%;
+  width: 1200px;
+  background-color: rgb(189, 189, 189);
+}
+
+
+
+/* header img {
   height: 4rem;
   margin-left: -50px;
   
@@ -112,7 +156,7 @@ header img {
   width: auto;
   padding-left: 60px;
   padding-top: 10px;
-} 
+}  */
 
 
 </style>
