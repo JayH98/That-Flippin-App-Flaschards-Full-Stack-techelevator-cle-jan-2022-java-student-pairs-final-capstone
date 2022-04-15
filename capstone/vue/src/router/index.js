@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import Create from '../views/Create.vue'
+import CardDeck from '../views/CardDeck.vue'
 import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
 // import Edit from '../views/Edit'
@@ -68,6 +69,14 @@ const router = new Router({
       path: "/edit-flashcard/:id",
       name: "edit-flashcard",
       component: EditFlashCard,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/deck/:id",
+      name: "card-deck",
+      component: CardDeck,
       meta: {
         requiresAuth: false
       }
