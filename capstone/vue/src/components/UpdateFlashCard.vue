@@ -1,14 +1,7 @@
 <template>
 <div>
-<a
-      id="show-Edit-flashcard-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-    >Edit A Flashcard</a>
 
-  <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
-     
+  <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
         <label for="tag">Tag:</label>
         <input id="tag" type="text" placeholder="Edit Card Tag Here" v-model="updatedCard.Tag" />
@@ -29,34 +22,39 @@
 </template>
 
 <script>
+import FlashCardService from '../services/FlashCardService.js'
+
 export default {
     name: "edit-card",
+    props: ["flashcardID"],
     data() {
         return {
             showForm: false,
             updatedCard: {
-                
-                Creator : "",
-                Tag : "",
-                Question : "",
-                Answer : "",
+                id: "",
+                Module: "",
+                Creator: "",
+                Tag: "",
+                Question: "",
+                Answer: "",
                 Deck: "",
             }
         }
     },
     methods: {
-        editCard(){
-            this.$store.commit("EDIT_CARD", this.updatedCard);
-            this.resetForm;
+        created() {
+          FlashCardService.getCard(this.flashcardID).then((response => {
+            this.updatedCard = response.data;
+          }))
         },
-        resetForm(){
-            this.showForm = false;
-            this.updatedCard = {
-                Tag : "",
-                Question : "",
-                Answer : "",
-            };
-        }
+        updateCard(){
+            FlashCardService.updateCard(this.flashcardID, this.updatedCard).then((response => {
+              if (response.status === 200) {
+                this.$router.push({name: 'home'});
+              }
+            }));
+            this.resetForm();
+        },
     },
     
 
