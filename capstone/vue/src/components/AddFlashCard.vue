@@ -1,13 +1,8 @@
 <template>
 <div>
-<a
-      id="show-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-    >Create A Flashcard</a>
+<h4>Create A Flashcard</h4>
 
-  <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
+  <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
         <label for="creator">Creator:</label>
         <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.Creator" />
@@ -40,7 +35,6 @@ export default {
     name: "add-card",
     data() {
         return {
-            showForm: false,
             newCard: {
                 id : 0,
                 Module : 0,
