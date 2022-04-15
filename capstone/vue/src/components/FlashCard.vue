@@ -7,8 +7,7 @@
       <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
       <section>Q: {{ flashcard.Question }}</section>
       <p>ID: {{ flashcard.id }}</p>
-      <!-- TE_Logo_right image above here or as object to go forward instead of "See Answer" -->
-      <!-- <button type="button">See Answer</button> -->
+      <router-link v-bind:to="{name: 'edit-flashcard', params: flashcard.id}"><button>Edit Flashcard</button></router-link>
         </div>
     </div>
 

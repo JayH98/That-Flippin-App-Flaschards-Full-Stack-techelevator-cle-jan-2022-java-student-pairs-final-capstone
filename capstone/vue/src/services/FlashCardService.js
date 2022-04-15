@@ -9,7 +9,7 @@ export default {
     return axios.get(`/user/${userID}/flashcards`, userID);
   },
   updateCard(id, flashcard) {
-    return axios.put(`/flashcard/${id}`, flashcard)
+    return axios.put(`/flashcard/${id}`, flashcard);
   }
 
   

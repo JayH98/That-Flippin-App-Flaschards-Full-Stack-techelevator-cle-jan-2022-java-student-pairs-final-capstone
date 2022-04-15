@@ -8,7 +8,6 @@ import Create from '../views/Create.vue'
 import CardDeck from '../views/CardDeck.vue'
 import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
-// import Edit from '../views/Edit'
 
 Vue.use(Router)
 
