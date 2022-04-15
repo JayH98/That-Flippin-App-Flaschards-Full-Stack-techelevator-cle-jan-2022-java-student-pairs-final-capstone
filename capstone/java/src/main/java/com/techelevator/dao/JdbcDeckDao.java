@@ -18,8 +18,8 @@ public class JdbcDeckDao implements DeckDao{
 
     public Deck editDeck(String name, String creator) {
         Deck newDeck = new Deck();
-        String deckSearchSql = "UPDATE deck_table"+
-                "SET ?, ? ;";
+        String deckSearchSql = "UPDATE deck_table "+
+                "SET ?, ? ; ";
         // WHERE will be on card during edit selection (BY ID)
 
         SqlRowSet editedDeck = jdbcTemplate.queryForRowSet(deckSearchSql, name, creator);
@@ -28,9 +28,9 @@ public class JdbcDeckDao implements DeckDao{
     }
 
     public Deck findDeckByUsername(String username) {
-        String sql = "SELECT deck" +
-                "FROM deck_table"+
-                "WHERE username = ?;";
+        String sql = "SELECT deck " +
+                "FROM deck_table "+
+                "WHERE username = ?; ";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, username);
         if (rowSet.next()) {
             return mapRowToDeck(rowSet);
