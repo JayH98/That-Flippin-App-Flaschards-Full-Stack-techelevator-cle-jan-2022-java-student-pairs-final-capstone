@@ -9,9 +9,6 @@
       <div class = "header-right-content">
         <nav class = "header-buttons">
           <ul>
-            <router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }"><button class = "home-button">HOME</button></router-link>  &nbsp;&nbsp;
-            <router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
-            
             <router-link id="home-button" style="text-decoration : none" v-bind:to="{ name: 'home' }"><button class = "home-button">HOME</button></router-link>  &nbsp;&nbsp;
             <router-link id="create-button" style="text-decoration : none" v-bind:to="{ name: 'create-deck'}" v-if="$store.state.token != ''"><button class = "create-button">CREATE</button></router-link>
             <router-link id="edit" style="text-decoration : none" v-bind:to="{ name: 'edit'}" v-if="$store.state.token != ''" ><button class = "edit-button">EDIT</button></router-link>

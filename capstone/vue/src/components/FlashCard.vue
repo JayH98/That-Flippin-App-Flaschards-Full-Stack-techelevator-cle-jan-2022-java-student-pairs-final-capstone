@@ -98,12 +98,23 @@ export default {
     padding: 1rem;
     backface-visibility: hidden;
     display:flex;
+    text-align: center;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .flashcard .flashcard-back {
     transform: rotateY(180deg);
+}
+
+#review-button {
+   box-sizing: border-box;
+    background-color: white;
+    min-width: 100px;
+    width: 20%;
+    height: 35px;
+    align-self: flex-end;
+   
 }
 
 
