@@ -14,8 +14,8 @@
         <label for="answer">Answer:</label>
         <textarea id="answer" type="text" placeholder="Edit Answer Here" v-model="updatedCard.Answer" />
       </div>
-      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="editFlashCard"/>
-      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
+      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="updateCard"/>
+      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />     
 
   </form>
 </div>   

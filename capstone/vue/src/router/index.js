@@ -6,7 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import Create from '../views/Create.vue'
 import store from '../store/index'
-import EditFlashCard from '../views/EditFlashCards.vue'
+import EditFlashCard from '../views/EditFlashCard.vue'
 
 Vue.use(Router)
 
