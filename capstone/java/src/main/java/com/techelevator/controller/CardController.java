@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 
 @RestController
+@CrossOrigin
 public class CardController {
     private JdbcCardDao cardDao;
 

@@ -7,7 +7,7 @@ import Register from '../views/Register.vue'
 import Create from '../views/Create.vue'
 import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
-import Edit from '../views/Edit'
+// import Edit from '../views/Edit'
 
 Vue.use(Router)
 

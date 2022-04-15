@@ -17,9 +17,9 @@ public class JdbcCardDao implements CardDao{
 
         String sql=
                 "INSERT INTO card_table " +
-                "(module, creator, tag, question, answer, deck) " +
-                "VALUES (?, ?, ?, ?, ?, ?);";
-//        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, module, creator, tag, question, answer, deck);
+                "(id, module, creator, tag, question, answer, deck) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?);";
+        jdbcTemplate.update(sql, 2, module, creator, tag, question, answer, deck);
         return "Card was created";
 
     }
