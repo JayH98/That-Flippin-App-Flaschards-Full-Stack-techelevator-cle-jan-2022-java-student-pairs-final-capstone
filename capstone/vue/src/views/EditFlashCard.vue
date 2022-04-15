@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Edit Topic</h1>
-    <update-flash-card v-bind:flashcardID="parseInt($route.params.id)" />
+    <h1>Edit Flashcard</h1>
+    <update-flash-card v-bind:flashcardID="parseInt($route.params.id)"/>
   </div>
 </template>
 
