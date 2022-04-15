@@ -165,7 +165,7 @@ export default {
 
 .study-method img, .proven-science img {
   width: 35%;
-  max-height: 200px
+  max-height: 200px;
 }
 
 .study-method, .proven-science {
