@@ -116,7 +116,9 @@
     <!-- needs v-bind to tie to the modules selected in the store -->
 
     <section>
+
       <button id="beginStudyBtn" type="button">Begin Study Session</button>
+
     </section>
 
     <section>

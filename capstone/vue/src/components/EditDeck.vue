@@ -42,8 +42,8 @@ export default {
         }
     },
     methods: {
-        editCard(){
-            this.$store.commit("EDIT_CARD", this.updatedCard);
+        editDeck(){
+            this.$store.commit("EDIT_DECK", this.updatedCard);
             this.resetForm;
         },
         resetForm(){
