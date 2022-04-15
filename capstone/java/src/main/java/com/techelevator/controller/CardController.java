@@ -49,6 +49,11 @@ public class CardController {
         return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
 
     }
+    @RequestMapping(path = "/flashcard/id", method = RequestMethod.GET)
+    public Card getGet(@Valid @RequestBody Card card) {
+        return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
+
+    }
 }
 
 
