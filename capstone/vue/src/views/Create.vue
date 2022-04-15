@@ -1,6 +1,8 @@
 <template>
 <div>
+    <h1> Create Deck</h1>
     <add-new-deck />
+    <h2> Create FlashCard </h2>
     <add-flash-card />
 </div>
 </template>

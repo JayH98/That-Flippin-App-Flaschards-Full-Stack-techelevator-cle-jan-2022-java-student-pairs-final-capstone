@@ -3,16 +3,14 @@
     <h2>Home</h2>
     <p>Search A Deck or Topic Tag</p>
 
-    <edit-flash-card />
-
-    <edit-deck />
+    
 
     
 
     
     
     <form>
-      <input  list="options" multiple/>
+      <input  list="options" placeholder="Tags" multiple/>
     <datalist id="options">
       <option value="Module 1"/>
         <option value="Module 2"/>

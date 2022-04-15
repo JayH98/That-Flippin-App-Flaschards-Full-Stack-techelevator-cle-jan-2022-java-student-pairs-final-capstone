@@ -1,13 +1,8 @@
 <template>
 <div>
-<a
-      id="show-Edit-flashcard-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-    >Edit A Flashcard</a>
 
-  <form v-on:submit.prevent v-if="showForm === true" autocomplete="off">
+
+  <form v-on:submit.prevent  autocomplete="off">
      
       <div class="form-element">
         <label for="tag">Tag:</label>
