@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 
 @RestController
+@CrossOrigin
 public class CardController {
     private JdbcCardDao cardDao;
 
@@ -46,6 +47,11 @@ public class CardController {
 
     @RequestMapping(path = "/flashcard", method = RequestMethod.POST)
     public Card editCard(@Valid @RequestBody Card card) {
+        return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
+
+    }
+    @RequestMapping(path = "/flashcard/id", method = RequestMethod.GET)
+    public Card getGet(@Valid @RequestBody Card card) {
         return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
 
     }

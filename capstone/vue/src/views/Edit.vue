@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import EditDeck from '../components/EditDeck.vue';
-import EditFlashCard from '../components/EditFlashCard.vue';
+// import EditDeck from '../components/EditDeck.vue';
+// import EditFlashCard from '../components/EditFlashCard.vue';
 
 
 export default {
-  components: {EditDeck, EditFlashCard},
+  // components: {EditDeck, EditFlashCard},
 name: "edit"
 };
 </script>
