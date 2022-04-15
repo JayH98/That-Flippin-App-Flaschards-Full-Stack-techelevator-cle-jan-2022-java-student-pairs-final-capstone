@@ -12,6 +12,7 @@
 
     <div class="flashcard-back">
         <div class = 'box'>
+          
       <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
       <p>A: {{flashcard.Answer}}</p>
       <p>Created By:{{flashcard.Creator}}</p>

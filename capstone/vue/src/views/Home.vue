@@ -3,6 +3,12 @@
     <h2>Home</h2>
     <p>Search A Deck or Topic Tag</p>
 
+    <edit-flash-card />
+
+    <edit-deck />
+
+    
+
     
     
     <form>
@@ -155,6 +161,8 @@
 <script>
 import DeckList from '../components/DeckList.vue';
 import FlashCardList from '../components/FlashCardList.vue';
+
+
 
 
 export default {
