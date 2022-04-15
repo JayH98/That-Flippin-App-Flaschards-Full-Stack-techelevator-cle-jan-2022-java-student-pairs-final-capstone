@@ -4,7 +4,7 @@
       
       <section>Created by: {{deck.Creator}}</section>
         
-      <button type="button" class = "study-button">Study This Deck</button>
+     <router-link v-bind:to="{ name: 'card-deck', params: deck.id }"> <button type="button" class = "study-button">Begin Study Session</button></router-link>
       
   </div>
 

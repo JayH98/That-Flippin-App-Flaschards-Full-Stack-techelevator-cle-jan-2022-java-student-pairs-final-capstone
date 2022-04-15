@@ -152,21 +152,18 @@
     </section>
 
     <deck-list/>
-
-    <flash-card-list/>
     
   </div>
 </template>
 
 <script>
 import DeckList from '../components/DeckList.vue';
-import FlashCardList from '../components/FlashCardList.vue';
 
 
 
 
 export default {
-  components: { FlashCardList, DeckList},
+  components: { DeckList},
   name: "home",
 
   // Created methods section in case needed later
