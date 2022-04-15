@@ -74,7 +74,8 @@ export default {
   height: 300px;
   transform-style:preserve-3d;
   transition: 250ms;
-  background-color: rgb(212, 206, 206);
+  /* background-color: rgb(212, 206, 206); */
+  background-color: #00ADEE;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);

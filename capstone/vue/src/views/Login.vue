@@ -85,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 
 
@@ -95,7 +95,7 @@ export default {
   
 } */
 
-.form-signin {
+/* .form-signin {
   margin: 10%;
   padding: 50px;
 }
@@ -118,10 +118,11 @@ export default {
     text-transform: uppercase;
 }
 
+
 html {
   background-color: #87ceeb;
-  /* font-family: Arial, Helvetica, sans-serif; */
-}
+   font-family: Arial, Helvetica, sans-serif; 
+}  */
 
 
 </style>
