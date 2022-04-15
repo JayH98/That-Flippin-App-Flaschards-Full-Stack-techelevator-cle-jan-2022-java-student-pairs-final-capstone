@@ -18,8 +18,8 @@
 
     
      
-      <!-- <li id="home-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'home' }">HOME</router-link>&nbsp;&nbsp;</li> -->
-      <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li> -->
+      <!-- <li id="home-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'home' }" v-bind:tag="li">HOME</router-link>&nbsp;&nbsp;</li> -->
+      <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }"  v-bind:tag="li" v-if="$store.state.token != ''">Logout</router-link></li> -->
       <!-- <li id="logout-button"><router-link style="text-decoration : none" v-bind:to="{ name: 'logout' }">Logout</router-link></li> -->
 
       
@@ -89,7 +89,7 @@ nav ul {
 
 
 
-#home-button, #logout-button {
+#home-button, #logout-button, #create-deck {
     font-weight: bold;
     list-style: none;
     width: 40%;

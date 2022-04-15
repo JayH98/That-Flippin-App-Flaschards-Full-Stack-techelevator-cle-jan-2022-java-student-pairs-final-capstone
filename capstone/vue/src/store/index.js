@@ -23,10 +23,13 @@ export default new Vuex.Store({
 
     // Addition of a filter for searching
     // Do we need to add a blank flashcard?
-    decks: [
+    decks: [ {
+      Name:"Tech Elevator",
+      Creator: "Tech Elevator",
+    }
       
     ],
-    
+
     flashcards: [
         {
         id: 1,
@@ -379,6 +382,34 @@ export default new Vuex.Store({
           Deck:"Tech Elevator",
           },
         ],
+
+        filter: [
+
+
+
+        ]
+
+        // computed: [
+        // filteredTags() {
+        //   const tagsFilter = this.$store.state.flashcards;
+        //   const tags = this.$store.state.flashcards;
+        //   return tags.filter(tag => {
+        //     return tagsFilter === 0 ? true : tagsFilter === flashcards.Tag;
+        //   }) }
+
+        // ]
+
+        // methods: [
+          
+        
+        
+        
+        //     const [] tags = [];
+        //     let tags = flashcards.filter(findCardByTag(tag) {
+        //       return tag; });
+        //     })
+        //   }
+        // ]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -402,6 +433,12 @@ export default new Vuex.Store({
     },
     ADD_DECK(state, deck) {
       state.decks.push(deck);
+    },
+    EDIT_CARD(state, updatedCard) {
+      state.flashcards.unshift(updatedCard);
+    },
+    EDIT_DECK(state, updatedDeck) {
+      state.flashcards.unshift(updatedDeck);
     }
 
     // Is this how the whole card will be added to the store or do we need to specify ID etc.

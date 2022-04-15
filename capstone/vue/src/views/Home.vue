@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <h2>Home</h2>
-    <p>Select A Deck or Topic Tag</p>
-    <add-flash-card />
+    <p>Search A Deck or Topic Tag</p>
 
-    <add-new-deck />
+    <edit-flash-card />
 
-    <deck-list />
+    <edit-deck />
+
     
 
-
+    
+    
     <form>
       <input  list="options" multiple/>
     <datalist id="options">
@@ -115,7 +116,9 @@
     <!-- needs v-bind to tie to the modules selected in the store -->
 
     <section>
+
       <button id="beginStudyBtn" type="button">Begin Study Session</button>
+
     </section>
 
     <section>
@@ -158,14 +161,14 @@
 </template>
 
 <script>
-import AddFlashCard from '../components/AddFlashCard.vue';
-import AddNewDeck from '../components/AddNewDeck.vue';
 import DeckList from '../components/DeckList.vue';
 import FlashCardList from '../components/FlashCardList.vue';
 
 
+
+
 export default {
-  components: { AddFlashCard, AddNewDeck, FlashCardList, DeckList},
+  components: { FlashCardList, DeckList},
   name: "home",
 
   // Created methods section in case needed later
