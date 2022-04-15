@@ -29,7 +29,7 @@ export default new Vuex.Store({
     }
       
     ],
-    
+
     flashcards: [
         {
         id: 1,
@@ -382,6 +382,34 @@ export default new Vuex.Store({
           Deck:"Tech Elevator",
           },
         ],
+
+        filter: [
+
+
+
+        ]
+
+        // computed: [
+        // filteredTags() {
+        //   const tagsFilter = this.$store.state.flashcards;
+        //   const tags = this.$store.state.flashcards;
+        //   return tags.filter(tag => {
+        //     return tagsFilter === 0 ? true : tagsFilter === flashcards.Tag;
+        //   }) }
+
+        // ]
+
+        // methods: [
+          
+        
+        
+        
+        //     const [] tags = [];
+        //     let tags = flashcards.filter(findCardByTag(tag) {
+        //       return tag; });
+        //     })
+        //   }
+        // ]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

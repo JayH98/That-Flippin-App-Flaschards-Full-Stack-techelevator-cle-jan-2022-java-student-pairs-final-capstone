@@ -12,8 +12,43 @@ export default {
     components: {
         FlashCard
         
-    }
+    },
+
+    data() {
+        return {
+            filter: {
+                Module: '',
+                Tag: '',
+                Creator: '',
+                Deck: ''
+                 
+            },
+        }
+    },
+
+    // computed: {
+    //     filteredCards() {
+    //         let filteredCards = this.FlashCards;
+    //         if (this.filter.Module != "") {
+    //             filteredCards = filteredCards.filter(module => FlashCard.module.includes(this.filter.Module))
+    //             }
+
+    //         if (this.filter.Tag != "") {
+    //             filteredCards = filteredCards.filter(tag => FlashCard.tag.includes(this.filter.Tag))
+    //         }
+
+    //         if (this.filter.Creator != "") {
+    //             filteredCards = filteredCards.filter(creator => FlashCard.creator.includes(this.filter.Creator))
+    //         }
+
+    //         if (this.filter.Deck != "") {
+    //             filteredCards = filteredCards.filter(deck => FlashCard.deck.includes(this.filter.Deck))
+    //          }
+    //         return filteredCards;
+    // }
+// }
 }
+
 </script>
 
 <style>
