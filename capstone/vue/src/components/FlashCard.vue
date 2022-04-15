@@ -1,4 +1,6 @@
 <template>
+
+
   <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
     <div class="flashcard-front">
         <div class = 'box'>
@@ -13,11 +15,35 @@
     <div class="flashcard-back">
         <div class = 'box'>
           
+
+          <!-- The button is not clickable.  clicking it turns the card around too.
+          how is that fixable?  I tried moving stuff around and still couldn't get the
+          mark for review button respond to just itself being clicked -->
+          <section>
+      <button id="review-button">Mark For Review</button> 
+          </section>
+
+<!-- The button will need to be moved, and also bound to some sort of logic or something
+      which will put it in either an array for review, or just mark it as needed for review.
+      Toggling the button between Mark for Review, and one that says "I KNOW THIS!" might work
+      -->
+
+      <!-- needs logic and might change anyways -->
+
+          
+          
+      
+
       <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
       <p>A: {{flashcard.Answer}}</p>
       <p>Created By:{{flashcard.Creator}}</p>
       <p>Deck:{{flashcard.Deck}}</p>
-      <!-- <button type="button">See Question</button> -->
+
+      
+      
+      
+
+      
         </div>
     </div>
 

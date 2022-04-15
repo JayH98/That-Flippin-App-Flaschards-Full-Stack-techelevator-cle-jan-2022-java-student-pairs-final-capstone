@@ -11,6 +11,7 @@
           <ul>
             <router-link id="home-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'home' }"><button class = "home-button">HOME</button></router-link>  &nbsp;&nbsp;
             <router-link id="logout-button" style="text-decoration : none" v-bind:tag="li" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
+            
          </ul>
         </nav>
       </div>
@@ -89,7 +90,7 @@ nav ul {
 
 
 
-#home-button, #logout-button, #create-deck {
+#home-button, #logout-button, #create-deck, #edit {
     font-weight: bold;
     list-style: none;
     width: 40%;

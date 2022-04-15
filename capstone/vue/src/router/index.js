@@ -6,7 +6,11 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import Create from '../views/Create.vue'
 import store from '../store/index'
+<<<<<<< HEAD
 import EditFlashCard from '../views/EditFlashCards.vue'
+=======
+import Edit from '../views/Edit'
+>>>>>>> 51f8e021af35cbec193021d41e75f700e1085b08
 
 Vue.use(Router)
 
@@ -67,6 +71,12 @@ const router = new Router({
       path: "/edit-flashcard/:id",
       name: "edit-flashcard",
       component: EditFlashCard,
+      path: "/edit",
+      name: "edit",
+      component: Edit,
+      meta: {
+        requiresAuth: false
+      }
     }
   ]
 })
