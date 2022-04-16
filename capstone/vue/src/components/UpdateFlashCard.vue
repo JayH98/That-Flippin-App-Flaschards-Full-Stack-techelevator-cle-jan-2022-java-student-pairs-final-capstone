@@ -41,7 +41,10 @@
 
     <flash-card v-bind:flashcard="updatedCard"/>
     <div class="errorMessage" v-show="cardUpdatedFailure">
-      {{ errorMessage }}
+      {{ updatedErrorMessage }}
+    </div>
+    <div class="errorMessage" v-show="cardRetrievedFailure">
+      {{ retrievedErrorMessage }}
     </div>
   </div>
 </template>
@@ -57,11 +60,13 @@ export default {
   data() {
     return {
       cardUpdatedFailure: false,
-      errorMessage: "",
+      cardRetrievedFailure: false,
+      updatedErrorMessage: "",
+      retrievedErrorMessage: "",
       showForm: false,
       updatedCard: {
         id: 0,
-        Module: "",
+        Module: 0,
         Creator: "",
         Tag: "",
         Question: "",
@@ -70,14 +75,41 @@ export default {
       },
     };
   },
-  methods: {
-    created() {
-      FlashCardService.getCard(this.flashcardID).then((response) => {
+  created() {
+      FlashCardService.getCard(this.$route.params.id).then((response) => {
         this.updatedCard = response.data;
-        // this.updatedCard.id = response.data.id
+        console.log("Card was retrieved")
       })
-      // .catch(());
+      .catch((error) => {
+        console.log("Card was not retrieved")
+        this.cardRetrievedFailure = true;
+          this.retrievedErrorMessage = "";
+          if (error.response) {
+            if (error.response.status === 500) {
+              this.retrievedErrorMessage =
+                "Error retrieving card. An internal server error occurred.";
+            } else if (error.response.status === 404) {
+              this.retrievedErrorMessage =
+                "Error retrieving card. URL could not be found.";
+            } else {
+              this.retrievedErrorMessage =
+                "Error retrieving card. Response received was code " +
+                error.response.status +
+                " '" +
+                error.response.statusText +
+                "'.";
+            }
+          }
+          else if (error.request) {
+            this.retrievedErrorMessage = "Error. Request for flashcard was made to server but no response was sent."
+          }
+          else {
+            this.retrievedErrorMessage = "Error. No request for flashcard was made."
+          }
+        });
     },
+
+  methods: {
     updateCard() {
       FlashCardService.updateCard(this.flashcardID, this.updatedCard)
         .then((response) => {
@@ -89,24 +121,30 @@ export default {
           this.$router.push({ name: "create-deck" });
         })
         .catch((error) => {
-          this.errorMessage = "";
+          this.updatedErrorMessage = "";
           if (error.response) {
             this.cardUpdatedFailure = true;
             if (error.response.status === 500) {
               
-              this.errorMessage =
+              this.updatedErrorMessage =
                 "Error updating form. An internal server error occurred.";
             } else if (error.response.status === 404) {
-              this.errorMessage =
+              this.updatedErrorMessage =
                 "Error updating card. URL could not be found.";
             } else {
-              this.errorMessage =
+              this.updatedErrorMessage =
                 "Error updating form. Response received was code " +
                 error.response.status +
                 " '" +
                 error.response.statusText +
                 "'.";
             }
+          }
+          else if (error.request) {
+            this.retrievedErrorMessage = "Error. Request to update flashcard was made to server but no response was sent."
+          }
+          else {
+            this.retrievedErrorMessage = "Error. No request to update flashcard was made."
           }
         });
     },

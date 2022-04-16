@@ -22,9 +22,8 @@ public class CardController {
 
     @RequestMapping(path = "/flashcard/tag/{tag}", method = RequestMethod.GET)
     public List<Card> findCardByTag(@Valid @PathVariable String tag) {
-            return cardDao.findCardByTag(tag);
-        }
-
+        return cardDao.findCardByTag(tag);
+    }
 
     @RequestMapping(path = "/flashcard/module/{module}", method = RequestMethod.GET)
     public List<Card> findCardByModule(@Valid @PathVariable int module) {
@@ -39,14 +38,13 @@ public class CardController {
     @RequestMapping(path = "/flashcard/deck/{deck}", method = RequestMethod.GET)
     public Card findCardByDeck(@Valid @PathVariable String deck) {
         return cardDao.findCardByDeck(deck);
-
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
     public String CreateCard(@Valid @RequestBody Card card) {
-        return cardDao.createCard(card.getModule(),card.getCreator(),card.getTag(),
-                card.getQuestion(),card.getAnswer(),card.getDeck());
+        return cardDao.createCard(card.getModule(), card.getCreator(), card.getTag(),
+                card.getQuestion(), card.getAnswer(), card.getDeck());
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -62,7 +60,7 @@ public class CardController {
         return cardDao.getAllCards(username);
     }
 
-
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.GET)
     public Card getCard(@Valid @PathVariable int id) {
@@ -70,8 +68,6 @@ public class CardController {
 
     }
 }
-
-
 
 
 //will need path
