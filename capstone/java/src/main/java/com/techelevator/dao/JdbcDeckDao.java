@@ -22,9 +22,14 @@ public class JdbcDeckDao implements DeckDao{
                 "SET ?, ? ; ";
         // WHERE will be on card during edit selection (BY ID)
 
+
         SqlRowSet editedDeck = jdbcTemplate.queryForRowSet(deckSearchSql, name, creator);
 
         return newDeck;
+
+        // title and the cards inside eg. remove cards from the deck
+        // Create a new created deck class?
+
     }
 
     public Deck findDeckByUsername(String username) {
