@@ -1,17 +1,23 @@
 <template>
   <div class="flashcard-container">
-      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in $store.state.flashcards" v-bind:key="flashcard.id"/>
+      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashcards" v-bind:key="flashcard.id"/>
   </div>
 </template>
 
 <script>
 import FlashCard from '@/components/FlashCard.vue'
+import FlashCardService from '@/services/FlashCardService.js'
 
 export default {
     name: 'flashcard-list',
     components: {
         FlashCard
         
+    },
+    created() {
+        FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
+            this.flashcards = response.data;
+        })
     },
 
     data() {
@@ -23,6 +29,7 @@ export default {
                 Deck: ''
                  
             },
+            flashcards: []
         }
     },
 

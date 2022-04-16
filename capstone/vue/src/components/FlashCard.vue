@@ -4,8 +4,8 @@
   <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
     <div class="flashcard-front">
         <div class = 'box'>
-      <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
-      <section>Q: {{ flashcard.Question }}</section>
+      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
+      <section>Q: {{ flashcard.question }}</section>
       <p>ID: {{ flashcard.id }}</p>
       <router-link v-bind:to="{name: 'edit-flashcard', params: flashcard.id}"><button>Edit Flashcard</button></router-link>
         </div>
@@ -33,10 +33,10 @@
           
       
 
-      <h1>{{ flashcard.Module }} / {{ flashcard.Tag }}</h1>
-      <p>A: {{flashcard.Answer}}</p>
-      <p>Created By:{{flashcard.Creator}}</p>
-      <p>Deck:{{flashcard.Deck}}</p>
+      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
+      <p>A: {{flashcard.answer}}</p>
+      <p>Created By:{{flashcard.creator}}</p>
+      <p>Deck:{{flashcard.deck}}</p>
 
       
       
