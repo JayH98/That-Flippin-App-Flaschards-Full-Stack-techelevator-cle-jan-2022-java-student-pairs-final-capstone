@@ -1,4 +1,4 @@
--- MY Capstone Final - FlashCards query statements page
+-- My (JHH) Capstone Final - FlashCards query statements page
 
 -- select * from users
 
