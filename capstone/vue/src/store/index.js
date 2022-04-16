@@ -401,9 +401,6 @@ export default new Vuex.Store({
 
         // methods: [
           
-        
-        
-        
         //     const [] tags = [];
         //     let tags = flashcards.filter(findCardByTag(tag) {
         //       return tag; });
