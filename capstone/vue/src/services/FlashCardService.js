@@ -3,10 +3,10 @@ import axios from 'axios';
 export default {
 
   getCard(id) {
-    return axios.get(`/flashcards/${id}`, id);
+    return axios.get(`/flashcards/${id}`);
   },
-  getAllCards(userID) {
-    return axios.get(`/user/${userID}/flashcards`, userID);
+  getAllCards(username) {
+    return axios.get(`/user/${username}/flashcards`);
   },
   updateCard(id, flashcard) {
     return axios.put(`/flashcard/${id}`, flashcard);
