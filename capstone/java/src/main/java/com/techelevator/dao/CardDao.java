@@ -10,6 +10,7 @@ public interface CardDao {
         public List<Card> findCardByTag(String tag);
         public List<Card> findCardByCreator(String creator);
         public List<Card> findCardByModule(int module);
+        public Card getCardById(int id);
         public List<Card> getAllCards(String username);
         public Card findCardByDeck(String deck);
         public String editCard(Card card);

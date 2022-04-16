@@ -31,19 +31,6 @@ public class JdbcCardDao implements CardDao {
     }
 
 
-    private Card mapRowToCard(SqlRowSet rowSetResults) {
-
-        Card card = new Card();
-        card.setId(rowSetResults.getInt("id"));
-        card.setModule(rowSetResults.getInt("module"));
-        card.setCreator(rowSetResults.getString("creator"));
-        card.setTag(rowSetResults.getString("tag"));
-        card.setQuestion(rowSetResults.getString("question"));
-        card.setAnswer(rowSetResults.getString("answer"));
-        card.setDeck(rowSetResults.getString("deck"));
-
-        return card;
-    }
 
 
     public List<Card> findCardByTag(String tag) {
@@ -71,6 +58,8 @@ public class JdbcCardDao implements CardDao {
         return flashcards;
     }
 
+
+
     @Override
     public List<Card> getAllCards(String username) {
         List<Card> flashcards = new ArrayList<>();
@@ -86,6 +75,20 @@ public class JdbcCardDao implements CardDao {
         }
 
         return flashcards;
+    }
+
+    @Override
+    public Card getCardById(int id) {
+       Card card = new Card();
+       String findCardByIdSql = "SELECT id, module, creator, tag, question, answer, deck " +
+               "FROM card_table " +
+               "WHERE id = ?;";
+
+       SqlRowSet rowset = jdbcTemplate.queryForRowSet(findCardByIdSql, id);
+
+       if (rowset.next()) {
+           card = mapRowToCard(rowset);
+       } return card;
     }
 
 
@@ -125,7 +128,19 @@ public class JdbcCardDao implements CardDao {
         return "Card Was Updated";
     }
 
-    // Edit Deck
+    private Card mapRowToCard(SqlRowSet rowSetResults) {
+
+        Card card = new Card();
+        card.setId(rowSetResults.getInt("id"));
+        card.setModule(rowSetResults.getInt("module"));
+        card.setCreator(rowSetResults.getString("creator"));
+        card.setTag(rowSetResults.getString("tag"));
+        card.setQuestion(rowSetResults.getString("question"));
+        card.setAnswer(rowSetResults.getString("answer"));
+        card.setDeck(rowSetResults.getString("deck"));
+
+        return card;
+    }
 
 
 }

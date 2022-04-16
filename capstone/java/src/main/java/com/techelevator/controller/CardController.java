@@ -49,8 +49,9 @@ public class CardController {
                 card.getQuestion(),card.getAnswer(),card.getDeck());
     }
 
-    @RequestMapping(path = "/flashcard", method = RequestMethod.PUT)
-    public String editCard(@Valid @RequestBody Card card) {
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.PUT)
+    public String editCard(@Valid @PathVariable int id, @RequestBody Card card) {
         return cardDao.editCard(card);
 
     }
@@ -62,10 +63,10 @@ public class CardController {
     }
 
 
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.GET)
-    public String getCard(@Valid @PathVariable Card card) {
-        return cardDao.editCard(card);                      // Need to create a new getCard method in jdbcTemplate and implement that here
+    public Card getCard(@Valid @PathVariable int id) {
+        return cardDao.getCardById(id);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 
     }
 }
