@@ -12,7 +12,7 @@ public interface CardDao {
         public List<Card> findCardByModule(int module);
         public Card getCardById(int id);
         public List<Card> getAllCards(String username);
-        public Card findCardByDeck(String deck);
+        public List<Card> findCardByDeck(String deck);
         public String editCard(Card card);
         public String createCard(int module, String creator, String tag, String question, String answer, String deck);
 

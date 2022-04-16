@@ -107,15 +107,16 @@ public class JdbcCardDao implements CardDao {
     }
 
 
-    public Card findCardByDeck(String deck) {
-        String deckSql = "SELECT id, module, creator, tag, question, answer " +
+    public List<Card> findCardByDeck(String deck) {
+        List<Card> flashcards = new ArrayList<>();
+        String deckSql = "SELECT id, module, creator, tag, question, answer, deck " +
                 "FROM card_table " +
-                "WHERE deck =?; ";
+                "WHERE deck = ?; ";
         SqlRowSet deckRowSet = jdbcTemplate.queryForRowSet(deckSql, deck);
-        if (deckRowSet.next()) {
-            return mapRowToCard(deckRowSet);
+        while (deckRowSet.next()) {
+             flashcards.add(mapRowToCard(deckRowSet));
         }
-        return null;
+        return flashcards;
     }
 
     public String editCard(Card card) {

@@ -36,7 +36,7 @@ public class CardController {
     }
 
     @RequestMapping(path = "/flashcard/deck/{deck}", method = RequestMethod.GET)
-    public Card findCardByDeck(@Valid @PathVariable String deck) {
+    public List<Card> findCardByDeck(@Valid @PathVariable String deck) {
         return cardDao.findCardByDeck(deck);
     }
 

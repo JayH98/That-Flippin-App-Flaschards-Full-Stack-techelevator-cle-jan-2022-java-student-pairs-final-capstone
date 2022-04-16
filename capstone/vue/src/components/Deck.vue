@@ -1,10 +1,10 @@
 <template>
   <div class = "deck">
-      <h1>{{deck.Name}}</h1>
+      <h1>{{deck.deck}}</h1>
       
-      <section>Created by: {{deck.Creator}}</section>
+      <section>Created by: {{deck.username}}</section>
         
-     <router-link v-bind:to="{ name: 'card-deck', params: deck.id }"> <button type="button" class = "study-button">Begin Study Session</button></router-link>
+     <router-link v-bind:to="{ name: 'card-deck', params: {deckName: deck.deck} }"> <button type="button" class = "study-button">Begin Study Session</button></router-link>
       
   </div>
 
