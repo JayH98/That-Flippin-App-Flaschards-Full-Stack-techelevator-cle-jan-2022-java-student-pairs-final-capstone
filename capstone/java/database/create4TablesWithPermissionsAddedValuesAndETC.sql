@@ -7,7 +7,7 @@
 
 BEGIN TRANSACTION;
 
---ROLLBACK;
+-- ROLLBACK;
 
 
 DROP TABLE IF EXISTS users, card_table, deck_table, deck_card_table CASCADE;
@@ -35,8 +35,8 @@ INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpUL
 -- 	This script creates the database users and grants them the necessary permissions
 -- 	********************************************************************************
 
-				--GRANT ALL WONT WORK UNLESS YOU HIGHLIGHT AND RUN IT SEPERATELY last
-				--ZACH helped explain that everyone was having trouble with the GrantAll yet it should not trouble us in the Vue.js
+				-- GRANT ALL WONT WORK UNLESS YOU HIGHLIGHT AND RUN IT SEPERATELY last
+				-- ZACH helped explain that everyone was having trouble with the GrantAll yet it should not trouble us in the Vue.js
 				
 
 -- CREATE USER final_capstone_owner
@@ -66,10 +66,6 @@ TO final_capstone_appuser;
 -- ABOVE is the copied script from the Seed Code
 -- ********************************************************************************
 
-
---DROP TABLE IF EXISTS card_table, deck_table, deck_card_table; --CASCADE;
-
-
 CREATE SEQUENCE card_table_serial;
 CREATE TABLE IF NOT EXISTS public.card_table
 (
@@ -86,9 +82,9 @@ CREATE TABLE IF NOT EXISTS public.card_table
 CREATE SEQUENCE deck_table_serial;
 CREATE TABLE IF NOT EXISTS public.deck_table
 (
-    deck character varying(50) NOT NULL,
-    deck_id integer NOT NULL DEFAULT nextval('deck_table_serial'),
-    username character varying(50) NOT NULL,
+    deck_id serial NOT NULL,
+	deck character varying(50) NOT NULL,
+	username character varying(50) NOT NULL,
     PRIMARY KEY (deck_id)
 );
 
@@ -122,87 +118,96 @@ ALTER TABLE public.deck_card_table
     REFERENCES public.deck_table (deck_id)
     NOT VALID;
 	
---ROLLBACK;
+	-- BELOW: Inserting values into tables
 	
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+-- ROLLBACK;
+INSERT INTO users (username,password_hash,role) VALUES ('Tech Elevator','$2a$10$fQas4hD6PGPGF8qI9O5RXeAS9ht00/EMCXXd.cuhGG3FdfXJg1l2O','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('jay','$2a$10$w5MkTYWCYky4KenFLg30ZuU0gLtFofZP8fbDqU2Vxm/XEVaSq.QOG','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('Angel','$2a$10$VZwqozySw9lLorllg1wOCuiVQNmN3DYnARJGrsAUu/SL7f/gLiAxO','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('ned','$2a$10$OVn4jj5vQvDO.LswVD.24O/eJ1k.1KAiUsCoFjfR4X9jPaKEhTVDO','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('kevin','$2a$10$aZ2gMYmQ8OMpwshMDc7Weuy57n8QP7vbYUavwK4ncf2RSK89rjBmW','ROLE_USER');
+-- INSERT INTO users (username,password_hash,role) VALUES ('danilo','','ROLE_USER');
+
+
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
 	VALUES (3, 'admin', 'DOM', 'What does DOM stand for?', 'Document Object Model', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
 	VALUES ( 3, 'admin', 'DOM', 'What type of tools in a web browser are used to inspect a DOM?', 'Developer Tools', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
 	VALUES ( 3, 'admin', 'Vue', 'What three programming languages can you use simultaneously in a Vue document??', 'HTML, CSS, and JavaScript', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'Vue', 'If a Vue router is not found, which error code is returned?', '404', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'Interview', 'True or False: Dirty laundry in the background of a video call is okay.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'Interview', 'What does the STAR in STAR questions stand for?', 'Situation, Task, Action, Result', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
 	VALUES (4, 'admin', 'Interview', 'True or False: When introducing yourself during a technical interview you should tailor your pitch to the more technical audience.', 'True', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'Resume', 'True or False: Having your full address on your resume is always helpful.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'Resume', 'True or False: A brightly colored resume is always the best.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'LinkedIn', 'True or False: Recruiters don’t use LinkedIn to find potential employees.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'LinkedIn', 'True or False: Posing with my dog in my LinkedIn profile picture is acceptable.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'LinkedIn', 'True or False: LinkedIn will not help you find a job.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Java', 'What are the three Principles of Object Oriented Programming?', 'Polymorphism, Encapsulation, and Inheritance', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'MVC', 'What does MVC Stand for?', 'Model, View, Controller', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (4, 'admin', 'Resume', 'How long, ideally, should your resume be?', '1 Page', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Git', 'What is version control?', 'Version control is software used to help keep track of changes over time to a codebase', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Git', 'What two steps must you take in Git before pushing your work?', 'Add and Commit', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Java', 'In a Map, a value is paired with what?', 'A Key', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Java', 'What is Polymorphism?', 'The ability of different objects to respond in a unique way to the same message', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Java', 'What command is used to end the iteration of a loop?', 'Break', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (1, 'admin', 'Java', 'What expression deals with True and False?', 'Boolean', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'SQL', 'What does SQL stand for?', 'Structured Query Language', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'SQL', 'If I wanted to select all rows in a table, what symbol would I use?', '*', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'SQL', 'What term would you use to connect two separate tables?', 'Join', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'HTTP', 'What is the difference between HTTP and HTTPS?', 'HTTPS is secured/encrypted', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'HTTP', '.com, .org, and .gov are examples of what URL part?', 'Top Level Domain', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'API', 'What does API stand for?', 'Application Programming Interface', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'API', 'What does JSON stand for?', 'JavaScript Object Notation', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (2, 'admin', 'API', 'What term is used to send an update request to an API?', 'PUT', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'CSS', 'True or False: An ID assigned to more than one element in CSS.', 'False', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'CSS', 'px is an example of what kind of length unit?', 'Absolute', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'CSS', 'What is Responsive Web Design?', 'Responsive web design is a set of practices that allows pages to alter their layout and appearance to suit different screen sizes and resolutions', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'JavaScript', 'What does NaN stand for?', 'Not a Number', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'JavaScript', 'What is the boolean value of “!null”', 'True', 'Tech Elevator - Default');
-INSERT INTO card_table ( module, creator, tag, question, answer, deck) 
+INSERT INTO card_table (module, creator, tag, question, answer, deck) 
  	VALUES (3, 'admin', 'HTML', 'What does HTML stand for?', 'Hyper Text Markup Language', 'Tech Elevator - Default');
+	
 
---INSERT INTO card_table (id, module, creator, tag, question, answer, deck) 
---	VALUES (3, 'admin', 'Tag', 'Quest', 'Answer', 'Tech Elevator - Default');
-
-
-
+-- INSERT INTO card_table (id, module, creator, tag, question, answer, deck) 
+--	 VALUES (3, 'admin', 'Tag', 'Quest', 'Answer', 'Tech Elevator - Default');
 
 
+INSERT INTO deck_table (deck, username) VALUES ('Tech Elevator - Default', 'admin');
 
---ROLLBACK;
+
+-- ROLLBACK;
 
 COMMIT TRANSACTION;
