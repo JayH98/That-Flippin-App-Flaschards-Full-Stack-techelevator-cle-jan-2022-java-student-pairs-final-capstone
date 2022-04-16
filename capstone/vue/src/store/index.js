@@ -26,8 +26,8 @@ export default new Vuex.Store({
     decks: [ {
       Name:"Tech Elevator",
       Creator: "Tech Elevator",
-    },
-    
+    }
+      
     ],
 
     flashcards: [
