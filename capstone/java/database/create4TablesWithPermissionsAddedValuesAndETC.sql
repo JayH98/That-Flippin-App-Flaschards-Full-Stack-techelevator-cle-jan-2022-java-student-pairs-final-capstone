@@ -7,7 +7,7 @@
 
 BEGIN TRANSACTION;
 
---ROLLBACK;
+-- ROLLBACK;
 
 
 DROP TABLE IF EXISTS users, card_table, deck_table, deck_card_table CASCADE;
@@ -35,8 +35,8 @@ INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpUL
 -- 	This script creates the database users and grants them the necessary permissions
 -- 	********************************************************************************
 
-				--GRANT ALL WONT WORK UNLESS YOU HIGHLIGHT AND RUN IT SEPERATELY last
-				--ZACH helped explain that everyone was having trouble with the GrantAll yet it should not trouble us in the Vue.js
+				-- GRANT ALL WONT WORK UNLESS YOU HIGHLIGHT AND RUN IT SEPERATELY last
+				-- ZACH helped explain that everyone was having trouble with the GrantAll yet it should not trouble us in the Vue.js
 				
 
 -- CREATE USER final_capstone_owner
@@ -120,13 +120,13 @@ ALTER TABLE public.deck_card_table
 	
 	-- BELOW: Inserting values into tables
 	
---ROLLBACK;
+-- ROLLBACK;
 INSERT INTO users (username,password_hash,role) VALUES ('Tech Elevator','$2a$10$fQas4hD6PGPGF8qI9O5RXeAS9ht00/EMCXXd.cuhGG3FdfXJg1l2O','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('jay','$2a$10$w5MkTYWCYky4KenFLg30ZuU0gLtFofZP8fbDqU2Vxm/XEVaSq.QOG','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('Angel','$2a$10$VZwqozySw9lLorllg1wOCuiVQNmN3DYnARJGrsAUu/SL7f/gLiAxO','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('ned','$2a$10$OVn4jj5vQvDO.LswVD.24O/eJ1k.1KAiUsCoFjfR4X9jPaKEhTVDO','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('kevin','$2a$10$aZ2gMYmQ8OMpwshMDc7Weuy57n8QP7vbYUavwK4ncf2RSK89rjBmW','ROLE_USER');
---INSERT INTO users (username,password_hash,role) VALUES ('danilo','','ROLE_USER');
+-- INSERT INTO users (username,password_hash,role) VALUES ('danilo','','ROLE_USER');
 
 
 INSERT INTO card_table (module, creator, tag, question, answer, deck) 
@@ -201,13 +201,13 @@ INSERT INTO card_table (module, creator, tag, question, answer, deck)
  	VALUES (3, 'admin', 'HTML', 'What does HTML stand for?', 'Hyper Text Markup Language', 'Tech Elevator - Default');
 	
 
---INSERT INTO card_table (id, module, creator, tag, question, answer, deck) 
---	VALUES (3, 'admin', 'Tag', 'Quest', 'Answer', 'Tech Elevator - Default');
+-- INSERT INTO card_table (id, module, creator, tag, question, answer, deck) 
+--	 VALUES (3, 'admin', 'Tag', 'Quest', 'Answer', 'Tech Elevator - Default');
 
 
 INSERT INTO deck_table (deck, username) VALUES ('Tech Elevator - Default', 'admin');
 
 
---ROLLBACK;
+-- ROLLBACK;
 
 COMMIT TRANSACTION;
