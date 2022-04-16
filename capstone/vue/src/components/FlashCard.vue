@@ -1,13 +1,30 @@
+
+
 <template>
+
 
 
   <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
     <div class="flashcard-front">
         <div class = 'box'>
-      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
-      <section>Q: {{ flashcard.question }}</section>
-      <p>ID: {{ flashcard.id }}</p>
-      <router-link v-bind:to="{name: 'edit-flashcard', params: flashcard.id}"><button>Edit Flashcard</button></router-link>
+          <section id='edit-flashcard-container'>
+<router-link v-bind:to="{name: 'edit-flashcard', params: flashcard.id}">
+        <button id="edit-flashcard">Edit </button></router-link>
+          </section>
+          <div id="search-container">
+            Module: {{ flashcard.Module }} <br/>
+             Tag: {{ flashcard.Tag }}
+          </div>
+      <section>
+        <div id="question-box">
+        Q: {{ flashcard.Question }} 
+          </div>
+          <div id="id">
+          {{ flashcard.id }}
+          </div>
+        </section>
+      
+      
         </div>
     </div>
 
@@ -19,7 +36,7 @@
           how is that fixable?  I tried moving stuff around and still couldn't get the
           mark for review button respond to just itself being clicked -->
           <section>
-      <button id="review-button">Mark For Review</button> 
+      <button id="review-button" v-bind:to="{name: 'review-flashcard', params: flashcard.id}">Mark For Review</button> 
           </section>
 
 <!-- The button will need to be moved, and also bound to some sort of logic or something
@@ -30,14 +47,19 @@
       <!-- needs logic and might change anyways -->
 
           
-          
-      
+          <!-- <div id="mod-back">
+            Module: {{ flashcard.Module }} <br/>
+             Tag: {{ flashcard.Tag }}
+          </div> -->
 
-      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
-      <p>A: {{flashcard.answer}}</p>
-      <p>Created By:{{flashcard.creator}}</p>
-      <p>Deck:{{flashcard.deck}}</p>
+      <div id="answer-block">
+         A: {{flashcard.Answer}}
+      </div>
+      <section id="deck-box">
+      <div id="creator">Created By:{{flashcard.Creator}} </div>
 
+      <div id="deck">Deck:{{flashcard.Deck}}</div>
+      </section>
       
       
       
@@ -50,6 +72,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: "flashcard",
   props: ["flashcard"],
@@ -108,15 +132,162 @@ export default {
 }
 
 #review-button {
-   box-sizing: border-box;
+box-sizing: border-box;
+margin: right 60%;;
     background-color: white;
     min-width: 100px;
     width: 20%;
     height: 35px;
     align-self: flex-end;
+    border-radius:25px;
+    block-size: fit-content;
+    width:fit-content;
+    position: relative;
+    top: -75px;
+
+   
+    
+    
+    
+    
+  /* position: fixed;
+  top:-45%;
+  left:70%;
+  block-size: fit-content;
+  width: fit-content; */
+  /* won't properly sit in the right corner like edit-flashcard would */
    
 }
 
+#edit-flashcard {
+box-sizing: border-box;
+margin: right 60%;;
+    background-color: white;
+    min-width: 100px;
+    width: 20%;
+    height: 35px;
+    align-self: flex-end;
+    border-radius:25px;
+  position: fixed;
+  top:5%;
+  right:5%;
+  block-size: fit-content;
+  width: fit-content;
 
+}
+
+#edit-flashcard-container {
+  justify-content: center;
+  align-content: center;
+
+}
+
+#question-box {
+  background: white;
+border-radius: 10px;
+border:black, solid;
+border-style: inset;
+font-size: 20px;
+
+}
+
+#mod {font-size: small;}
+
+#tag {font-size: small;}
+
+
+#mod-back {font-size: medium;}
+#question {font-size: large;}
+
+#answer-block {
+background: white;
+border-radius: 10px;
+border:black, solid;
+border-style: inset;
+font-size: 20px;
+
+
+}
+
+#search-container {
+  background: white;
+border-radius: 10px;
+border:black, solid;
+border-style:ridge;
+font-size: 12px;
+width:fit-content;
+block-size:fit-content;
+position: fixed;
+top: 5%;
+left: 5%;
+  
+}
+
+ #creator {
+  block-size:fit-content;
+  width:fit-content;
+  font-size: small;
+  position:fixed;
+  left: 15%;
+  bottom: -100%;
+  
+ }
+
+
+#deck {
+  
+  font-size: small;
+ block-size:fit-content;
+  width:fit-content;
+  font-size: small;
+position: fixed;
+bottom: -120%;
+left: 15%;
+border:none; 
+
+
+}
+/* #deck-box {
+   block-size:fit-content;
+  width:fit-content;
+  font-size: small;
+position: fixed;
+bottom: 50%;
+left: 95%;
+border:none;
+} */
+
+
+/* #creator {
+  block-size:fit-content;
+  font-size: small;
+position: fixed;
+bottom: 50%;
+left: 95%;
+border:none;
+transform:rotate(.25turn);
+} */
+/* Rotates to the edge of the some cards but not others */
+
+
+#id {position: fixed;
+bottom: 5%;
+right: 5%;
+border:none;
+}
+
+#mod-back {
+background: white;
+border-radius: 10px;
+border:black, solid;
+border-style:ridge;
+font-size: 12px;
+width:fit-content;
+block-size:fit-content;
+position: fixed;
+top: 5%;
+left: 5%;
+
+}
 
 </style>
