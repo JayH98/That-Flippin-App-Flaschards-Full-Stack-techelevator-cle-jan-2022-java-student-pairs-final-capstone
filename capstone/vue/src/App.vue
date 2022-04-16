@@ -13,6 +13,7 @@
             <router-link id="create-button" style="text-decoration : none" v-bind:to="{ name: 'create-deck'}" v-if="$store.state.token != ''"><button class = "create-button">CREATE</button></router-link>
             <router-link id="edit" style="text-decoration : none" v-bind:to="{ name: 'edit'}" v-if="$store.state.token != ''" ><button class = "edit-button">EDIT</button></router-link>
             <router-link id="logout-button" style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
+            <router-link id="meet-us" style="text-decoration : none" v-bind:to="{ name: 'meet-us'}"><button class = "meet-us">Meet The Creative Team</button></router-link>
          </ul>
         </nav>
       </div>
@@ -56,7 +57,12 @@ header img {
   width: 90px;
 }
 
-
+.meet-us {
+  background-color: #00ADEE;
+  border-radius: 5px;
+  height: 60px;
+  width: 90px;
+}
 
 </style>
 
