@@ -3,10 +3,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.CardDao;
 import com.techelevator.dao.JdbcCardDao;
 import com.techelevator.model.Card;
+import com.techelevator.model.User;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -18,18 +21,18 @@ public class CardController {
     }
 
     @RequestMapping(path = "/flashcard/tag/{tag}", method = RequestMethod.GET)
-    public Card findCardByTag(@Valid @PathVariable String tag) {
+    public List<Card> findCardByTag(@Valid @PathVariable String tag) {
             return cardDao.findCardByTag(tag);
         }
 
 
     @RequestMapping(path = "/flashcard/module/{module}", method = RequestMethod.GET)
-    public Card findCardByModule(@Valid @PathVariable int module) {
+    public List<Card> findCardByModule(@Valid @PathVariable int module) {
         return cardDao.findCardByModule(module);
     }
 
     @RequestMapping(path = "/flashcard/creator/{creator}", method = RequestMethod.GET)
-    public Card findCardByCreator(@Valid @PathVariable String creator) {
+    public List<Card> findCardByCreator(@Valid @PathVariable String creator) {
         return cardDao.findCardByCreator(creator);
     }
 
@@ -39,20 +42,30 @@ public class CardController {
 
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
     public String CreateCard(@Valid @RequestBody Card card) {
         return cardDao.createCard(card.getModule(),card.getCreator(),card.getTag(),
                 card.getQuestion(),card.getAnswer(),card.getDeck());
     }
 
-    @RequestMapping(path = "/flashcard", method = RequestMethod.POST)
-    public Card editCard(@Valid @RequestBody Card card) {
-        return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
+    @RequestMapping(path = "/flashcard", method = RequestMethod.PUT)
+    public String editCard(@Valid @RequestBody Card card) {
+        return cardDao.editCard(card);
 
     }
-    @RequestMapping(path = "/flashcard/id", method = RequestMethod.GET)
-    public Card getGet(@Valid @RequestBody Card card) {
-        return cardDao.editCard(card.getTag(), card.getQuestion(), card.getAnswer());
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/user/{username}/flashcards", method = RequestMethod.GET)
+    public List<Card> getAllCards(@PathVariable String username) {
+        return cardDao.getAllCards(username);
+    }
+
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.GET)
+    public String getCard(@Valid @PathVariable Card card) {
+        return cardDao.editCard(card);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 
     }
 }

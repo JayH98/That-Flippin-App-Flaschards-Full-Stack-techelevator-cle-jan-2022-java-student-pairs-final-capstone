@@ -62,8 +62,6 @@ header img {
 
 <style scoped>
 
-
-
 #app {
   height: 100%;
   width: 1200px;
