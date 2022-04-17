@@ -1,5 +1,5 @@
 <template>
-  <div class="meet-us">
+  <div class="meet-us-title">
     <h2>Meet The Creative Team</h2>
     <div>
       <!-- Team # Octothorpe - Flash Cards -->
