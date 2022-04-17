@@ -126,7 +126,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('jay','$2a$10$w5MkTYWCYk
 INSERT INTO users (username,password_hash,role) VALUES ('Angel','$2a$10$VZwqozySw9lLorllg1wOCuiVQNmN3DYnARJGrsAUu/SL7f/gLiAxO','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('ned','$2a$10$OVn4jj5vQvDO.LswVD.24O/eJ1k.1KAiUsCoFjfR4X9jPaKEhTVDO','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('kevin','$2a$10$aZ2gMYmQ8OMpwshMDc7Weuy57n8QP7vbYUavwK4ncf2RSK89rjBmW','ROLE_USER');
--- INSERT INTO users (username,password_hash,role) VALUES ('danilo','','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('Danilo','$2a$10$S/GAW2j6s4QUnUNdjPCPruiAXz7QFMKGKB3z7oiZMvhXmui95Nv6G','ROLE_USER');
 
 
 INSERT INTO card_table (module, creator, tag, question, answer, deck) 
