@@ -10,6 +10,9 @@ export default {
   },
   updateCard(id, flashcard) {
     return axios.put(`/flashcard/${id}`, flashcard);
+  },
+  createCard(flashcard){
+    return axios.post(`/flashcard/createCard`, flashcard);
   }
 
   

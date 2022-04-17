@@ -4,13 +4,13 @@ import com.techelevator.dao.JdbcCardDao;
 import com.techelevator.dao.JdbcDeckDao;
 import com.techelevator.model.Card;
 import com.techelevator.model.Deck;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
+@RestController
+@CrossOrigin
 public class DeckController {
 
     private JdbcDeckDao deckDao;
@@ -19,8 +19,8 @@ public class DeckController {
         this.deckDao = deck;
     }
 
-    @RequestMapping(path = "/deck/name/{name}", method = RequestMethod.GET)
-    public Deck findDeckByUsername(@Valid @PathVariable String username) {
+    @RequestMapping(path = "/user/{username}/decks", method = RequestMethod.GET)
+    public List<Deck> findDeckByUsername(@Valid @PathVariable String username) {
         return deckDao.findDeckByUsername(username);
     }
 

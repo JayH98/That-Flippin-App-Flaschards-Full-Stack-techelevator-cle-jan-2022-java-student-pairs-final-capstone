@@ -5,11 +5,13 @@ import com.techelevator.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 @Component
 public class JdbcCardDao implements CardDao {
 
@@ -28,21 +30,6 @@ public class JdbcCardDao implements CardDao {
         jdbcTemplate.update(sql, module, creator, tag, question, answer, deck);
         return "Card was created";
 
-    }
-
-
-    private Card mapRowToCard(SqlRowSet rowSetResults) {
-
-        Card card = new Card();
-        card.setId(rowSetResults.getInt("id"));
-        card.setModule(rowSetResults.getInt("module"));
-        card.setCreator(rowSetResults.getString("creator"));
-        card.setTag(rowSetResults.getString("tag"));
-        card.setQuestion(rowSetResults.getString("question"));
-        card.setAnswer(rowSetResults.getString("answer"));
-        card.setDeck(rowSetResults.getString("deck"));
-
-        return card;
     }
 
 
@@ -71,6 +58,8 @@ public class JdbcCardDao implements CardDao {
         return flashcards;
     }
 
+
+
     @Override
     public List<Card> getAllCards(String username) {
         List<Card> flashcards = new ArrayList<>();
@@ -88,6 +77,20 @@ public class JdbcCardDao implements CardDao {
         return flashcards;
     }
 
+    @Override
+    public Card getCardById(int id) {
+       Card card = new Card();
+       String findCardByIdSql = "SELECT id, module, creator, tag, question, answer, deck " +
+               "FROM card_table " +
+               "WHERE id = ?;";
+
+       SqlRowSet rowset = jdbcTemplate.queryForRowSet(findCardByIdSql, id);
+
+       if (rowset.next()) {
+           card = mapRowToCard(rowset);
+       } return card;
+    }
+
 
     public List<Card> findCardByCreator(String creator) {
         List<Card> flashcards = new ArrayList<>();
@@ -102,15 +105,16 @@ public class JdbcCardDao implements CardDao {
     }
 
 
-    public Card findCardByDeck(String deck) {
-        String deckSql = "SELECT id, module, creator, tag, question, answer " +
+    public List<Card> findCardByDeck(String deck) {
+        List<Card> flashcards = new ArrayList<>();
+        String deckSql = "SELECT id, module, creator, tag, question, answer, deck " +
                 "FROM card_table " +
-                "WHERE deck =?; ";
+                "WHERE deck = ?; ";
         SqlRowSet deckRowSet = jdbcTemplate.queryForRowSet(deckSql, deck);
-        if (deckRowSet.next()) {
-            return mapRowToCard(deckRowSet);
+        while (deckRowSet.next()) {
+             flashcards.add(mapRowToCard(deckRowSet));
         }
-        return null;
+        return flashcards;
     }
 
     public String editCard(Card card) {
@@ -125,7 +129,19 @@ public class JdbcCardDao implements CardDao {
         return "Card Was Updated";
     }
 
-    // Edit Deck
+    private Card mapRowToCard(SqlRowSet rowSetResults) {
+
+        Card card = new Card();
+        card.setId(rowSetResults.getInt("id"));
+        card.setModule(rowSetResults.getInt("module"));
+        card.setCreator(rowSetResults.getString("creator"));
+        card.setTag(rowSetResults.getString("tag"));
+        card.setQuestion(rowSetResults.getString("question"));
+        card.setAnswer(rowSetResults.getString("answer"));
+        card.setDeck(rowSetResults.getString("deck"));
+
+        return card;
+    }
 
 
 }

@@ -12,7 +12,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8081")
 public class CardController {
     private JdbcCardDao cardDao;
 
@@ -22,9 +22,8 @@ public class CardController {
 
     @RequestMapping(path = "/flashcard/tag/{tag}", method = RequestMethod.GET)
     public List<Card> findCardByTag(@Valid @PathVariable String tag) {
-            return cardDao.findCardByTag(tag);
-        }
-
+        return cardDao.findCardByTag(tag);
+    }
 
     @RequestMapping(path = "/flashcard/module/{module}", method = RequestMethod.GET)
     public List<Card> findCardByModule(@Valid @PathVariable int module) {
@@ -37,22 +36,21 @@ public class CardController {
     }
 
     @RequestMapping(path = "/flashcard/deck/{deck}", method = RequestMethod.GET)
-    public Card findCardByDeck(@Valid @PathVariable String deck) {
+    public List<Card> findCardByDeck(@Valid @PathVariable String deck) {
         return cardDao.findCardByDeck(deck);
-
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
-    public String CreateCard(@Valid @RequestBody Card card) {
-        return cardDao.createCard(card.getModule(),card.getCreator(),card.getTag(),
-                card.getQuestion(),card.getAnswer(),card.getDeck());
+    public String createCard(@Valid @RequestBody Card card) {
+        return cardDao.createCard(card.getModule(), card.getCreator(), card.getTag(),
+                card.getQuestion(), card.getAnswer(), card.getDeck());
     }
 
-    @RequestMapping(path = "/flashcard", method = RequestMethod.PUT)
-    public String editCard(@Valid @RequestBody Card card) {
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.PUT)
+    public String editCard(@Valid @PathVariable int id, @RequestBody Card card) {
         return cardDao.editCard(card);
-
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -61,16 +59,14 @@ public class CardController {
         return cardDao.getAllCards(username);
     }
 
-
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.GET)
-    public String getCard(@Valid @PathVariable Card card) {
-        return cardDao.editCard(card);                      // Need to create a new getCard method in jdbcTemplate and implement that here
+    @CrossOrigin
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/flashcards/{id}", method = RequestMethod.GET)
+    public Card getCard(@Valid @PathVariable int id) {
+        return cardDao.getCardById(id);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 
     }
 }
-
-
 
 
 //will need path

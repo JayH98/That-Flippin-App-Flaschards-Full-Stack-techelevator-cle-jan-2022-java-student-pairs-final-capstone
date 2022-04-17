@@ -7,6 +7,9 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class JdbcDeckDao implements DeckDao{
 
@@ -32,14 +35,15 @@ public class JdbcDeckDao implements DeckDao{
 
     }
 
-    public Deck findDeckByUsername(String username) {
-        String sql = "SELECT deck " +
+    public List<Deck> findDeckByUsername(String username) {
+        List<Deck> decks = new ArrayList<>();
+        String sql = "SELECT deck, deck_id, username " +
                 "FROM deck_table "+
-                "WHERE username = ?; ";
+                "WHERE username = ? OR username = 'admin'; ";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, username);
-        if (rowSet.next()) {
-            return mapRowToDeck(rowSet);
-        } return null;
+        while (rowSet.next()) {
+            decks.add(mapRowToDeck(rowSet));
+        } return decks;
     }
 
     private Deck mapRowToDeck(SqlRowSet rowSetResults) {

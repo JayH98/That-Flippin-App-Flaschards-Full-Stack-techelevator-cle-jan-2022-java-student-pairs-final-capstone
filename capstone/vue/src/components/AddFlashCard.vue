@@ -5,23 +5,23 @@
   <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
         <label for="creator">Creator:</label>
-        <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.Creator" />
+        <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.creator" />
       </div>
       <div class="form-element">
         <label for="tag">Tag:</label>
-        <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.Tag" />
+        <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.tag" />
       </div>  
       <div class="form-element">
         <label for="question">Question:</label>
-        <textarea id="question" type="text" placeholder="Insert Question Here" v-model="newCard.Question" />
+        <textarea id="question" type="text" placeholder="Insert Question Here" v-model="newCard.question" />
       </div>  
       <div class="form-element">
         <label for="answer">Answer:</label>
-        <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.Answer" />
+        <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.answer" />
       </div>
       <div class="form-element">
         <label for="deck">Deck:</label>
-        <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.Deck" />
+        <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.deck" />
       </div>
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
       <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
@@ -31,30 +31,35 @@
 </template>
 
 <script>
+import FlashCardService from '../services/FlashCardService.js'
+
 export default {
     name: "add-card",
     data() {
         return {
             newCard: {
-                id : 0,
-                Module : 0,
-                Creator : "",
-                Tag : "",
-                Question : "",
-                Answer : "",
-                Deck: "",
+                module : 0,
+                creator : "",
+                tag : "",
+                question : "",
+                answer : "",
+                deck: "",
             }
         }
     },
     methods: {
         addNewCard(){
-            this.$store.commit("ADD_CARD", this.newCard);
-            this.resetForm;
+            FlashCardService.createCard(this.newCard).then(response => {
+              if (response.status === 201) {
+              this.resetForm();
+              console.log("Card created successfully");
+              
+              }
+            })
+            
         },
         resetForm(){
-            this.showForm = false;
             this.newCard = {
-                id : 0,
                 Module : 0,
                 Creator : "",
                 Tag : "",

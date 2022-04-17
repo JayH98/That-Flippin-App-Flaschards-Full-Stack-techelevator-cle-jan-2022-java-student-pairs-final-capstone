@@ -7,7 +7,7 @@
       <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
       <section>Q: {{ flashcard.question }}</section>
       <p>ID: {{ flashcard.id }}</p>
-      <router-link v-bind:to="{name: 'edit-flashcard', params: flashcard.id}"><button>Edit Flashcard</button></router-link>
+      <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
         </div>
     </div>
 
