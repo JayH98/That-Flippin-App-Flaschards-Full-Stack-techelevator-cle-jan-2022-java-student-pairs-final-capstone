@@ -4,36 +4,39 @@
   <form v-on:submit.prevent autocomplete="off">
      
       <div class="form-element">
-        <label for="tag">Tag:</label>
-        <input id="tag" type="text" placeholder="Edit Deck Tag Here" v-model="updatedDeck.Tag" />
-      </div>  
-      <div class="form-element">
-        <label for="question">Name:</label>
-        <textarea id="question" type="text" placeholder="Edit Name Here" v-model="updatedDeck.Name" />
-      </div>  
+        <label for="tag">Deck Name: </label>
+        <input id="tag" type="text" placeholder="Edit Deck Name Here" v-model="updatedDeck.deck" />
+      </div>   
       
-      <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck"/>
-      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
+      <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck">Save Changes</button>
+      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm">Cancel</button> 
+
+      <deck v-bind:deck="updatedDeck"/>     
 
   </form>
 </div>   
 </template>
 
 <script>
+import Deck from './Deck.vue';
+import DeckService from '../services/DeckService.js'
 export default {
+  components: { Deck },
     name: 'edit-deck',
+    props: ["deckID"],
     data() {
         return {
             showForm: false,
             updatedDeck: {
-                
-                
-                Tag : "",
-               
-               
-                Deck: "",
+                deck: "",
             }
         }
+    },
+    created() {
+        DeckService.getDeck(this.$route.params.id).then((response) => {
+        this.updatedDeck = response.data;
+        console.log("Deck was retrieved")
+      })
     },
     methods: {
         editDeck(){

@@ -24,11 +24,15 @@ public class DeckController {
         return deckDao.findDeckByUsername(username);
     }
 
+    @RequestMapping(path = "/decks/{id}", method = RequestMethod.GET)
+    public Deck findDeckById(@Valid @PathVariable int id) {
+        return deckDao.findDeckById(id);
+    }
+
 
     @RequestMapping(path = "/deck/editDeck", method = RequestMethod.POST)
     public Deck editDeck(@Valid @RequestBody Deck deck) {
         return deckDao.editDeck(deck.getUsername(), deck.getDeck());
-
     }
 
 }

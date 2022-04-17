@@ -41,6 +41,17 @@ public class JdbcDeckDao implements DeckDao{
         } return decks;
     }
 
+    public Deck findDeckById(int id) {
+        String sql = "SELECT deck, deck_id, username " +
+                "FROM deck_table "+
+                "WHERE deck_id = ? ";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, id);
+        if (rowSet.next()) {
+            return mapRowToDeck(rowSet);
+        } return null;
+    }
+
+
     private Deck mapRowToDeck(SqlRowSet rowSetResults) {
 
         Deck deck = new Deck();
