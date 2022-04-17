@@ -33,8 +33,6 @@ public class JdbcCardDao implements CardDao {
     }
 
 
-
-
     public List<Card> findCardByTag(String tag) {
         List<Card> flashcards = new ArrayList<>();
         String sql = "SELECT id, module, creator, tag, question, answer, deck " +

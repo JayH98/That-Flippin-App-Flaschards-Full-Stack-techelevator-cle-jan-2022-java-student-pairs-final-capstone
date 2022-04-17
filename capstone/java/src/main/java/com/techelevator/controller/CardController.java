@@ -12,7 +12,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8081")
 public class CardController {
     private JdbcCardDao cardDao;
 
@@ -42,7 +42,7 @@ public class CardController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
-    public String CreateCard(@Valid @RequestBody Card card) {
+    public String createCard(@Valid @RequestBody Card card) {
         return cardDao.createCard(card.getModule(), card.getCreator(), card.getTag(),
                 card.getQuestion(), card.getAnswer(), card.getDeck());
     }
@@ -51,7 +51,6 @@ public class CardController {
     @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.PUT)
     public String editCard(@Valid @PathVariable int id, @RequestBody Card card) {
         return cardDao.editCard(card);
-
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -62,7 +61,7 @@ public class CardController {
 
     @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(path = "/flashcard/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/flashcards/{id}", method = RequestMethod.GET)
     public Card getCard(@Valid @PathVariable int id) {
         return cardDao.getCardById(id);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 

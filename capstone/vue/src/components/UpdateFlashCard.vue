@@ -7,7 +7,7 @@
           id="tag"
           type="text"
           placeholder="Edit Card Tag Here"
-          v-model="updatedCard.Tag"
+          v-model="updatedCard.tag"
         />
       </div>
       <div class="form-element">
@@ -16,7 +16,7 @@
           id="question"
           type="text"
           placeholder="Edit Question Here"
-          v-model="updatedCard.Question"
+          v-model="updatedCard.question"
         />
       </div>
       <div class="form-element">
@@ -25,7 +25,7 @@
           id="answer"
           type="text"
           placeholder="Edit Answer Here"
-          v-model="updatedCard.Answer"
+          v-model="updatedCard.answer"
         />
       </div>
       <button class="saveBtn" type="submit" value="Save">Save</button>
@@ -66,12 +66,12 @@ export default {
       showForm: false,
       updatedCard: {
         id: 0,
-        Module: 0,
-        Creator: "",
-        Tag: "",
-        Question: "",
-        Answer: "",
-        Deck: "",
+        module: 0,
+        creator: "",
+        tag: "",
+        question: "",
+        answer: "",
+        deck: "",
       },
     };
   },
@@ -114,6 +114,7 @@ export default {
       FlashCardService.updateCard(this.flashcardID, this.updatedCard)
         .then((response) => {
           if (response.status === 202) {
+            console.log("Card was updated");
             this.cardUpdatedFailure = false;
             this.resetForm();
             this.$router.push({ name: "home" });
