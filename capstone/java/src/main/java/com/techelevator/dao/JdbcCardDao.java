@@ -59,7 +59,6 @@ public class JdbcCardDao implements CardDao {
     }
 
 
-
     @Override
     public List<Card> getAllCards(String username) {
         List<Card> flashcards = new ArrayList<>();
@@ -79,16 +78,17 @@ public class JdbcCardDao implements CardDao {
 
     @Override
     public Card getCardById(int id) {
-       Card card = new Card();
-       String findCardByIdSql = "SELECT id, module, creator, tag, question, answer, deck " +
-               "FROM card_table " +
-               "WHERE id = ?;";
+        Card card = new Card();
+        String findCardByIdSql = "SELECT id, module, creator, tag, question, answer, deck " +
+                "FROM card_table " +
+                "WHERE id = ?;";
 
-       SqlRowSet rowset = jdbcTemplate.queryForRowSet(findCardByIdSql, id);
+        SqlRowSet rowset = jdbcTemplate.queryForRowSet(findCardByIdSql, id);
 
-       if (rowset.next()) {
-           card = mapRowToCard(rowset);
-       } return card;
+        if (rowset.next()) {
+            card = mapRowToCard(rowset);
+        }
+        return card;
     }
 
     public void removeCardFromDeck(int id) {
@@ -107,7 +107,6 @@ public class JdbcCardDao implements CardDao {
 
         jdbcTemplate.update(sql, deckName, flashcardId);
     }
-
 
 
     public List<Card> findCardByCreator(String creator) {
@@ -130,7 +129,7 @@ public class JdbcCardDao implements CardDao {
                 "WHERE deck = ?; ";
         SqlRowSet deckRowSet = jdbcTemplate.queryForRowSet(deckSql, deck);
         while (deckRowSet.next()) {
-             flashcards.add(mapRowToCard(deckRowSet));
+            flashcards.add(mapRowToCard(deckRowSet));
         }
         return flashcards;
     }

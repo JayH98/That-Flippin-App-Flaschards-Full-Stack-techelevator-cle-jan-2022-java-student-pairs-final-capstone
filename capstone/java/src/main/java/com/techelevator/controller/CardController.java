@@ -67,6 +67,7 @@ public class CardController {
         return cardDao.getCardById(id);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 
     }
+
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path = "/flashcard/{id}/deck", method = RequestMethod.PUT)
     public void removeCardFromDeck(@PathVariable int id) {

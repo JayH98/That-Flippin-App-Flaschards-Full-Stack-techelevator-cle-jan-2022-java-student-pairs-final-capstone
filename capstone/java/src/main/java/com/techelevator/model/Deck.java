@@ -5,7 +5,8 @@ public class Deck {
     private String deck;
     private String username;
 
-    public Deck() {}
+    public Deck() {
+    }
 
 
     public Deck(int deckId, String deck, String username) {
