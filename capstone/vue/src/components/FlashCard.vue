@@ -15,10 +15,16 @@
         </div>
     </div>
 
+    <!-- Added button to edit card and delete card. -->
+    <!-- <router-link tag="edit-flashcard" @click="edit-flashcard" v-bind:class="{'edit' : editCard}">
+      <h1>{{ card.title }}</h1>
+      <p>{{ card.description }}</p>
+      <router-link tag="button":to="{ name: 'EditCard', params: {cardID: $route.params.cardID} }" class="btn editCard"> Edit Card </router-link>
+      <button class="btn deleteCard" v-on:click="deleteCard"> Delete Card </button> -->
+    
+
     <div class="flashcard-back">
         <div class = 'box'>
-          
-
           <!-- The button is not clickable.  clicking it turns the card around too.
           how is that fixable?  I tried moving stuff around and still couldn't get the
           mark for review button respond to just itself being clicked -->
@@ -62,6 +68,7 @@ export default {
   data() {
     return {
       flipCard: false,
+      // editCard: ??? and/or deleteCard: ???
     };
   },
   methods: {
@@ -81,6 +88,63 @@ export default {
     }
   },
 
+  // Added the methods of searching for cards (not done yet) and deleting cards. I used CardDetail.vue in Lecture Final from mod 3 POST to assist. 
+//    methods: {
+//     retrieveCard() {
+//       boardsService
+//         .getCard(this.$route.params.cardID)
+//         .then(response => {
+//           this.$store.commit("SET_CURRENT_CARD", response.data);
+//           this.isLoading = false;
+//         })
+//         .catch(error => {
+//           if (error.response && error.response.status === 404) {
+//             alert(
+//               "Something is not right... This card may have been deleted or you have entered an invalid card ID. Try again!"
+//             );
+//             this.$router.push("/");
+//           }
+//         });
+//     },
+//     deleteCard() {
+//       if (
+//         confirm(
+//           "Are you sure you want to delete this card? Be warned this action cannot be undone."
+//         )
+//       ) {
+//         boardsService
+//           .deleteCard(this.card.id)
+//           .then(response => {
+//             if (response.status === 200) {
+//               alert("Card successfully deleted");
+//               this.$router.push(`/board/${this.card.boardId}`);
+//             }
+//           })
+//           .catch(error => {
+//             if (error.response) {
+//               this.errorMsg =
+//                 "Error deleting card. Response received was '" +
+//                 error.response.statusText +
+//                 "'.";
+//             } else if (error.request) {
+//               this.errorMsg =
+//                 "Error deleting card. Server could not be reached.";
+//             } else {
+//               this.errorMsg =
+//                 "Error deleting card. Request could not be created.";
+//             }
+//           });
+//       }
+//     },
+//   },
+//   created() {
+//     this.retrieveCard();
+//   },
+//   computed: {
+//     card() {
+//       return this.$store.state.card;
+//     }
+//   }
 };
 </script>
 

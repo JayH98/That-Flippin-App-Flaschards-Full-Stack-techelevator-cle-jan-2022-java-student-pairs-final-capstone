@@ -10,6 +10,6 @@ public interface DeckDao {
 
     public List<Deck> findDeckByUsername(String username);
 
-    public Deck findDeckByDeckName(String deckName);
+    public String createDeck(Deck deck);
 
 }

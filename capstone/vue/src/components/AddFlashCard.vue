@@ -4,10 +4,6 @@
 
   <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
-        <label for="creator">Creator:</label>
-        <input id="creator" type="text" placeholder="Who Are You?" v-model="newCard.creator" />
-      </div>
-      <div class="form-element">
         <label for="tag">Tag:</label>
         <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.tag" />
       </div>  
@@ -39,7 +35,7 @@ export default {
         return {
             newCard: {
                 module : 0,
-                creator : "",
+                creator : this.$store.state.user.username,
                 tag : "",
                 question : "",
                 answer : "",

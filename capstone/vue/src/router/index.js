@@ -9,6 +9,8 @@ import CardDeck from '../views/CardDeck.vue'
 import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
 import EditDeck from '../views/EditDeck.vue'
+import MeetUs from '@/views/MeetTheCreators.vue'
+
 
 Vue.use(Router)
 
@@ -89,6 +91,12 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/meet-us",
+      name: "meet-us",
+      component: MeetUs,
+    }
+    
   ]
 })
 

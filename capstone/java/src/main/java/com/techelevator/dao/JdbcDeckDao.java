@@ -5,11 +5,13 @@ import com.techelevator.model.Deck;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 @Component
 public class JdbcDeckDao implements DeckDao{
 
@@ -25,9 +27,14 @@ public class JdbcDeckDao implements DeckDao{
                 "SET ?, ? ; ";
         // WHERE will be on card during edit selection (BY ID)
 
+
         SqlRowSet editedDeck = jdbcTemplate.queryForRowSet(deckSearchSql, name, creator);
 
         return newDeck;
+
+        // title and the cards inside eg. remove cards from the deck
+        // Create a new created deck class?
+
     }
 
     public List<Deck> findDeckByUsername(String username) {
@@ -51,6 +58,14 @@ public class JdbcDeckDao implements DeckDao{
         } return null;
     }
 
+
+    public String createDeck(Deck deck) {
+        String sql = "INSERT INTO deck_table " +
+                "(deck, username) " +
+                "VALUES (?, ?);";
+        jdbcTemplate.update(sql, deck.getDeck(), deck.getUsername());
+        return "Deck was created";
+    }
 
     private Deck mapRowToDeck(SqlRowSet rowSetResults) {
 
