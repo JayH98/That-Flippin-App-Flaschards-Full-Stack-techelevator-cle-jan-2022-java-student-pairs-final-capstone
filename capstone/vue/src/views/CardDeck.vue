@@ -51,7 +51,13 @@ export default {
         DeckService.getCardsInDeck(this.$route.params.deckName).then((response) => {
             this.flashcards = response.data;
             this.deckName = this.$route.params.deckName;
-        })
+        });
+        this.flashcards.forEach((flashcard) => {
+            // const markForReview = 'markForReview';
+            // flashcard[markForReview] = false;
+
+            Object.assign(flashcard, {markForReview: false})
+        });
     },
 
     data() {

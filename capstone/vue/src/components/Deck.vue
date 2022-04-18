@@ -33,8 +33,12 @@ export default {
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    background: rgb(0,111,121);
-    background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%);
+    /* background: rgb(0,111,121); */
+    /* background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%); */
+    background: linear-gradient(90deg, #71d96f 0%, rgba(0,212,255,1) 100%);
+    border:inset;
+    border-radius: 25px;
+
     border: 5px solid royalblue;
     width: 30%;
 }

@@ -160,7 +160,8 @@ export default {
   align-items: center;
   position: relative;
   width: 30%;
-  height: 300px;
+  /* height: 20%; */
+  height: 25rem;
   transform-style:preserve-3d;
   transition: 250ms;
   /* background-color: rgb(212, 206, 206); */
