@@ -17,7 +17,13 @@ export default {
     created() {
         FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
             this.flashcards = response.data;
-        })
+        });
+        this.flashcards.forEach((flashcard) => {
+            // const markForReview = 'markForReview';
+            // flashcard[markForReview] = false;
+
+            Object.assign(flashcard, {markForReview: false})
+        });
     },
 
     data() {

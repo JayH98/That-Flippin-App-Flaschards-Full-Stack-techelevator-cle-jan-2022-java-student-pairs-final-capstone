@@ -18,5 +18,7 @@ public interface CardDao {
 
         public void removeCardFromDeck(int id);
 
+        public void addCardToDeck(int flashcardId, String deckname);
+
 
 }

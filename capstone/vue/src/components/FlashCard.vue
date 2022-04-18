@@ -9,7 +9,7 @@
       <p>ID: {{ flashcard.id }}</p>
       <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
       <div class = "edit-buttons">
-        <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName">Add to deck</button>
+        <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
         <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button>
       </div>
         </div>
@@ -67,22 +67,26 @@ export default {
   components: {},
   data() {
     return {
+      deckName: this.$route.params.deckName,
       flipCard: false,
       // editCard: ??? and/or deleteCard: ???
+      addFlashCard: {},
     };
   },
   methods: {
     removeCardFromDeck(id) {
       FlashCardService.removeCardFromDeck(id).then((response) => {
         if (response.status == 200) {
-          console.log("Yay");
+          console.log("Yay. Card was removed to deck");
         }
       })
     },
-    addCardToDeck(id, deckName) {
-      FlashCardService.addToDeck(id, deckName).then((response) => {
+    addCardToDeck(cardId) {
+      this.addFlashCard = {id: cardId, deck: this.deckName};
+
+      FlashCardService.addCardToDeck(this.addFlashCard).then((response) => {
         if (response.status == 200) {
-          console.log("Yay");
+          console.log("Yay. Card was added to deck");
         }
       })
     }
@@ -156,7 +160,8 @@ export default {
   align-items: center;
   position: relative;
   width: 30%;
-  height: 300px;
+  /* height: 20%; */
+  height: 25rem;
   transform-style:preserve-3d;
   transition: 250ms;
   /* background-color: rgb(212, 206, 206); */

@@ -100,6 +100,14 @@ public class JdbcCardDao implements CardDao {
 
     }
 
+    public void addCardToDeck(int flashcardId, String deckName) {
+        String sql = "UPDATE card_table " +
+                "SET deck = ? " +
+                "WHERE id = ?; ";
+
+        jdbcTemplate.update(sql, deckName, flashcardId);
+    }
+
 
 
     public List<Card> findCardByCreator(String creator) {

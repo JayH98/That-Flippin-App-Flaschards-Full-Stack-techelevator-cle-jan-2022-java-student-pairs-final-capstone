@@ -23,8 +23,19 @@ export default {
 <template>
 <div>
     <h1>Current deck: {{deckName}}</h1>
+
+    <div class = "tag-label">
+    <label for="tagFilter">Tag: </label>
+    <input type="text" id="tagFilter" v-model="filter.tag"/>
+    </div>
+
+    <div class = "question-label">
+    <label for="questionFilter">Question: </label>
+    <input type="text" id="questionFilter" v-model="filter.question"/>
+    </div>
+
   <div class="flashcard-container">
-      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashcards" v-bind:key="flashcard.id"/>
+      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in filteredFlashCards" v-bind:key="flashcard.id"/>
   </div>
 </div>
 </template>
@@ -40,22 +51,41 @@ export default {
         DeckService.getCardsInDeck(this.$route.params.deckName).then((response) => {
             this.flashcards = response.data;
             this.deckName = this.$route.params.deckName;
-        })
+        });
+        this.flashcards.forEach((flashcard) => {
+            // const markForReview = 'markForReview';
+            // flashcard[markForReview] = false;
+
+            Object.assign(flashcard, {markForReview: false})
+        });
     },
 
     data() {
         return {
-            filter: {
-                Module: '',
-                Tag: '',
-                Creator: '',
-                Deck: ''
+            deckName: '',
+            flashcards: [],
+             filter: {
+                module: '',
+                tag: '',
+                creator: '',
+                deck: ''
                  
             },
-            flashcards: [],
-            deckName: ''
         }
     },
+    computed: {
+        filteredFlashCards() {
+           return this.flashcards.filter((flashcard) => {
+               if (this.filter.tag  && !flashcard.tag.toLowerCase().includes(this.filter.tag.toLowerCase())) {
+                   return false;
+               }
+               if (this.filter.question  && !flashcard.question.toLowerCase().includes(this.filter.question.toLowerCase())) {
+                   return false;
+               }
+               return true;
+           })
+        }
+    }
 
     // computed: {
     //     filteredCards() {
@@ -88,5 +118,9 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 10px;
+}
+
+.tag-label {
+    margin-bottom: 20px;
 }
 </style>
