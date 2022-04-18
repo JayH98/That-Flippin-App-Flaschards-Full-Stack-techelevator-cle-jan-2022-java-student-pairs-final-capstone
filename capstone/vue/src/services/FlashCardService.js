@@ -16,6 +16,9 @@ export default {
   },
   removeCardFromDeck(id) {
   return axios.put(`/flashcard/${id}/deck`, id)
+  },
+  addCardToDeck(flashcard) {
+    return axios.put(`/deck/addFlashcard`, flashcard)
   }
   
 

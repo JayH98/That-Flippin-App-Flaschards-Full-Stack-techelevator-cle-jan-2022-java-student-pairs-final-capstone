@@ -20,6 +20,11 @@ public class CardController {
         this.cardDao = card;
     }
 
+    @RequestMapping(path = "/flashcard/creator/{creator}", method = RequestMethod.GET)
+    public List<Card> findCardByCreator(@Valid @PathVariable String creator) {
+        return cardDao.findCardByCreator(creator);
+    }
+
     @RequestMapping(path = "/flashcard/tag/{tag}", method = RequestMethod.GET)
     public List<Card> findCardByTag(@Valid @PathVariable String tag) {
         return cardDao.findCardByTag(tag);
@@ -30,10 +35,6 @@ public class CardController {
         return cardDao.findCardByModule(module);
     }
 
-    @RequestMapping(path = "/flashcard/creator/{creator}", method = RequestMethod.GET)
-    public List<Card> findCardByCreator(@Valid @PathVariable String creator) {
-        return cardDao.findCardByCreator(creator);
-    }
 
     @RequestMapping(path = "/flashcard/deck/{deck}", method = RequestMethod.GET)
     public List<Card> findCardByDeck(@Valid @PathVariable String deck) {
@@ -72,6 +73,11 @@ public class CardController {
         cardDao.removeCardFromDeck(id);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/deck/addFlashcard", method = RequestMethod.PUT)
+    public void addCardToDeck(@RequestBody Card card) {
+        cardDao.addCardToDeck(card.getId(), card.getDeck());
+    }
 }
 
 
