@@ -13,6 +13,9 @@ export default {
   },
   getCardsInDeck(deckname) {
       return axios.get(`/flashcard/deck/${deckname}`)
+  },
+  createDeck(deck) {
+    return axios.post("/deck/createDeck", deck)
   }
 
   
