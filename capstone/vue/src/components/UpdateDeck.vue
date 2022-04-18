@@ -11,7 +11,8 @@
       <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck">Save Changes</button>
       <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm">Cancel</button> 
 
-      <deck v-bind:deck="updatedDeck"/>     
+      <deck v-bind:deck="updatedDeck"/>
+      <flash-card-list/>     
 
   </form>
 </div>   
@@ -20,10 +21,11 @@
 <script>
 import Deck from './Deck.vue';
 import DeckService from '../services/DeckService.js'
+import FlashCardList from './FlashCardList.vue';
 export default {
-  components: { Deck },
+  components: { Deck, FlashCardList },
     name: 'edit-deck',
-    props: ["deckID"],
+    props: ["deckName"],
     data() {
         return {
             showForm: false,
@@ -33,7 +35,7 @@ export default {
         }
     },
     created() {
-        DeckService.getDeck(this.$route.params.id).then((response) => {
+        DeckService.getDeck(this.$route.params.deckName).then((response) => {
         this.updatedDeck = response.data;
         console.log("Deck was retrieved")
       })

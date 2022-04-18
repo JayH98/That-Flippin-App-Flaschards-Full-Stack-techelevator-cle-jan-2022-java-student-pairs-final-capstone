@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Edit Flashcard</h1>
-    <update-deck v-bind:deckID="parseInt($route.params.id)"/>
+    <update-deck v-bind:deckName="$route.params.deckName"/>
   </div>
 </template>
 

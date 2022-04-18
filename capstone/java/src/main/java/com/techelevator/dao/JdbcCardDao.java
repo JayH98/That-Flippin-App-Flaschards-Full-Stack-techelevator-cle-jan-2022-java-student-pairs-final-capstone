@@ -91,6 +91,16 @@ public class JdbcCardDao implements CardDao {
        } return card;
     }
 
+    public void removeCardFromDeck(int id) {
+        String sql = "UPDATE card_table " +
+                "SET deck = '' " +
+                "WHERE id = ?; ";
+
+        jdbcTemplate.update(sql, id);
+
+    }
+
+
 
     public List<Card> findCardByCreator(String creator) {
         List<Card> flashcards = new ArrayList<>();

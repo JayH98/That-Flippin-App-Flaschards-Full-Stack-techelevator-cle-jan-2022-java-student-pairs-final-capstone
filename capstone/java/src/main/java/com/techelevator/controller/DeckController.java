@@ -24,9 +24,9 @@ public class DeckController {
         return deckDao.findDeckByUsername(username);
     }
 
-    @RequestMapping(path = "/decks/{id}", method = RequestMethod.GET)
-    public Deck findDeckById(@Valid @PathVariable int id) {
-        return deckDao.findDeckById(id);
+    @RequestMapping(path = "/decks/{deckName}", method = RequestMethod.GET)
+    public Deck findDeckById(@Valid @PathVariable String deckName) {
+        return deckDao.findDeckByDeckName(deckName);
     }
 
 

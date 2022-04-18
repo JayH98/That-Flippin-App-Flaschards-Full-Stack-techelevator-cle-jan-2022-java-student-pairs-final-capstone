@@ -82,7 +82,7 @@ const router = new Router({
       }
     },
     {
-      path: "/edit-deck/:id",
+      path: "/edit-deck/:deckName",
       name: "edit-deck",
       component: EditDeck,
       meta: {

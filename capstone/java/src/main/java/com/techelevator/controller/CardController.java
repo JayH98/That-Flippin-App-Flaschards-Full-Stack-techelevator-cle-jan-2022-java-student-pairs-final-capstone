@@ -62,10 +62,16 @@ public class CardController {
     @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path = "/flashcards/{id}", method = RequestMethod.GET)
-    public Card getCard(@Valid @PathVariable int id) {
+    public Card getCard(@PathVariable int id) {
         return cardDao.getCardById(id);                      // Need to create a new getCard method in jdbcTemplate and implement that here
 
     }
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/flashcard/{id}/deck", method = RequestMethod.PUT)
+    public void removeCardFromDeck(@PathVariable int id) {
+        cardDao.removeCardFromDeck(id);
+    }
+
 }
 
 

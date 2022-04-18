@@ -16,5 +16,7 @@ public interface CardDao {
         public String editCard(Card card);
         public String createCard(int module, String creator, String tag, String question, String answer, String deck);
 
+        public void removeCardFromDeck(int id);
+
 
 }

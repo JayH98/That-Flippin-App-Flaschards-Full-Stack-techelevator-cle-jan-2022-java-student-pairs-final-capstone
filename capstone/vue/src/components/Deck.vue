@@ -5,7 +5,7 @@
       <section>Created by: {{deck.username}}</section>
 
     <div class = "deck-buttons">
-        <router-link v-bind:to="{ name: 'edit-deck', params: {id: deck.deckId} }"> <button type="button" class = "edit">Edit Deck</button></router-link>
+        <router-link v-bind:to="{ name: 'edit-deck', params: {deckName: deck.deck} }"> <button type="button" class = "edit">Edit Deck</button></router-link>
         <router-link v-bind:to="{ name: 'card-deck', params: {deckName: deck.deck} }"> <button type="button" class = "study-button">Begin Study Session</button></router-link>
     </div>
       
