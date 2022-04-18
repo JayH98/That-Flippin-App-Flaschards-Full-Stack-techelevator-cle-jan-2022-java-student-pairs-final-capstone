@@ -10,19 +10,10 @@
           id="deckName"
           type="text"
           placeholder="Insert Name Here"
-          v-model="newDeck.Name"
+          v-model="newDeck.deck"
         />
       </div>
 
-      <div class="form-element">
-        <label for="creator">Creator:</label>
-        <input
-          id="creator"
-          type="text"
-          placeholder="Who Are You?"
-          v-model="newDeck.Creator"
-        />
-      </div>
 
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewDeck"/>
       <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />
@@ -31,25 +22,36 @@
 </template>
 
 <script>
+import DeckService from '../services/DeckService';
 export default {
   name: "add-deck",
   data() {
     return {
-      showForm: false,
       newDeck: {
-        Creator: "",
-        Name: "",
+        username : this.$store.state.user.username,
+        deck: "",
       },
     };
   },
   methods: {
     addNewDeck() {
-      this.$store.commit("ADD_DECK", this.newDeck);
-      this.resetForm();
+      DeckService.createDeck(this.newDeck).then(response => {
+        if (response.status === 201) {
+          this.resetForm();
+          console.log("Deck created successfully")
+        }
+      }).catch((error) =>{
+        console.log(error.response.statusText)
+      })
+
+      // this.$store.commit("ADD_DECK", this.newDeck);
+      // this.resetForm();
     },
     resetForm() {
-      this.showForm = false;
-      this.newDeck = {};
+      this.newDeck = {
+        deck: "",
+        username: ""
+      };
     },
   },
 };
