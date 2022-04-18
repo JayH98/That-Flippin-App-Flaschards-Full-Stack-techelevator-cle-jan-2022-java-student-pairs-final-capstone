@@ -13,8 +13,10 @@ export default {
   },
   createCard(flashcard){
     return axios.post(`/flashcard/createCard`, flashcard);
+  },
+  removeCardFromDeck(id) {
+  return axios.put(`/flashcard/${id}/deck`, id)
   }
-
   
 
 }

@@ -115,7 +115,7 @@
 
     <section>
 
-      <button id="beginStudyBtn" type="button">Begin Study Session</button>
+      <!-- <button id="beginStudyBtn" type="button">Begin Study Session</button> -->    
 
     </section>
 

@@ -8,6 +8,10 @@
       <section>Q: {{ flashcard.question }}</section>
       <p>ID: {{ flashcard.id }}</p>
       <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
+      <div class = "edit-buttons">
+        <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName">Add to deck</button>
+        <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button>
+      </div>
         </div>
     </div>
 
@@ -56,6 +60,7 @@
 </template>
 
 <script>
+import FlashCardService from '../services/FlashCardService';
 export default {
   name: "flashcard",
   props: ["flashcard"],
@@ -66,6 +71,23 @@ export default {
       // editCard: ??? and/or deleteCard: ???
     };
   },
+  methods: {
+    removeCardFromDeck(id) {
+      FlashCardService.removeCardFromDeck(id).then((response) => {
+        if (response.status == 200) {
+          console.log("Yay");
+        }
+      })
+    },
+    addCardToDeck(id, deckName) {
+      FlashCardService.addToDeck(id, deckName).then((response) => {
+        if (response.status == 200) {
+          console.log("Yay");
+        }
+      })
+    }
+  },
+
   // Added the methods of searching for cards (not done yet) and deleting cards. I used CardDetail.vue in Lecture Final from mod 3 POST to assist. 
 //    methods: {
 //     retrieveCard() {
@@ -181,6 +203,14 @@ export default {
    
 }
 
+.edit-buttons {
+  display: flex;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
 
 
 </style>

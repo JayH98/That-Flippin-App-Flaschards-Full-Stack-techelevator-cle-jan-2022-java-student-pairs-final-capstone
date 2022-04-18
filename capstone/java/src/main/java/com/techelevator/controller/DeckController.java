@@ -25,11 +25,15 @@ public class DeckController {
         return deckDao.findDeckByUsername(username);
     }
 
+    @RequestMapping(path = "/decks/{deckName}", method = RequestMethod.GET)
+    public Deck findDeckById(@Valid @PathVariable String deckName) {
+        return deckDao.findDeckByDeckName(deckName);
+    }
+
 
     @RequestMapping(path = "/deck/editDeck", method = RequestMethod.POST)
     public Deck editDeck(@Valid @RequestBody Deck deck) {
         return deckDao.editDeck(deck.getUsername(), deck.getDeck());
-
     }
 
     @ResponseStatus(HttpStatus.CREATED)

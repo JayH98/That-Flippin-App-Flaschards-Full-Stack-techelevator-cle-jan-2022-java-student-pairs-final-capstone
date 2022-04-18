@@ -8,6 +8,7 @@ import Create from '../views/Create.vue'
 import CardDeck from '../views/CardDeck.vue'
 import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
+import EditDeck from '../views/EditDeck.vue'
 import MeetUs from '@/views/MeetTheCreators.vue'
 
 
@@ -78,6 +79,14 @@ const router = new Router({
       path: "/deck/:deckName",
       name: "card-deck",
       component: CardDeck,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/edit-deck/:deckName",
+      name: "edit-deck",
+      component: EditDeck,
       meta: {
         requiresAuth: false
       }
