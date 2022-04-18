@@ -26,32 +26,32 @@ public class JdbcUserDao implements UserDao {
 
     @Override
     public int findIdByUsername(String username) {
-        if(username == null) throw new IllegalArgumentException("Username cannot be null");
+        if (username == null) throw new IllegalArgumentException("Username cannot be null");
 
         Integer userId = null;
         try {
             userId = jdbcTemplate.queryForObject("select user_id from users where username = ?", Integer.class, username);
 
-        } catch(EmptyResultDataAccessException e) {
+        } catch (EmptyResultDataAccessException e) {
             throw new UsernameNotFoundException("User " + username + " was not found.");
         }
 
-        if(userId == null) throw new UsernameNotFoundException("User " + username + " was not found.");
+        if (userId == null) throw new UsernameNotFoundException("User " + username + " was not found.");
 
 
         return userId;
     }
 
-	@Override
-	public User getUserById(Long userId) {
-		String sql = "SELECT * FROM users WHERE user_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
-		if(results.next()) {
-			return mapRowToUser(results);
-		} else {
-			throw new UserNotFoundException();
-		}
-	}
+    @Override
+    public User getUserById(Long userId) {
+        String sql = "SELECT * FROM users WHERE user_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        if (results.next()) {
+            return mapRowToUser(results);
+        } else {
+            throw new UserNotFoundException();
+        }
+    }
 
     @Override
     public List<User> findAll() {
@@ -59,7 +59,7 @@ public class JdbcUserDao implements UserDao {
         String sql = "select * from users";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
-        while(results.next()) {
+        while (results.next()) {
             User user = mapRowToUser(results);
             users.add(user);
         }
@@ -69,10 +69,10 @@ public class JdbcUserDao implements UserDao {
 
     @Override
     public User findByUsername(String username) {
-        if(username == null) throw new IllegalArgumentException("Username cannot be null");
+        if (username == null) throw new IllegalArgumentException("Username cannot be null");
 
         for (User user : this.findAll()) {
-            if( user.getUsername().toLowerCase().equals(username.toLowerCase())) {
+            if (user.getUsername().toLowerCase().equals(username.toLowerCase())) {
                 return user;
             }
         }

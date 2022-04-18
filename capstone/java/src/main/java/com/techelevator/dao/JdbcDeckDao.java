@@ -13,17 +13,19 @@ import java.util.List;
 
 @CrossOrigin
 @Component
-public class JdbcDeckDao implements DeckDao{
+public class JdbcDeckDao implements DeckDao {
 
 
     private JdbcTemplate jdbcTemplate;
 
-    public JdbcDeckDao(DataSource datasource) { this.jdbcTemplate = new JdbcTemplate(datasource);}
+    public JdbcDeckDao(DataSource datasource) {
+        this.jdbcTemplate = new JdbcTemplate(datasource);
+    }
 
 
     public Deck editDeck(String name, String creator) {
         Deck newDeck = new Deck();
-        String deckSearchSql = "UPDATE deck_table "+
+        String deckSearchSql = "UPDATE deck_table " +
                 "SET ?, ? ; ";
         // WHERE will be on card during edit selection (BY ID)
 
@@ -40,22 +42,24 @@ public class JdbcDeckDao implements DeckDao{
     public List<Deck> findDeckByUsername(String username) {
         List<Deck> decks = new ArrayList<>();
         String sql = "SELECT deck, deck_id, username " +
-                "FROM deck_table "+
+                "FROM deck_table " +
                 "WHERE username = ? OR username = 'admin'; ";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, username);
         while (rowSet.next()) {
             decks.add(mapRowToDeck(rowSet));
-        } return decks;
+        }
+        return decks;
     }
 
     public Deck findDeckByDeckName(String deckName) {
         String sql = "SELECT deck, deck_id, username " +
-                "FROM deck_table "+
+                "FROM deck_table " +
                 "WHERE deck = ? ";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, deckName);
         if (rowSet.next()) {
             return mapRowToDeck(rowSet);
-        } return null;
+        }
+        return null;
     }
 
 
@@ -79,6 +83,6 @@ public class JdbcDeckDao implements DeckDao{
         return deck;
     }
 
-    }
+}
 
 

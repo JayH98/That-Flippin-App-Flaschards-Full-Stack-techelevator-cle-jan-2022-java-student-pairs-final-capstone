@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DeckDao {
 
-   public Deck editDeck(String name, String creator);
+    public Deck editDeck(String name, String creator);
 
     public List<Deck> findDeckByUsername(String username);
 
