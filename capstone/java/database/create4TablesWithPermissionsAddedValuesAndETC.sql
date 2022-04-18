@@ -205,7 +205,7 @@ INSERT INTO card_table (module, creator, tag, question, answer, deck)
 --	 VALUES (3, 'admin', 'Tag', 'Quest', 'Answer', 'Tech Elevator - Default');
 
 
-INSERT INTO deck_table (deck, username) VALUES ('Tech Elevator - Default', 'admin');
+INSERT INTO deck_table (deck, username) VALUES ('Tech Elevator - Default', 'Tech Elevator');
 
 
 -- ROLLBACK;
