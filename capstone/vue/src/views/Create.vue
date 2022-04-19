@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="home">
     <h1> Create Deck</h1>
     <add-new-deck />
     <h2> Create FlashCard </h2>
@@ -19,5 +19,8 @@ name: "create-deck"
    
 
 <style>
+.home {
+background-image: url('../assets/notecard.png');
 
+}
 </style>

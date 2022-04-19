@@ -70,7 +70,21 @@ input.cancelBtn {
   text-align: center;
   text-transform: uppercase;
 }
+.saveBtn:hover {
+  transition:linear;
+  
+  
+  background: linear-gradient(to right,#00ADEE, #71D96F 40%);
 
+}
+
+.cancelBtn:hover {
+  transition:linear;
+  
+  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% )
+
+
+}
 
 </style>
 

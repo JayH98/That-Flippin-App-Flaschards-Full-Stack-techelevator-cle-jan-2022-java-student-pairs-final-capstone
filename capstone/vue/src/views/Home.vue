@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <h2>Home</h2>
-    <p>Search A Deck or Topic Tag</p>
+    
+    <div id="title">
+    <h2><span style="color: #00ADEE ">TE</span>rra <span style="color: #00ADEE ">TE</span>ch</h2>
+   
+    </div>
 
     
 
@@ -9,7 +12,7 @@
 
     
     
-    <form>
+    <!-- <form>
       <input  list="options" placeholder="Tags" multiple/>
     <datalist id="options">
       <option value="Module 1"/>
@@ -33,7 +36,7 @@
         <option value="Tech Elevator"/>
           </datalist>
         
-    </form>
+    </form> -->
 
 
     <!-- <input type="checkbox" id="module1" value="module1" name="studyTopic"
@@ -190,7 +193,13 @@ ul {
 
 .home {
   display: grid;
+  align-items: center;
+  background-image: url('../assets/notecard.png');
+  background-position: center;
+  background-size:auto;
   
+
+
 }
 
 h2, p, #beginStudy {
@@ -214,6 +223,26 @@ form {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+}
+
+#title {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 4em;
+  font-family:'Courier New', Courier, monospace;
+  
+}
+
+#h2 {
+  overflow:hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align:center;
+  font-size: 7em;
+  font-family:'Courier New', Courier, monospace;
+  
+  
 }
 
 
