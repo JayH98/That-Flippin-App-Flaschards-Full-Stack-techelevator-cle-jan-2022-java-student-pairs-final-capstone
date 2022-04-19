@@ -76,6 +76,22 @@ a {
   
 }
 
+.saveBtn:hover {
+  transition:linear;
+  transition-delay: .25s;
+  
+  background: linear-gradient(to right,#00ADEE, #71D96F 40%);
+
+}
+
+.cancelBtn:hover {
+  transition:linear;
+  transition-delay: .25s;
+  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% )
+
+
+}
+
 /* below is unNeeded due to being in component AddNewDeck */
 /* input.saveBtn,
 input.cancelBtn {

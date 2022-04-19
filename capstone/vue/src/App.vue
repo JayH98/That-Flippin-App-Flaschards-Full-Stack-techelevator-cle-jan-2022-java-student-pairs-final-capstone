@@ -11,9 +11,9 @@
           <ul>
             <router-link id="home-button" style="text-decoration : none" v-bind:to="{ name: 'home' }"><button class = "home-button">HOME</button></router-link>  &nbsp;&nbsp;
             <router-link id="create-button" style="text-decoration : none" v-bind:to="{ name: 'create-deck'}" v-if="$store.state.token != ''"><button class = "create-button">CREATE</button></router-link>
-            <router-link id="edit" style="text-decoration : none" v-bind:to="{ name: 'edit'}" v-if="$store.state.token != ''" ><button class = "edit-button">EDIT</button></router-link>
+           
             <router-link id="logout-button" style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
-            <router-link id="meet-us" style="text-decoration : none" v-bind:to="{ name: 'meet-us'}"><button class = "meet-us">Meet The Creative Team</button></router-link>
+            <router-link id="meet-us" style="text-decoration : none" v-bind:to="{ name: 'meet-us'}"><button class = "meet-us">ABOUT US</button></router-link>
          </ul>
         </nav>
       </div>
@@ -37,6 +37,7 @@ body {
   min-height: 600px;
   /* width: 100vw; */
   background-color: rgb(189, 189, 189);
+  
 }
 
 header {
@@ -55,16 +56,71 @@ header img {
   border-radius: 5px;
   height: 30px;
   width: 90px;
+  
 }
+
+.create-button:hover {
+  transform: translateY(-10px);
+  transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+}
+
+.home-button:hover {
+ transform: translateY(-10px);
+  transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+  
+}
+
+.logout-button:hover { 
+  transform: translateY(-10px);
+  transition: .25s;
+  background: radial-gradient(#00ADEE, rgb(243, 81, 81));
+
+}
+
+.meet-us:hover{
+transform: translateY(-10px);
+  transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+
+}
+
 
 .meet-us {
   background-color: #00ADEE;
   border-radius: 5px;
-  height: 60px;
+  height: 30px;
   width: 90px;
+  
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
+
 
 <style scoped>
 
@@ -73,6 +129,17 @@ header img {
   width: 1200px;
   background-color: rgb(189, 189, 189);
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
