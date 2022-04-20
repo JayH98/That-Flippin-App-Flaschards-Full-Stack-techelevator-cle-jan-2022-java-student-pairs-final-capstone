@@ -9,14 +9,6 @@
       </p>
       
       <ul id="all-bios">
-        
-       <a id="angelS" class="LinkedIn-img-link" href="https://www.linkedin.com/in/avscott/" >
-        <!-- <img id="LinkedIn-logo" src="@/assets/LinkedInLogo.png" data-LinkedIn-hook-img="img" alt="LinkedIn Logo"> -->
-        <img id="LinkedIn-AS" src="https://media-exp1.licdn.com/dms/image/C4D03AQGrw_TsrIutLQ/profile-displayphoto-shrink_400_400/0/1646151506591?e=1655942400&v=beta&t=h1eJPc9bd9BiOuXDkxQ2Hosf6N_Wk-M9jxVZfFro-qY" 
-          data-LinkedIn-hook-img="img" alt="LinkedIn AS profile pic">
-        <br />
-        Angel Scott
-       </a>
 
        <a id="daniloPA" class="LinkedIn-img-link" href="https://www.linkedin.com/in/danilo-pivaral-alvarez-20a905170/" data-LinkedIn-hook-img="link">
         <!-- <img id="LinkedIn-logo" src="@/assets/LinkedInLogo.png" data-LinkedIn-hook-img="img" alt="LinkedIn Logo"> -->
@@ -28,10 +20,18 @@
 
        <a id="graysonG" class="LinkedIn-img-link" href="https://www.linkedin.com/in/dan-grayson-gregg/" data-LinkedIn-hook-img="link">
         <!-- <img id="LinkedIn-logo" src="@/assets/LinkedInLogo.png" data-LinkedIn-hook-img="img" alt="LinkedIn Logo"> -->
-        <img id="LinkedIn-DGG" src="https://media-exp1.licdn.com/dms/image/C4D03AQHJF8CcmMBPuA/profile-displayphoto-shrink_400_400/0/1642376498222?e=1655942400&v=beta&t=O0QiZpuqpdxnr-ZfdybDqX53PutwpA1lDjtBUcWZuOg" 
+        <img id="LinkedIn-DGG" src="https://media-exp1.licdn.com/dms/image/C5603AQFu2-Bkopv5ZQ/profile-displayphoto-shrink_400_400/0/1650422965333?e=1655942400&v=beta&t=TJCv9ji8e7OzrlTc9h2OHM1SZniW44ieGixW2t1i9V0" 
           data-LinkedIn-hook-img="img" alt="LinkedIn DGG profile pic">
         <br />
         Dan (Grayson) Gregg
+       </a>
+
+       <a id="angelS" class="LinkedIn-img-link" href="https://www.linkedin.com/in/avscott/" >
+        <!-- <img id="LinkedIn-logo" src="@/assets/LinkedInLogo.png" data-LinkedIn-hook-img="img" alt="LinkedIn Logo"> -->
+        <img id="LinkedIn-AS" src="https://media-exp1.licdn.com/dms/image/C4D03AQGrw_TsrIutLQ/profile-displayphoto-shrink_400_400/0/1646151506591?e=1655942400&v=beta&t=h1eJPc9bd9BiOuXDkxQ2Hosf6N_Wk-M9jxVZfFro-qY" 
+          data-LinkedIn-hook-img="img" alt="LinkedIn AS profile pic">
+        <br />
+        Angel Scott
        </a>
 
        <a id="jayH" class="LinkedIn-img-link" href="https://www.linkedin.com/in/jeleah-hill/" data-LinkedIn-hook-img="link">
@@ -82,21 +82,24 @@ width: 150px;
 a#angelS, a#daniloPA, a#graysonG, a#jayH , a#kevinS  {
   align-items: center;
   text-align: center;
+  height: 200px;
+  padding-bottom: 0px;
   
 }
 
 img {
   align-items: center;
-  height: 20%;
+  height: 150px;
 }
 
 #all-bios{
   position: relative;
   background-image: url('../assets/notecard.png');
-  background-size:cover;  
-  
- 
+  background-size:cover;
+  height: 400px;
+  align-items: center; 
 }
+
 </style>
 
 
