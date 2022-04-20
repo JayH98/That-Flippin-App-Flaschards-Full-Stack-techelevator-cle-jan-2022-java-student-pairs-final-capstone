@@ -1,9 +1,12 @@
 <template>
 <div class="home">
-    <h1> Create Deck</h1>
+  <div id="create-deck">
+    <h1>Create Deck</h1>
     <add-new-deck />
-    <h2> Create FlashCard </h2>
+  </div>
+    <div id="create-card"><h2> Create FlashCard </h2>
     <add-flash-card />
+    </div>
 </div>
 </template>
 
@@ -19,4 +22,24 @@ name: "create-deck"
    
 
 <style>
+
+
+
+#create-deck{
+  position: relative;
+  background-image: url('../assets/notecard.png');
+  background-size:contain;  
+  
+  background-repeat: no-repeat;
+  align-content: center;
+  
+}
+
+#create-card{
+  background-image: url('../assets/notecard.png');
+  background-size: contain;
+  background-repeat:no-repeat;
+  align-content:center;
+}
+
 </style>
