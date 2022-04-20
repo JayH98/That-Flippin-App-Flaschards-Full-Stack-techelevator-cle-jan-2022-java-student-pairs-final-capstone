@@ -1,7 +1,7 @@
 <template>
 
 
-  <div class="flashcard" @click="flipCard = !flipCard" v-bind:class="{'flipped': flipCard}">
+  <div class="flashcard" @dblclick="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
     <div class="flashcard-front">
         <div class = 'box'>
       <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
@@ -15,12 +15,6 @@
         </div>
     </div>
 
-    <!-- Added button to edit card and delete card. -->
-    <!-- <router-link tag="edit-flashcard" @click="edit-flashcard" v-bind:class="{'edit' : editCard}">
-      <h1>{{ card.title }}</h1>
-      <p>{{ card.description }}</p>
-      <router-link tag="button":to="{ name: 'EditCard', params: {cardID: $route.params.cardID} }" class="btn editCard"> Edit Card </router-link>
-      <button class="btn deleteCard" v-on:click="deleteCard"> Delete Card </button> -->
     
 
     <div class="flashcard-back">
@@ -29,7 +23,8 @@
           how is that fixable?  I tried moving stuff around and still couldn't get the
           mark for review button respond to just itself being clicked -->
           <section>
-      <button id="review-button">Mark For Review</button> 
+          <!-- <input type="checkbox" v-on:click="changeReviewStatus($event, flashcard.id)"/> -->
+            <button id="review-button" @click='changeReviewStatus(flashcard)'>Mark For Review</button>
           </section>
 
 <!-- The button will need to be moved, and also bound to some sort of logic or something
@@ -69,6 +64,7 @@ export default {
     return {
       deckName: this.$route.params.deckName,
       flipCard: false,
+      markForReview: false,
       // editCard: ??? and/or deleteCard: ???
       addFlashCard: {},
     };
@@ -89,6 +85,17 @@ export default {
           console.log("Yay. Card was added to deck");
         }
       })
+    },
+    changeReviewStatus(flashcard) {
+      // this.markForReview = !this.markForReview;
+
+      // if (event.target.parentElement.parentElement.parentElement.parentElement.classList.contains("markForReview")) {
+      //   event.target.parentElement.parentElement.parentElement.parentElement.classList.add("test");
+      //   console.log("Made it into method")
+      // }
+      this.markForReview = !this.markForReview;
+      this.$emit('markForReview', flashcard);
+      console.log(flashcard.question);
     }
   },
 
@@ -217,5 +224,11 @@ export default {
   flex-direction: column;
 }
 
+.markForReview {
+  background-color: mediumaquamarine;
+}
 
+.test {
+  color:oldlace;
+}
 </style>
