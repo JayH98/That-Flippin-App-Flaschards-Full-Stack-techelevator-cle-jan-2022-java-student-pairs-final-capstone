@@ -1,39 +1,19 @@
-<!-- <template>
-<div>
-  <h2>Hello World</h2>
-  <flash-card-list/>
-</div>
-
-</template>
-
-<script>
-import FlashCardList from '../components/FlashCardList.vue'
-export default {
-  components: { FlashCardList },
-
-}
-</script>
-
-<style>
-
-</style>
--->
-
 
 <template>
 <div>
+    <div id="current-deck">
     <h1>Current deck: {{deckName}}</h1>
-
+    </div>
 <nav class = "filter">
 
     <div class = "tag-label">
-    <label for="tagFilter">Tag: </label>
-    <input type="text" id="tagFilter" v-model="filter.tag"/>
+    <label for="tagFilter"> </label>
+    <input type="text" id="tagFilter" v-model="filter.tag" placeholder="Search By Tag"/>
     </div>
 
     <div class = "question-label">
-    <label for="questionFilter">Question: </label>
-    <input type="text" id="questionFilter" v-model="filter.question"/>
+    <label for="questionFilter"> </label>
+    <input type="text" id="questionFilter" v-model="filter.question" placeholder="Search By Question"/>
     </div>
 
     <router-link v-bind:to="{name: 'marked-review', params: {markedReview: this.flashcardsForReview}}"><button class = "review-label">Review Marked Cards</button></router-link>
@@ -58,9 +38,7 @@ export default {
             this.deckName = this.$route.params.deckName;
 
             this.flashcards.forEach((flashcard) => {
-            // const markForReview = 'markForReview';
-            // flashcard[markForReview] = false;
-
+           
             Object.assign(flashcard, {markForReview: false})
 
         });
@@ -120,17 +98,21 @@ export default {
 .tag-label {
     margin-bottom: 20px;
     font-size: large;
-    font-family: fantasy;
+   font-family:'Courier New', Courier, monospace;
     color: #556268;
 }
 
 .question-label {
     font-size: large;
-    font-family:fantasy;
+    font-family:'Courier New', Courier, monospace;
     color:#556268;
-    
+}
 
-
+#current-deck {
+    background-image: url('../assets/parchment.jpg');
+    width:fit-content;
+    border-radius: 5px;
+    color:#556268;
 }
 
 .filter {
