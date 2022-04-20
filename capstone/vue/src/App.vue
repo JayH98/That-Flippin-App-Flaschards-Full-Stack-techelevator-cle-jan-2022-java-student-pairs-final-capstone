@@ -31,13 +31,18 @@
   </div>
 </template>
 
-<style> 
+<style>
+#app {
+  min-width: 1250px;
+}
+
 body {
   display: block;
   min-height: 600px;
   /* width: 100vw; */
   background-color: rgb(189, 189, 189);
-  background-image: url('./assets/Woodstain.jpg');
+  background: url('./assets/Woodstain.jpg');
+  /* width: 100vw; */
 }
 
 header {

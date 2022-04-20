@@ -1,7 +1,7 @@
 <template>
 
 
-  <div class="flashcard" @dblclick="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
+  <div class="flashcard" @click.self="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
     <div class="flashcard-front">
         <div class = 'box'>
       <!-- <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
@@ -14,8 +14,10 @@
       <section id='edit-flashcard-container'>
        <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
  <div class = "edit-buttons">
-        <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
-        <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button> 
+        <button v-show="(this.$route.name ===  'edit-deck' && flashcard.deck !== this.$route.params.deckName) || cardRemovedFromDeck" @click="addCardToDeck(flashcard.id)">Add to deck</button>
+        <button v-show="(this.$route.name === 'edit-deck' && flashcard.deck === this.$route.params.deckName) || cardAddedToDeck" @click="removeCardFromDeck(flashcard.id)">Remove from deck</button>
+        <div class = "cardAdded" v-show="cardAddedToDeck && !cardRemovedFromDeck">Card successfully added to deck!</div>
+        <div class = "cardRemoved" v-show="!cardAddedToDeck && cardRemovedFromDeck">Card successfully removed from deck!</div> 
  </div>
       </section>
       <section>
@@ -43,18 +45,7 @@
           <!-- <input type="checkbox" v-on:click="changeReviewStatus($event, flashcard.id)"/> -->
             <button id="review-button" @click='changeReviewStatus(flashcard)'>Mark For Review</button>
           </section>
-
-<!-- The button will need to be moved, and also bound to some sort of logic or something
-      which will put it in either an array for review, or just mark it as needed for review.
-      Toggling the button between Mark for Review, and one that says "I KNOW THIS!" might work
-      -->
-
-      <!-- needs logic and might change anyways -->
-
           
-          
-      
-
       <!-- <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
       <p>A: {{flashcard.answer}}</p>
       <p>Created By:{{flashcard.creator}}</p>
@@ -90,13 +81,18 @@ export default {
       markForReview: false,
       // editCard: ??? and/or deleteCard: ???
       addFlashCard: {},
+      cardAddedToDeck: false,
+      cardRemovedFromDeck: false,
     };
   },
   methods: {
-    removeCardFromDeck(id) {
-      FlashCardService.removeCardFromDeck(id).then((response) => {
+    removeCardFromDeck(cardId) {
+      FlashCardService.removeCardFromDeck(cardId).then((response) => {
         if (response.status == 200) {
           console.log("Yay. Card was removed to deck");
+          this.cardRemovedFromDeck = true;
+          this.cardAddedToDeck = false;
+          this.$emit('refreshFlashCardList')
         }
       })
     },
@@ -106,6 +102,9 @@ export default {
       FlashCardService.addCardToDeck(this.addFlashCard).then((response) => {
         if (response.status == 200) {
           console.log("Yay. Card was added to deck");
+          this.cardAddedToDeck = true;
+          this.cardRemovedFromDeck = false;
+          this.$emit('refreshFlashCardList');
         }
       })
     },
@@ -122,63 +121,7 @@ export default {
     }
   },
 
-  // Added the methods of searching for cards (not done yet) and deleting cards. I used CardDetail.vue in Lecture Final from mod 3 POST to assist. 
-//    methods: {
-//     retrieveCard() {
-//       boardsService
-//         .getCard(this.$route.params.cardID)
-//         .then(response => {
-//           this.$store.commit("SET_CURRENT_CARD", response.data);
-//           this.isLoading = false;
-//         })
-//         .catch(error => {
-//           if (error.response && error.response.status === 404) {
-//             alert(
-//               "Something is not right... This card may have been deleted or you have entered an invalid card ID. Try again!"
-//             );
-//             this.$router.push("/");
-//           }
-//         });
-//     },
-//     deleteCard() {
-//       if (
-//         confirm(
-//           "Are you sure you want to delete this card? Be warned this action cannot be undone."
-//         )
-//       ) {
-//         boardsService
-//           .deleteCard(this.card.id)
-//           .then(response => {
-//             if (response.status === 200) {
-//               alert("Card successfully deleted");
-//               this.$router.push(`/board/${this.card.boardId}`);
-//             }
-//           })
-//           .catch(error => {
-//             if (error.response) {
-//               this.errorMsg =
-//                 "Error deleting card. Response received was '" +
-//                 error.response.statusText +
-//                 "'.";
-//             } else if (error.request) {
-//               this.errorMsg =
-//                 "Error deleting card. Server could not be reached.";
-//             } else {
-//               this.errorMsg =
-//                 "Error deleting card. Request could not be created.";
-//             }
-//           });
-//       }
-//     },
-//   },
-//   created() {
-//     this.retrieveCard();
-//   },
-//   computed: {
-//     card() {
-//       return this.$store.state.card;
-//     }
-//   }
+  
 };
 </script>
 
@@ -198,7 +141,7 @@ export default {
   /* background-color: #00ADEE; */
   background-image: url('../assets/parchment.jpg');
   border-radius: 5px;
-  cursor: pointer;
+  cursor:pointer;
   box-shadow: 0 0 5px 2px rgba(4, 132, 236, 0.3);
   transform: perspective(1000px) rotateY(var(--rotate-y, 0))
   translateY(var(--translate-y, 0));
@@ -365,5 +308,18 @@ left: 5%;
 
 .test {
   color:oldlace;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-buttons .cardAdded {
+background-color: #00ADEE;
+}
+
+.edit-buttons .cardRemoved {
+  background-color: rgba(255, 108, 108, 0.746)
 }
 </style>

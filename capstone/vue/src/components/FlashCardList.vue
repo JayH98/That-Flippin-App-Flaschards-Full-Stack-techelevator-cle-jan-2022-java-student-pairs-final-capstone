@@ -1,12 +1,12 @@
 <template>
   <div class="flashcard-container">
-      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashcards" v-bind:key="flashcard.id"/>
+      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashCardList" v-bind:key="flashcard.id" @refreshFlashCardList="refreshFlashCardList()"/>
   </div>
 </template>
 
 <script>
 import FlashCard from '@/components/FlashCard.vue'
-import FlashCardService from '@/services/FlashCardService.js'
+// import FlashCardService from '@/services/FlashCardService.js'
 
 export default {
     name: 'flashcard-list',
@@ -14,17 +14,18 @@ export default {
         FlashCard
         
     },
-    created() {
-        FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
-            this.flashcards = response.data;
-        });
-        this.flashcards.forEach((flashcard) => {
-            // const markForReview = 'markForReview';
-            // flashcard[markForReview] = false;
+    props: ["flashCardList"],
+    // created() {
+    //     FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
+    //         this.flashcards = response.data;
+    //     });
+    //     this.flashcards.forEach((flashcard) => {
+    //         // const markForReview = 'markForReview';
+    //         // flashcard[markForReview] = false;
 
-            Object.assign(flashcard, {markForReview: false})
-        });
-    },
+    //         Object.assign(flashcard, {markForReview: false})
+    //     });
+    // },
 
     data() {
         return {
@@ -38,28 +39,12 @@ export default {
             flashcards: []
         }
     },
-
-    // computed: {
-    //     filteredCards() {
-    //         let filteredCards = this.FlashCards;
-    //         if (this.filter.Module != "") {
-    //             filteredCards = filteredCards.filter(module => FlashCard.module.includes(this.filter.Module))
-    //             }
-
-    //         if (this.filter.Tag != "") {
-    //             filteredCards = filteredCards.filter(tag => FlashCard.tag.includes(this.filter.Tag))
-    //         }
-
-    //         if (this.filter.Creator != "") {
-    //             filteredCards = filteredCards.filter(creator => FlashCard.creator.includes(this.filter.Creator))
-    //         }
-
-    //         if (this.filter.Deck != "") {
-    //             filteredCards = filteredCards.filter(deck => FlashCard.deck.includes(this.filter.Deck))
-    //          }
-    //         return filteredCards;
-    // }
-// }
+    methods: {
+        refreshFlashCardList() {
+            this.$emit('refreshFlashCardList');
+        }
+    }
+   
 }
 
 </script>

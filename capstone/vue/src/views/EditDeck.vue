@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Edit Flashcard</h1>
+    <h1>Edit Deck</h1>
     <update-deck v-bind:deckName="$route.params.deckName"/>
   </div>
 </template>
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style>
+h1 {
+  color: #00ADEE;
+}
 </style>
