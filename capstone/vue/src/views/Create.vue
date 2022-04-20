@@ -19,8 +19,4 @@ name: "create-deck"
    
 
 <style>
-.home {
-background-image: url('../assets/notecard.png');
-
-}
 </style>

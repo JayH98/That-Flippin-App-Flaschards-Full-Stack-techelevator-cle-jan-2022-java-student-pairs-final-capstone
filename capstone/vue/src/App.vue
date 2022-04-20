@@ -37,7 +37,7 @@ body {
   min-height: 600px;
   /* width: 100vw; */
   background-color: rgb(189, 189, 189);
-  
+  background-image: url('./assets/Woodstain.jpg');
 }
 
 header {
@@ -52,11 +52,14 @@ header {
 } */
 
 .home-button, .logout-button, .create-button, .edit-button {
-  background-color: #00ADEE;
+  /* background-color: #00ADEE; */
   border-radius: 5px;
   height: 30px;
   width: 90px;
-  
+  /* background-image: url('./assets/notecard.png');
+  background-repeat:no-repeat;
+  background-size:cover; */
+  background-image: url('./assets/parchment.jpg');
 }
 
 .create-button:hover {
@@ -92,8 +95,30 @@ transform: translateY(-10px);
   border-radius: 5px;
   height: 30px;
   width: 90px;
-  
+  background-image: url('./assets/parchment.jpg');
 }
+
+#app {
+  background-image: url('./assets/Woodstain.jpg');
+}
+
+.header-left-content {
+align-items:center;
+justify-content: center;
+object-fit: cover;
+
+
+}
+#te-logo{
+  background:white;
+  border-radius: 5px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+  
+
 
 
 

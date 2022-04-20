@@ -2,7 +2,8 @@
   <div class="home">
     
     <div id="title">
-    <h2><span style="color: #00ADEE ">TE</span>rra <span style="color: #00ADEE ">TE</span>ch</h2>
+    <h2>This Flippin' App <br/>
+     Flashcards that T.E.A.C.H.<br/><span id="subtitle"> (Tech Elevator Acquiring Comprehension Helper)</span></h2>
    
     </div>
 
@@ -184,7 +185,9 @@ body {
   grid-template-areas: 
   "ul ul"
   "#home #home"
-  ;              
+  ; 
+  background-image: url('../assets/Woodstain.jpg');
+
 }
 
 ul {
@@ -194,7 +197,7 @@ ul {
 .home {
   display: grid;
   align-items: center;
-  background-image: url('../assets/notecard.png');
+  /* background-image: url('../assets/notecard.png'); */
   background-position: center;
   background-size:auto;
   
@@ -226,24 +229,26 @@ form {
 }
 
 #title {
+  display:flex;
   justify-content: center;
   align-content: center;
   text-align: center;
-  font-size: 4em;
+  font-size: 2em;
   font-family:'Courier New', Courier, monospace;
+  
+  background-image: url('../assets/notecard.png');
+  background-size: cover;
+  font-weight: bolder;
+
+  
   
 }
 
-#h2 {
-  overflow:hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  text-align:center;
-  font-size: 7em;
-  font-family:'Courier New', Courier, monospace;
-  
-  
+#subtitle{
+  font-size: .85em;
 }
+
+
 
 
 </style>
