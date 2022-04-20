@@ -66,10 +66,13 @@ export default {
 
 <style>
 
+h2#meet-us {
+  color: #00ADEE;
+  background: #71D96F;
+}
+
 ul {
-  height: 30%;
-  
-  
+  height: 30%;  
 }
 
 a {

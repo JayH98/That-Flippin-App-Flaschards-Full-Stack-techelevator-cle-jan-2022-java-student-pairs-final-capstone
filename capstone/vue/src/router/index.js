@@ -10,6 +10,7 @@ import store from '../store/index'
 import EditFlashCard from '../views/EditFlashCard.vue'
 import EditDeck from '../views/EditDeck.vue'
 import MeetUs from '@/views/MeetTheCreators.vue'
+import MarkedReview from '@/views/MarkedReview.vue'
 
 
 Vue.use(Router)
@@ -95,7 +96,15 @@ const router = new Router({
       path: "/meet-us",
       name: "meet-us",
       component: MeetUs,
-    }
+    },
+    {
+      path: "/marked-review/:markedReview",
+      name: "marked-review",
+      component: MarkedReview,
+      meta: {
+        requiresAuth: false
+      }
+    },
     
   ]
 })

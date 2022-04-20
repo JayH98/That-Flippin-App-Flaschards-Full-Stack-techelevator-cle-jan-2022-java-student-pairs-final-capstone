@@ -24,6 +24,8 @@ export default {
 <div>
     <h1>Current deck: {{deckName}}</h1>
 
+<nav class = "filter">
+
     <div class = "tag-label">
     <label for="tagFilter">Tag: </label>
     <input type="text" id="tagFilter" v-model="filter.tag"/>
@@ -34,8 +36,11 @@ export default {
     <input type="text" id="questionFilter" v-model="filter.question"/>
     </div>
 
+    <router-link v-bind:to="{name: 'marked-review', params: {markedReview: this.flashcardsForReview}}"><button class = "review-label">Review Marked Cards</button></router-link>
+    </nav>
+
   <div class="flashcard-container">
-      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in filteredFlashCards" v-bind:key="flashcard.id"/>
+      <flash-card v-bind:flashcard="flashcard" v-for="flashcard in filteredFlashCards" v-bind:key="flashcard.id" @markForReview="addForReview"/>
   </div>
 </div>
 </template>
@@ -51,12 +56,16 @@ export default {
         DeckService.getCardsInDeck(this.$route.params.deckName).then((response) => {
             this.flashcards = response.data;
             this.deckName = this.$route.params.deckName;
-        });
-        this.flashcards.forEach((flashcard) => {
+
+            this.flashcards.forEach((flashcard) => {
             // const markForReview = 'markForReview';
             // flashcard[markForReview] = false;
 
             Object.assign(flashcard, {markForReview: false})
+
+        });
+            
+        
         });
     },
 
@@ -64,6 +73,7 @@ export default {
         return {
             deckName: '',
             flashcards: [],
+            flashcardsForReview: [],
              filter: {
                 module: '',
                 tag: '',
@@ -71,6 +81,12 @@ export default {
                 deck: ''
                  
             },
+        }
+    },
+    methods: {
+        addForReview(flashcard) {
+            this.flashcardsForReview.unshift(flashcard);
+            console.log(flashcard.module);
         }
     },
     computed: {
@@ -84,31 +100,12 @@ export default {
                }
                return true;
            })
+        },
+        
         }
     }
 
-    // computed: {
-    //     filteredCards() {
-    //         let filteredCards = this.FlashCards;
-    //         if (this.filter.Module != "") {
-    //             filteredCards = filteredCards.filter(module => FlashCard.module.includes(this.filter.Module))
-    //             }
 
-    //         if (this.filter.Tag != "") {
-    //             filteredCards = filteredCards.filter(tag => FlashCard.tag.includes(this.filter.Tag))
-    //         }
-
-    //         if (this.filter.Creator != "") {
-    //             filteredCards = filteredCards.filter(creator => FlashCard.creator.includes(this.filter.Creator))
-    //         }
-
-    //         if (this.filter.Deck != "") {
-    //             filteredCards = filteredCards.filter(deck => FlashCard.deck.includes(this.filter.Deck))
-    //          }
-    //         return filteredCards;
-    // }
-// }
-}
 
 </script>
 
@@ -134,5 +131,10 @@ export default {
     
 
 
+}
+
+.filter {
+    display: flex;
+    justify-content: space-evenly;
 }
 </style>

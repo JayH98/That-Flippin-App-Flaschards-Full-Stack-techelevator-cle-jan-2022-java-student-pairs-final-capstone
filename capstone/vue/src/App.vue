@@ -13,7 +13,7 @@
             <router-link id="create-button" style="text-decoration : none" v-bind:to="{ name: 'create-deck'}" v-if="$store.state.token != ''"><button class = "create-button">CREATE</button></router-link>
            
             <router-link id="logout-button" style="text-decoration : none" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><button class = "logout-button">LOGOUT</button></router-link>
-            <router-link id="meet-us" style="text-decoration : none" v-bind:to="{ name: 'meet-us'}"><button class = "meet-us">ABOUT US</button></router-link>
+            <router-link id="meet-us" style="text-decoration : none" v-bind:to="{ name: 'meet-us'}"><button class = "meet-us">CONTACT US</button></router-link>
          </ul>
         </nav>
       </div>
@@ -93,7 +93,7 @@ transform: translateY(-10px);
 .meet-us {
   background-color: #00ADEE;
   border-radius: 5px;
-  height: 30px;
+  height: 40px;
   width: 90px;
   background-image: url('./assets/parchment.jpg');
 }
