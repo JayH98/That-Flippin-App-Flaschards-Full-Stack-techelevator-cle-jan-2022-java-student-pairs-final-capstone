@@ -199,14 +199,14 @@ export default {
   background-image: url('../assets/parchment.jpg');
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 5px 2px rgba(4, 132, 236, 0.3);
   transform: perspective(1000px) rotateY(var(--rotate-y, 0))
   translateY(var(--translate-y, 0));
 }
 
 .flashcard:hover {
-  --translate-y: -2px;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .6);
+  --translate-y: -5px;
+  box-shadow: 0 0 5px 2px rgba(4, 132, 236, .6);
 }
 
 
@@ -359,7 +359,8 @@ left: 5%;
 }
 
 .markForReview {
-  background-color: mediumaquamarine;
+  background-image: url('');
+  background-color: #71D96F;
 }
 
 .test {
