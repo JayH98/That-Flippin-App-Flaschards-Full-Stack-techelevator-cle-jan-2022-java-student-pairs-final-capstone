@@ -1,11 +1,12 @@
 <template>
   <div class="meet-us-title">
-    <h2>Meet The Creative Team</h2>
+    <h2 id="meet-us">Meet The Creative Team</h2>
     <div>
       <!-- Team # Octothorpe - Flash Cards -->
       <p>
         We the people who made this are the awesome Team # Octothorpe! Heed our
-        Flash Cards and become more knowledgeable!
+        Flash Cards and become more knowledgeable! Our T.E.A.C.H. (Tech.Elevator.Acquiring.Comprehension.Helper.) FlashCards will 
+        help you on your full-stack path.
       </p>
       
       <ul>
@@ -64,10 +65,13 @@ export default {
 
 <style>
 
+h2#meet-us {
+  color: #00ADEE;
+  background: #71D96F;
+}
+
 ul {
-  height: 30%;
-  
-  
+  height: 30%;  
 }
 
 a {
