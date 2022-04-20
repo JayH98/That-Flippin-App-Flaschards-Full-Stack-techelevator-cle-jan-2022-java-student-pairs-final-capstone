@@ -1,15 +1,13 @@
 <template>
   <div>
 
-<h4>Create Deck</h4>
-
     <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
-        <label for="deckName">Deck Name:</label>
+       
         <input
           id="deckName"
           type="text"
-          placeholder="Insert Name Here"
+          placeholder="Insert Deck Name Here"
           v-model="newDeck.deck"
         />
       </div>
@@ -44,8 +42,7 @@ export default {
         console.log(error.response.statusText)
       })
 
-      // this.$store.commit("ADD_DECK", this.newDeck);
-      // this.resetForm();
+     
     },
     resetForm() {
       this.newDeck = {
@@ -61,7 +58,10 @@ export default {
 
 input.saveBtn,
 input.cancelBtn {
-  width: 10%;
+  position:relative;
+  right:7%;
+  font-family:'Courier New', Courier, monospace;
+  width: 50%;
   padding: 5px;
   border-radius: 5px;
   color: #000000;
@@ -69,23 +69,24 @@ input.cancelBtn {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  background-image: url('../assets/parchment.jpg');
+  
 }
 .saveBtn:hover {
   transition:linear;
   
   
   background: linear-gradient(to right,#00ADEE, #71D96F 40%);
-
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 .cancelBtn:hover {
   transition:linear;
   
-  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% )
+  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% );
 
-
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 </style>
 
- <!-- <a>Create A New Deck</a> -->

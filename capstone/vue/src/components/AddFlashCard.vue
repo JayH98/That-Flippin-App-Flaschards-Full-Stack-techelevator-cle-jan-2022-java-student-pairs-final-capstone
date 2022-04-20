@@ -1,22 +1,22 @@
 <template>
 <div>
-<h4>Create A Flashcard</h4>
+<!-- <h4>Create A Flashcard</h4> -->
 
   <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
-        <label for="tag">Tag:</label>
-        <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.tag" />
+        <label for="tag"></label>
+        <input id="tag" type="text" placeholder="Insert New Card Tag Here" v-model="newCard.tag" />
       </div>  
       <div class="form-element">
-        <label for="question">Question:</label>
-        <textarea id="question" type="text" placeholder="Insert Question Here" v-model="newCard.question" />
+        <label for="question"></label>
+        <textarea id="question" type="text" placeholder="Insert New Question Here" v-model="newCard.question" />
       </div>  
       <div class="form-element">
-        <label for="answer">Answer:</label>
-        <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.answer" />
+        <label for="answer"></label>
+        <textarea id="answer" type="text" placeholder="Insert New Answer Here" v-model="newCard.answer" />
       </div>
       <div class="form-element">
-        <label for="deck">Deck:</label>
+        <label for="deck"></label>
         <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.deck" />
       </div>
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
@@ -76,35 +76,24 @@ a {
   
 }
 
+.saveBtn, .cancelBtn {
+  background-image: url('../assets/parchment.jpg');
+}
+
 .saveBtn:hover {
   transition:linear;
   transition-delay: .25s;
   
   background: linear-gradient(to right,#00ADEE, #71D96F 40%);
-
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 .cancelBtn:hover {
   transition:linear;
   transition-delay: .25s;
-  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% )
-
+  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% );
+  cursor:url('../assets/pointer.png'), pointer;
 
 }
-
-/* below is unNeeded due to being in component AddNewDeck */
-/* input.saveBtn,
-input.cancelBtn {
-  width: 10%;
-  padding: 5px;
-  border-radius: 5px;
-  color: #000000;
-  background-color: #00afef;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-} */
-
-
 
 </style>

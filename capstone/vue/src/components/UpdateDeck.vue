@@ -74,3 +74,5 @@ input.cancelBtn {
   text-align: center;
   text-transform: uppercase;
 }
+
+

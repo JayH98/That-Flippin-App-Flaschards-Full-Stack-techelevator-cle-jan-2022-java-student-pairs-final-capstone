@@ -1,19 +1,20 @@
 <template>
   <div id="register" class="text-center">
-    <h1>Full Stack Flashcards</h1>
+    <h1 id="title">That Flippin' App!</h1>
     <form class="form-register" @submit.prevent="register" autocomplete="off">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 id="subtitle" class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <div id="form-fillout">
         <div id="username-box">
-          <label for="username" class="sr-only">Username:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="username" class="sr-only"></label>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <input
             type="text"
             id="username"
             class="form-control"
-            placeholder="Username"
+            placeholder="Create New Username"
             v-model="user.username"
             required
             autofocus
@@ -21,12 +22,13 @@
         </div>
         <br />
         <div id="password-box">
-          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;
+          <label for="password" class="sr-only"></label>
+          &nbsp;&nbsp;&nbsp;
           <input
             type="password"
             id="password"
             class="form-control"
-            placeholder="Password"
+            placeholder="Create New Password"
             v-model="user.password"
             required
           />&nbsp;
@@ -41,37 +43,59 @@
         </div>
         <br />
         <div id="accountExists-box">
-          <router-link :to="{ name: 'login' }">Have an account?</router-link> &nbsp;&nbsp;
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
+          <router-link id="have-account" to:="{ name: 'login' }">Have an account?</router-link>
+          &nbsp;&nbsp;
+          <button id="create-account-btn"  type="submit">
             Create Account
           </button>
         </div>
       </div>
     </form>
-    <div class = "study-guy-container">
-      <img id = "study-guy-img" src = '../assets/guy-studying.jpg'/>
+    <div class="study-guy-container">
+      <img id="study-guy-img" src="../assets/guy-studying.jpg" />
 
-      <div class = "study-guy-text">
-        <h2>Elevate your studying</h2>
-        <p>This is placeholder text. Later, I will put something more meaningful here</p>
+      <div id="study-guy-text" class="study-guy-text">
+        <h2>Elevate your studying</h2> <br/>
+        <p>
+          <br/>
+          In minutes you could have a whole new study tool!  Study, and as you learn, Edit your
+          flashcards<br/>  so they work for you!
+        </p>
       </div>
 
-      <div class = "study-method">
+      <div id="study-method" class="study-method">
         <div>
           <h3>The age old study method with a Tech Elevator twist</h3>
-          <p>Every new account comes with 35 flashcards premade by Tech Elevator alumni to help you study!</p>
+          <p> 
+            <br/><br/>
+            Every new account comes with 35 flashcards pre-made by Tech Elevator
+            alumni to help you study!
+            
+           
+          </p>
         </div>
-        <img id = "tech-elevator-cleveland" src = '../assets/tech-elevator-cleveland.jpg' alt = 'Students from Cleveland tech elevator campus'/>
+        <img
+          id="tech-elevator-cleveland"
+          src="../assets/tech-elevator-cleveland.jpg"
+          alt="Students from Cleveland tech elevator campus"
+        />
       </div>
 
-      <div class = "proven-science">
+      <div id="proven-science" class="proven-science">
         <div>
           <h3>A study method backed by science</h3>
-          <p>Flashcards have been proven to increase information retention and improve conceptual understanding</p>
+          <br/>
+          <p>
+            Flashcards have been proven to increase information retention and
+            improve conceptual understanding
+          </p>
         </div>
-        <img id = "flashcard" src = '../assets/flashcards.jpg' alt = 'Decks of flashcards'/>
+        <img
+          id="flashcard"
+          src="../assets/flashcards.jpg"
+          alt="Decks of flashcards"
+        />
       </div>
-      
     </div>
   </div>
 </template>
@@ -128,25 +152,30 @@ export default {
 
 <style>
 .form-register {
-  /* margin: 10%; */
+
   padding: 50px;
-  
 }
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
-  
 }
 #accountExists-box button {
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    color: #000000;
-    background-color: #00afef;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+   background-image: url('../assets/parchment.jpg');
+}
+
+#accountExists-box button:hover {
+  transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+  cursor:url('../assets/pointer.png'), pointer;
 }
 #test-box {
   display: flex;
@@ -156,19 +185,22 @@ export default {
 </style>
 
 <style scoped>
-
-.study-method div, .proven-science div {
+.study-method div,
+.proven-science div {
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
-.study-method img, .proven-science img {
+.study-method img,
+.proven-science img {
   width: 35%;
   max-height: 200px;
 }
 
-.study-method, .proven-science {
+.study-method,
+.proven-science {
   display: flex;
   column-gap: 50px;
 }
@@ -183,6 +215,7 @@ export default {
 
 .study-guy-container {
   width: 100%;
+  
 }
 #study-guy-img {
   width: 100%;
@@ -194,13 +227,66 @@ export default {
   position: relative;
   width: 50%;
   bottom: 150px;
-  /* background-image: linear-gradient(to right, red , yellow); */
+  font-size:large;
+ 
 }
 
 
 
-h2, .study-guy-text p {
-  color: rgb(3, 221, 3);
+h2{ 
   font-weight: bold;
+color:black;
+
+
+}
+.study-guy-text{
+  color:black;
+ 
+
+  
+}
+
+h1{
+background-size:contain;
+width:fit-content;
+border-radius: 5px;
+}
+
+#create-account-button {
+ transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+  cursor:url('../assets/pointer.png'), pointer;
+}
+
+#study-method {
+background-image: url('../assets/notecard.png');
+background-size:cover;
+width:fit-content
+
+}
+
+#proven-science{
+   background-image: url('../assets/notecard.png');
+   background-size:cover;
+   width:fit-content;
+}
+
+#study-guy-text{
+  background-image:url('../assets/notecard.png');
+background-size:co;
+width:fit-content;
+border-radius: 5px;
+}
+
+#title {
+  background-image:url('../assets/parchment.jpg');
+  width:fit-content;
+}
+
+#subtitle {
+  font-size:large;
+  background-image:url('../assets/parchment.jpg');
+  width:fit-content;
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>

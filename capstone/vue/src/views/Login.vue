@@ -1,7 +1,11 @@
 <template>
   <div id="login" class="text-center">
-    <form class="form-signin" @submit.prevent="login" autocomplete="off">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+
+
+   <h1 class="h3 mb-3 font-weight-normal">Welcome to That Flippin' App! <br/>Please Sign In</h1>
+    
+    <form id="sign-in" class="form-signin" @submit.prevent="login" autocomplete="off">
+       
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
       </div>
@@ -12,9 +16,12 @@
       >
         Thank you for registering, please sign in.
       </div>
+
+      
+
       <div id="form-fillout">
         <div id="username-box">
-          <label for="username" class="sr-only">Username: </label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="username" class="sr-only"></label> &nbsp;&nbsp;&nbsp;&nbsp;
           <input
             type="text"
             id="username"
@@ -27,7 +34,7 @@
         </div>
         <br />
         <div id="password-box">
-        <label for="password" class="sr-only">Password: </label> &nbsp;&nbsp;&nbsp;
+        <label for="password" class="sr-only"></label> &nbsp;&nbsp;&nbsp;
         <input
           type="password"
           id="password"
@@ -38,10 +45,15 @@
         />
         </div>
         <br />
-        <div id="account-box">
-          <router-link :to="{ name: 'register' }">Need an account?</router-link> &nbsp;&nbsp;&nbsp;&nbsp;
+          <div id="submit-button">
           <button type="submit">Sign in</button>
+    
+          </div>
+
+        <div  >
+          <router-link id="account-link" :to="{ name: 'register' }">Register Here</router-link> &nbsp;&nbsp;&nbsp;&nbsp;
         </div>
+        
       </div>
     </form>
   </div>
@@ -87,42 +99,67 @@ export default {
 
 <style>
 
+</style>
+
+<style scoped>
 
 
-/* #login, #account-box{
-  
-  padding: 20px;
-  
-} */
 
-/* .form-signin {
-  margin: 10%;
-  padding: 50px;
+.login {
+  display:flex;
+  align-items: flex-start;
 }
 
-#form-fillout {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+#sign-in {
+  display:flex;
+  justify-content: center;
+  position:relative;
+  top:200px;
+  }
+
+
+.h3 {
+display:flex;
+color: #00ADEE;
+  justify-content: center;
+  position:relative;
+  top:200px;
+  left:25%;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 80px;
+  background-image: url('../assets/notecard.png');
+  width: 60%;
+  text-align: center;
+}
+ 
+
+#account-link {
+  display:flex;
+
+  align-items:center;
+  background-image: url('../assets/parchment.jpg');
+  border-radius:5px; 
+  color:#556268;
+  text-decoration: none;
   
 }
 
-#account-box button {
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    color: #000000;
-    background-color: #00afef;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+#account-link:hover {
+  color:black;
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 
-html {
-  background-color: #87ceeb;
-   font-family: Arial, Helvetica, sans-serif; 
-}  */
+#submit-button{
+  position:relative;
+  left:30%;
+  align-content: center;
+  justify-content: center;
+  cursor:url('../assets/pointer.png'), pointer;
+}
+
+
+
 
 
 </style>
