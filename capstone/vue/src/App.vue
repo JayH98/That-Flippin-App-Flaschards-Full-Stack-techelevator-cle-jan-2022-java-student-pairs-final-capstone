@@ -46,10 +46,10 @@ header {
   width: 100%;
 }
 
-header img {
+/* header img {
   width: 600px;
   height: auto;
-}
+} */
 
 .home-button, .logout-button, .create-button, .edit-button {
   background-color: #00ADEE;

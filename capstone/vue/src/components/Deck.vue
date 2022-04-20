@@ -82,9 +82,8 @@ transform:rotate(1turn);
     transform:skewY(5deg);
 }
 
-#te-logo{
-    width: 50%;
-    height: 50%;
+#te-logo {
+    width: 60%;
     height: auto;
 }
 
