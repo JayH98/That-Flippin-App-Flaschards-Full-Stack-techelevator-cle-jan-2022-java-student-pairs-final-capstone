@@ -1,8 +1,10 @@
 <template>
   <div class = "deck">
-      <h1>{{deck.deck}}</h1>
+      <h1 id="deck-name">{{deck.deck}}</h1>
+
+      <img id="te-logo" v-if="deck.deck == 'Tech Elevator - Default'" src = "../assets/TE_Logo.png"/>
       
-      <section>Created by: {{deck.username}}</section>
+      <section id="creator-box">Created By: {{deck.username}}</section>
 
     <div class = "deck-buttons">
         <router-link v-bind:to="{ name: 'edit-deck', params: {deckName: deck.deck} }"> <button type="button" class = "edit">Edit Deck</button></router-link>
@@ -32,10 +34,12 @@ export default {
     display: flex;
     text-align: center;
     flex-direction: column;
+    align-items:center;
     justify-content: center;
     /* background: rgb(0,111,121); */
     /* background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%); */
-    background: linear-gradient(90deg, #71d96f 0%, rgba(0,212,255,1) 100%);
+    /* background: linear-gradient(90deg, #71d96f 0%, rgba(0,212,255,1) 100%); */
+    background-image: url('../assets/parchment.jpg');
     border:inset;
     border-radius: 25px;
 
@@ -61,6 +65,38 @@ export default {
     min-width: 100px;
     width: 20%;
     height: 35px;
+    border-radius: 15px;
+    border-style: groove;
+}
+
+.study-button:hover {
+transition:1.8s;
+/* background: linear-gradient(90deg, rgba(0,212,255,1) 100%, #71d96f 0%, ); */
+background: radial-gradient(white, #71D96F);
+transform:skewX(-15deg);
+
+}
+
+.edit:hover {
+    transition: 1s;
+    background: radial-gradient(white, rgba(0,212,255,1));
+    transform:scale(1.15);
+}
+
+#te-logo {
+    width: 60%;
+    height: auto;
+    border-radius: 15px;
+}
+
+#deck-name{
+    font-family: cursive;
+    text-align: center;
+}
+
+#creator-box{
+    font-size:large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 

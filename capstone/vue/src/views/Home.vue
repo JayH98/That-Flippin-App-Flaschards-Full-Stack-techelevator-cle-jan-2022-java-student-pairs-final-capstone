@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <h2>Home</h2>
-    <p>Search A Deck or Topic Tag</p>
+    
+    <div id="title">
+    <h2>This Flippin' App <br/>
+     Flashcards that T.E.A.C.H.<br/><span id="subtitle"> (Tech Elevator Acquiring Comprehension Helper)</span></h2>
+   
+    </div>
 
     
 
@@ -9,7 +13,7 @@
 
     
     
-    <form>
+    <!-- <form>
       <input  list="options" placeholder="Tags" multiple/>
     <datalist id="options">
       <option value="Module 1"/>
@@ -33,7 +37,7 @@
         <option value="Tech Elevator"/>
           </datalist>
         
-    </form>
+    </form> -->
 
 
     <!-- <input type="checkbox" id="module1" value="module1" name="studyTopic"
@@ -181,7 +185,9 @@ body {
   grid-template-areas: 
   "ul ul"
   "#home #home"
-  ;              
+  ; 
+  background-image: url('../assets/Woodstain.jpg');
+
 }
 
 ul {
@@ -190,7 +196,13 @@ ul {
 
 .home {
   display: grid;
+  align-items: center;
+  /* background-image: url('../assets/notecard.png'); */
+  background-position: center;
+  background-size:auto;
   
+
+
 }
 
 h2, p, #beginStudy {
@@ -215,6 +227,28 @@ form {
   text-align: center;
   text-transform: uppercase;
 }
+
+#title {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 2em;
+  font-family:'Courier New', Courier, monospace;
+  
+  background-image: url('../assets/notecard.png');
+  background-size: cover;
+  font-weight: bolder;
+
+  
+  
+}
+
+#subtitle{
+  font-size: .85em;
+}
+
+
 
 
 </style>

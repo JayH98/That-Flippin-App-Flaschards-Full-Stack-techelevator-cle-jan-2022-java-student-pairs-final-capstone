@@ -8,7 +8,8 @@
       </div>
       <div id="form-fillout">
         <div id="username-box">
-          <label for="username" class="sr-only">Username:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="username" class="sr-only">Username:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <input
             type="text"
             id="username"
@@ -21,7 +22,8 @@
         </div>
         <br />
         <div id="password-box">
-          <label for="password" class="sr-only">Password:</label> &nbsp;&nbsp;&nbsp;
+          <label for="password" class="sr-only">Password:</label>
+          &nbsp;&nbsp;&nbsp;
           <input
             type="password"
             id="password"
@@ -41,37 +43,54 @@
         </div>
         <br />
         <div id="accountExists-box">
-          <router-link :to="{ name: 'login' }">Have an account?</router-link> &nbsp;&nbsp;
+          <router-link :to="{ name: 'login' }">Have an account?</router-link>
+          &nbsp;&nbsp;
           <button class="btn btn-lg btn-primary btn-block" type="submit">
             Create Account
           </button>
         </div>
       </div>
     </form>
-    <div class = "study-guy-container">
-      <img id = "study-guy-img" src = '../assets/guy-studying.jpg'/>
+    <div class="study-guy-container">
+      <img id="study-guy-img" src="../assets/guy-studying.jpg" />
 
-      <div class = "study-guy-text">
+      <div class="study-guy-text">
         <h2>Elevate your studying</h2>
-        <p>This is placeholder text. Later, I will put something more meaningful here</p>
+        <p>
+          This is placeholder text. Later, I will put something more meaningful
+          here
+        </p>
       </div>
 
-      <div class = "study-method">
+      <div class="study-method">
         <div>
           <h3>The age old study method with a Tech Elevator twist</h3>
-          <p>Every new account comes with 35 flashcards premade by Tech Elevator alumni to help you study!</p>
+          <p>
+            Every new account comes with 35 flashcards premade by Tech Elevator
+            alumni to help you study!
+          </p>
         </div>
-        <img id = "tech-elevator-cleveland" src = '../assets/tech-elevator-cleveland.jpg' alt = 'Students from Cleveland tech elevator campus'/>
+        <img
+          id="tech-elevator-cleveland"
+          src="../assets/tech-elevator-cleveland.jpg"
+          alt="Students from Cleveland tech elevator campus"
+        />
       </div>
 
-      <div class = "proven-science">
+      <div class="proven-science">
         <div>
           <h3>A study method backed by science</h3>
-          <p>Flashcards have been proven to increase information retention and improve conceptual understanding</p>
+          <p>
+            Flashcards have been proven to increase information retention and
+            improve conceptual understanding
+          </p>
         </div>
-        <img id = "flashcard" src = '../assets/flashcards.jpg' alt = 'Decks of flashcards'/>
+        <img
+          id="flashcard"
+          src="../assets/flashcards.jpg"
+          alt="Decks of flashcards"
+        />
       </div>
-      
     </div>
   </div>
 </template>
@@ -130,23 +149,21 @@ export default {
 .form-register {
   /* margin: 10%; */
   padding: 50px;
-  
 }
 #form-fillout {
   display: flex;
   flex-direction: column;
   text-align: left;
-  
 }
 #accountExists-box button {
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    color: #000000;
-    background-color: #00afef;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #00afef;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 #test-box {
   display: flex;
@@ -156,19 +173,21 @@ export default {
 </style>
 
 <style scoped>
-
-.study-method div, .proven-science div {
+.study-method div,
+.proven-science div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.study-method img, .proven-science img {
+.study-method img,
+.proven-science img {
   width: 35%;
   max-height: 200px;
 }
 
-.study-method, .proven-science {
+.study-method,
+.proven-science {
   display: flex;
   column-gap: 50px;
 }
@@ -197,9 +216,8 @@ export default {
   /* background-image: linear-gradient(to right, red , yellow); */
 }
 
-
-
-h2, .study-guy-text p {
+h2,
+.study-guy-text p {
   color: rgb(3, 221, 3);
   font-weight: bold;
 }

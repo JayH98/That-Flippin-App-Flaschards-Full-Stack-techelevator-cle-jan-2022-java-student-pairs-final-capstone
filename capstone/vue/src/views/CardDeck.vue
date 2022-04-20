@@ -119,6 +119,18 @@ export default {
 
 .tag-label {
     margin-bottom: 20px;
+    font-size: large;
+    font-family: fantasy;
+    color: #556268;
+}
+
+.question-label {
+    font-size: large;
+    font-family:fantasy;
+    color:#556268;
+    
+
+
 }
 
 .filter {

@@ -4,16 +4,33 @@
   <div class="flashcard" @dblclick="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
     <div class="flashcard-front">
         <div class = 'box'>
-      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
+      <!-- <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
       <section>Q: {{ flashcard.question }}</section>
       <p>ID: {{ flashcard.id }}</p>
       <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
       <div class = "edit-buttons">
         <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
-        <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button>
+        <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button> -->
+      <section id='edit-flashcard-container'>
+       <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button>Edit Flashcard</button></router-link>
+ <div class = "edit-buttons">
+        <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
+        <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button> 
+ </div>
+      </section>
+      <section>
+        <div id="question-box">
+          Q: {{flashcard.question}}
+        </div>
+        <div id="id">
+          {{flashcard.id}}
+        </div>
+      </section>
+      
+      
       </div>
         </div>
-    </div>
+   
 
     
 
@@ -38,14 +55,20 @@
           
       
 
-      <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
+      <!-- <h1>{{ flashcard.module }} / {{ flashcard.tag }}</h1>
       <p>A: {{flashcard.answer}}</p>
       <p>Created By:{{flashcard.creator}}</p>
-      <p>Deck:{{flashcard.deck}}</p>
+      <p>Deck:{{flashcard.deck}}</p> -->
 
+      <div id="answer-block">
+         A: {{flashcard.answer}}
+      </div>
+      <section id="deck-box">
+      <div id="creator">Created By:{{flashcard.creator}} </div>
       
       
-      
+      <div id="deck">Deck:{{flashcard.deck}}</div>
+      </section>
 
       
         </div>
@@ -172,7 +195,8 @@ export default {
   transform-style:preserve-3d;
   transition: 250ms;
   /* background-color: rgb(212, 206, 206); */
-  background-color: #00ADEE;
+  /* background-color: #00ADEE; */
+  background-image: url('../assets/parchment.jpg');
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
@@ -207,17 +231,127 @@ export default {
 
 #review-button {
    box-sizing: border-box;
+   margin: right 60%;
     background-color: white;
     min-width: 100px;
     width: 20%;
     height: 35px;
     align-self: flex-end;
+    border-radius: 25px;
+    block-size: fit-content;
+    width: fit-content;
+    position: relative;
+    top: -75px;
    
 }
+
+#edit-flashcard{
+  box-sizing: border-box;
+margin: right 60%;;
+    background-color: white;
+    min-width: 100px;
+    width: 20%;
+    height: 35px;
+    align-self: flex-end;
+    border-radius:25px;
+  position: fixed;
+  top:5%;
+  right:5%;
+  block-size: fit-content;
+  width: fit-content;
+}
+
+#edit-flashcard-container {
+  justify-content: center;
+  align-content: center;
+
+}
+
+
+#question-box {
+  background: white;
+border-radius: 10px;
+border:black, solid;
+border-style: inset;
+font-size: 20px;
+}
+
+#mod {font-size: small;}
+
+#tag {font-size: small;}
+
+#mod-back {font-size: medium;}
+#question {font-size: large;}
+
 
 .edit-buttons {
   display: flex;
 }
+
+#answer-block {
+background: white;
+border-radius: 10px;
+border:black, solid;
+border-style: inset;
+font-size: 20px;
+}
+
+#search-container {
+  background: white;
+border-radius: 10px;
+border:black, solid;
+border-style:ridge;
+font-size: 12px;
+width:fit-content;
+block-size:fit-content;
+position: fixed;
+top: 5%;
+left: 5%;
+  
+}
+
+ #creator {
+  block-size:fit-content;
+  width:fit-content;
+  font-size: small;
+  position:fixed;
+  left: 15%;
+  bottom: -100%;
+  
+ }
+
+#deck {
+  
+  font-size: small;
+ block-size:fit-content;
+  width:fit-content;
+  font-size: small;
+position: fixed;
+bottom: -120%;
+left: 15%;
+border:none; 
+}
+
+#id {position: fixed;
+bottom: 5%;
+right: 5%;
+border:none;
+}
+
+#mod-back {
+background: white;
+border-radius: 10px;
+border:black, solid;
+border-style:ridge;
+font-size: 12px;
+width:fit-content;
+block-size:fit-content;
+position: fixed;
+top: 5%;
+left: 5%;
+
+}
+
 
 .box {
   display: flex;
