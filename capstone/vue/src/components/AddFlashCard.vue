@@ -85,30 +85,15 @@ a {
   transition-delay: .25s;
   
   background: linear-gradient(to right,#00ADEE, #71D96F 40%);
-
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 .cancelBtn:hover {
   transition:linear;
   transition-delay: .25s;
-  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% )
-
+  background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% );
+  cursor:url('../assets/pointer.png'), pointer;
 
 }
-
-/* below is unNeeded due to being in component AddNewDeck */
-/* input.saveBtn,
-input.cancelBtn {
-  width: 10%;
-  padding: 5px;
-  border-radius: 5px;
-  color: #000000;
-  background-color: #00afef;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-} */
-
-
 
 </style>

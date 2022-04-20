@@ -24,22 +24,38 @@ name: "create-deck"
 <style>
 
 
-
+.home {
+  justify-content:center;
+  
+  
+ 
+}
 #create-deck{
+  text-align: center;
   position: relative;
   background-image: url('../assets/notecard.png');
-  background-size:contain;  
-  
+  background-size:100%;  
+  justify-content: center;
   background-repeat: no-repeat;
   align-content: center;
-  
+  width: 150%;
+
 }
 
 #create-card{
+  text-align: center;
   background-image: url('../assets/notecard.png');
-  background-size: contain;
+  background-size:cover;
   background-repeat:no-repeat;
   align-content:center;
+  width:150%;
 }
 
+.h1{
+  font-size: xx-large;
+}
+
+.h2{
+  font: xx-large;
+}
 </style>

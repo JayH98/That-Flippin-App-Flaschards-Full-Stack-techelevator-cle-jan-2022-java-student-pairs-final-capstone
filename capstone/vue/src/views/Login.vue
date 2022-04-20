@@ -1,6 +1,8 @@
 <template>
   <div id="login" class="text-center">
-   <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+
+
+   <h1 class="h3 mb-3 font-weight-normal">Welcome to That Flippin' App! <br/>Please Sign In</h1>
     
     <form id="sign-in" class="form-signin" @submit.prevent="login" autocomplete="off">
        
@@ -54,59 +56,6 @@
         
       </div>
     </form>
-
-
-    <!-- BELOW COPIED FROM views/register.vue -->
-    <!-- <div class="study-guy-container">
-      <img id="study-guy-img" src="../assets/guy-studying.jpg" />
-
-      <div class="study-guy-text">
-        <h2>Elevate your studying</h2>
-        <p>
-          This is placeholder text. Later, I will put something more meaningful
-          here
-        </p>
-      </div>
-
-      <div class="study-method">
-        <div>
-          <h3>The age old study method with a Tech Elevator twist</h3>
-          <p>
-            Every new account comes with 35 flashcards premade by Tech Elevator
-            alumni to help you study!
-          </p>
-        </div>
-        <img
-          id="tech-elevator-cleveland"
-          src="../assets/tech-elevator-cleveland.jpg"
-          alt="Students from Cleveland tech elevator campus"
-        />
-      </div>
-
-      <div class="proven-science">
-        <div>
-          <h3>A study method backed by science</h3>
-          <p>
-            Flashcards have been proven to increase information retention and
-            improve conceptual understanding
-          </p>
-        </div>
-        <img
-          id="flashcard"
-          src="../assets/flashcards.jpg"
-          alt="Decks of flashcards"
-        />
-      </div>
-    </div> -->
-    <!-- ABOVE COPIED FROM views/register.vue -->
-    <!-- BELOW JHH modified copied FROM views/register.vue -->
-
-    <!-- <div class="pictures-container">
-      <img id="flashCardsIndexCardsOnDardWoodTableTop-img" src="../assets/flashCardsIndexCardsOnDardWoodTableTop.jpeg" />
-
-    </div> -->
-
-
   </div>
 </template>
 
@@ -149,121 +98,16 @@ export default {
 </script>
 
 <style>
-/* BELOW IS OLD CODE */
-/* #login, #account-box{  
-  padding: 20px;  
-} */
-/* .form-signin {
-  margin: 10%;
-  padding: 50px;
-}*/
-/* #form-fillout {
-  display: flex;
-  flex-direction: column;
-  text-align: left;  
-}*/
-/* #account-box button {
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    color: #000000;
-    background-color: #00afef;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}*/
-/* html {
-  background-color: #87ceeb;
-   font-family: Arial, Helvetica, sans-serif; 
-}  */
-/* ABOVE IS OLD CODE */
 
-
-
-
-/* BELOW IS COPIED FROM views/register.vue CODE */
-/* .form-register {
-  padding: 50px;
-}*/
-/* #form-fillout {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-} */
-/* #accountExists-box button {
-  width: 10%;
-  padding: 5px;
-  border-radius: 5px;
-  color: #000000;
-  background-color: #00afef;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-} */
-/* #test-box {
-  display: flex;
-  border: 10px lightgrey;
-  width: 300px;
-} */
 </style>
 
 <style scoped>
-/* .study-method div,
-.proven-science div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
-/* .study-method img,
-.proven-science img {
-  width: 35%;
-  max-height: 200px;
-} */
-
-/* .study-method,
-.proven-science {
-  display: flex;
-  column-gap: 50px;
-} */
-
-/* .proven-science {
-  flex-direction: row-reverse;
-} */
-
-/* .study-method {
-  margin-bottom: 80px;
-} */
-
-/* .study-guy-container {
-  width: 100%;
-} */
-/* #study-guy-img {
-  width: 100%;
-  height: 400px;
-  padding-left: 15px;
-} */
-
-/* .study-guy-text {
-  position: relative;
-  width: 50%;
-  bottom: 150px;
-} */
-
-/* h2,
-.study-guy-text p {
-  color: rgb(3, 221, 3);
-  font-weight: bold;
-}  */
-/* ABOVE IS COPIED FROM views/register.vue CODE */
 
 
 .login {
   display:flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
+  align-items: flex-start;
 }
 
 #sign-in {
@@ -271,7 +115,6 @@ export default {
   justify-content: center;
   position:relative;
   top:200px;
-  /* color:white; */
   }
 
 
@@ -282,45 +125,41 @@ color: #00ADEE;
   position:relative;
   top:200px;
   left:25%;
-  /* padding-left: 50%; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:'Courier New', Courier, monospace;
   font-size: 80px;
   background-image: url('../assets/notecard.png');
-  /* background-size: contain; */
   width: 60%;
-  
+  text-align: center;
 }
-
-/* #account-box {
-  display:inline-block;
-  width:fit-content;
-  font-size: larger;
-  color:#00ADEE;
-    text-align: center;} */
  
-  
 
 #account-link {
   display:flex;
-  position:relative;
-  left:35%;
+
   align-items:center;
   background-image: url('../assets/parchment.jpg');
   border-radius:5px; 
+  color:#556268;
+  text-decoration: none;
   
-  width:10px;
 }
+
+#account-link:hover {
+  color:black;
+  cursor:url('../assets/pointer.png'), pointer;
+}
+
 
 #submit-button{
   position:relative;
-  left:35%;
+  left:30%;
+  align-content: center;
+  justify-content: center;
+  cursor:url('../assets/pointer.png'), pointer;
 }
 
 
-/* 
-.text-center{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-} */
 
+
+
+</style>
