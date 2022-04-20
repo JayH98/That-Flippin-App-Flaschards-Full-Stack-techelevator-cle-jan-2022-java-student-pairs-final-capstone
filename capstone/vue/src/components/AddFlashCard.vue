@@ -1,22 +1,22 @@
 <template>
 <div>
-<h4>Create A Flashcard</h4>
+<!-- <h4>Create A Flashcard</h4> -->
 
   <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
-        <label for="tag">Tag:</label>
-        <input id="tag" type="text" placeholder="New Card Tag" v-model="newCard.tag" />
+        <label for="tag"></label>
+        <input id="tag" type="text" placeholder="Insert New Card Tag Here" v-model="newCard.tag" />
       </div>  
       <div class="form-element">
-        <label for="question">Question:</label>
-        <textarea id="question" type="text" placeholder="Insert Question Here" v-model="newCard.question" />
+        <label for="question"></label>
+        <textarea id="question" type="text" placeholder="Insert New Question Here" v-model="newCard.question" />
       </div>  
       <div class="form-element">
-        <label for="answer">Answer:</label>
-        <textarea id="answer" type="text" placeholder="Insert Answer Here" v-model="newCard.answer" />
+        <label for="answer"></label>
+        <textarea id="answer" type="text" placeholder="Insert New Answer Here" v-model="newCard.answer" />
       </div>
       <div class="form-element">
-        <label for="deck">Deck:</label>
+        <label for="deck"></label>
         <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.deck" />
       </div>
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
@@ -74,6 +74,10 @@ export default {
 a {
   padding-left: 50px;
   
+}
+
+.saveBtn, .cancelBtn {
+  background-image: url('../assets/parchment.jpg');
 }
 
 .saveBtn:hover {

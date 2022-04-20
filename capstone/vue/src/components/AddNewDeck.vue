@@ -1,15 +1,15 @@
 <template>
   <div>
 
-<h4>Create Deck</h4>
+<!-- <h4>Create Deck</h4> -->
 
     <form v-on:submit.prevent autocomplete="off">
       <div class="form-element">
-        <label for="deckName">Deck Name:</label>
+       
         <input
           id="deckName"
           type="text"
-          placeholder="Insert Name Here"
+          placeholder="Insert Deck Name Here"
           v-model="newDeck.deck"
         />
       </div>
@@ -69,6 +69,7 @@ input.cancelBtn {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  background-image: url('../assets/parchment.jpg');
 }
 .saveBtn:hover {
   transition:linear;

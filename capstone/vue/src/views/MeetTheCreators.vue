@@ -1,14 +1,15 @@
 <template>
   <div class="meet-us-title">
-    <h2>Meet The Creative Team</h2>
+    <h2 style="color:#00ADEE">Meet The Creative Team</h2>
     <div>
       <!-- Team # Octothorpe - Flash Cards -->
-      <p>
-        We the people who made this are the awesome Team # Octothorpe! Heed our
+      <p style="color:#999DA0">
+        We are the awesome Team # Octothorpe! Heed our
         Flash Cards and become more knowledgeable!
       </p>
       
-      <ul>
+      <ul id="all-bios">
+        
        <a id="angelS" class="LinkedIn-img-link" href="https://www.linkedin.com/in/avscott/" >
         <!-- <img id="LinkedIn-logo" src="@/assets/LinkedInLogo.png" data-LinkedIn-hook-img="img" alt="LinkedIn Logo"> -->
         <img id="LinkedIn-AS" src="https://media-exp1.licdn.com/dms/image/C4D03AQGrw_TsrIutLQ/profile-displayphoto-shrink_400_400/0/1646151506591?e=1655942400&v=beta&t=h1eJPc9bd9BiOuXDkxQ2Hosf6N_Wk-M9jxVZfFro-qY" 
@@ -48,6 +49,7 @@
         <br />
         Kevin Steinbach
        </a>
+        
       </ul>
     </div>
   </div>
@@ -77,11 +79,21 @@ width: 150px;
 a#angelS, a#daniloPA, a#graysonG, a#jayH , a#kevinS  {
   align-items: center;
   text-align: center;
+  
 }
 
 img {
   align-items: center;
   height: 20%;
 }
+
+#all-bios{
+  position: relative;
+  background-image: url('../assets/notecard.png');
+  background-size:cover;  
+  
+ 
+}
 </style>
+
 
