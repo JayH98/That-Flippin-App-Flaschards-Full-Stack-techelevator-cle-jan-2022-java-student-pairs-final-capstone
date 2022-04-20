@@ -83,9 +83,8 @@ transform:skewX(-15deg);
     transform:scale(1.15);
 }
 
-#te-logo{
-    width: 50%;
-    height: 50%;
+#te-logo {
+    width: 60%;
     height: auto;
     border-radius: 15px;
 }
