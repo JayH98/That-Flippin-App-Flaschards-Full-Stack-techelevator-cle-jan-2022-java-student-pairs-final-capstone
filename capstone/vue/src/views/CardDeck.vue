@@ -27,7 +27,7 @@
   <div class="flashcard-container" v-show="showReviewCards">
       <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashcardsForReview" v-bind:key="flashcard.id"/>
   </div>
-  <h2 v-show="studySessionComplete">Study session complete! You got {{flashcardsForReview.length}} wrong out of {{filteredFlashCards.length}}</h2>
+  <h2 v-show="studySessionComplete">Study session complete! You need to review {{flashcardsForReview.length}} out of {{filteredFlashCards.length}}</h2>
   <button class = "completeStudySessionBtn" @click="studySessionComplete = !studySessionComplete">{{studySessionComplete ? 'Study Deck Again' : 'Complete Study Session'}}</button>
 </div>
 </template>
@@ -37,7 +37,7 @@ import FlashCard from '@/components/FlashCard.vue'
 import DeckService from '@/services/DeckService.js'
 
 export default {
-    name: 'flashcard-list',
+    name: 'study-deck',
     components: {FlashCard},
     created() {
         DeckService.getCardsInDeck(this.$route.params.deckName).then((response) => {

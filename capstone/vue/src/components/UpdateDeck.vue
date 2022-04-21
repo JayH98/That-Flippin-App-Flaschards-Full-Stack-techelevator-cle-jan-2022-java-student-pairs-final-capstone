@@ -9,10 +9,10 @@
       </div>   
       
       <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck">Save Changes</button>
-      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="this.$router.push({ path: '/' });">Cancel</button> 
+      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="cancelEdit()">Cancel</button> 
 
       <deck v-bind:deck="updatedDeck"/>
-      <flash-card-list/>     
+      <flash-card-list v-bind:flashCardList = "allFlashCards" @refreshFlashCardList="getAllCards()"/>
 
   </form>
 </div>   
@@ -21,6 +21,7 @@
 <script>
 import Deck from './Deck.vue';
 import DeckService from '../services/DeckService.js'
+import FlashCardService from '../services/FlashCardService.js'
 import FlashCardList from './FlashCardList.vue';
 export default {
   components: { Deck, FlashCardList },
@@ -29,6 +30,7 @@ export default {
     data() {
         return {
             showForm: false,
+            allFlashCards: [],
             updatedDeck: {
                 deck: "",
             }
@@ -37,7 +39,9 @@ export default {
     created() {
         DeckService.getDeck(this.$route.params.deckName).then((response) => {
         this.updatedDeck = response.data;
-        console.log("Deck was retrieved")
+        console.log("Deck was retrieved");
+
+        this.getAllCards();
       })
     },
     methods: {
@@ -53,15 +57,21 @@ export default {
                 Answer : "",
             };
         },
+        
+        getAllCards() {
+          FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
+            this.allFlashCards = response.data;
+            console.log("All flashcards retrieved")
+
+        });
+        },
+
         cancelEdit() {
           this.$router.push({path: '/'})
         }
-
-    },
-   
-
-
+    }
 }
+
 
 
 </script>
@@ -81,4 +91,4 @@ input.cancelBtn {
 
 }
 
-
+</style>

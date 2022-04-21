@@ -7,6 +7,8 @@
    
     </div>
 
+    
+
     <deck-list/>
     
   </div>
@@ -28,14 +30,15 @@ export default {
 <style>
 
 body {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-  "ul ul"
-  "#home #home"
-  ; 
+  "header header"
+  "title title"
+  "deck deck"
+  ;  */
   background-image: url('../assets/Woodstain.jpg');
-
+  height: 100vh;
 }
 
 ul {

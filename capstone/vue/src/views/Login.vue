@@ -130,6 +130,7 @@ color: #00ADEE;
   background-image: url('../assets/notecard.png');
   width: 60%;
   text-align: center;
+  background-repeat: none;
 }
  
 

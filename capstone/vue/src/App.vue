@@ -22,12 +22,20 @@
   </div>
 </template>
 
-<style> 
+<style>
+#app {
+  /* min-width: 1250px; */
+  margin: 0;
+  width: 100%;
+}
+
 body {
   display: block;
   min-height: 600px;
   background-color: rgb(189, 189, 189);
-  background-image: url('./assets/Woodstain.jpg');
+  background: url('./assets/Woodstain.jpg');
+  margin: 0;
+  /* width: 100vw; */
 }
 
 header {
@@ -100,6 +108,8 @@ object-fit: cover;
   align-items: center;
   object-fit: cover;
 }
+
+
   
 </style>
 
@@ -108,7 +118,7 @@ object-fit: cover;
 
 #app {
   height: 100%;
-  width: 1200px;
+  width: 100%;
   background-color: rgb(189, 189, 189);
   cursor:url('./assets/pointer_tilted.png'), pointer;
 }
