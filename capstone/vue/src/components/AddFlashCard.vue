@@ -19,6 +19,16 @@
         <label for="deck"></label>
         <input id="deck" type="text" placeholder="Deck Name" v-model="newCard.deck" />
       </div>
+
+      <div class="dropDown">
+        <label>Select Deck</label>
+        <select id="deckList" v-model="newCard.deck">
+          <option></option>
+          <option v-for="deck in pickDecks" :key="deck.deck" >{{ deck.deck }}</option>
+        </select>   
+     </div>   
+
+
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
       <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
 
@@ -27,10 +37,18 @@
 </template>
 
 <script>
+import DeckService from '../services/DeckService.js'
 import FlashCardService from '../services/FlashCardService.js'
 
 export default {
     name: "add-card",
+    created() {
+          DeckService.getAllDecks(this.$store.state.user.username).then(response => {
+            this.pickDecks = response.data;
+            //if in postman we get an json object (array). that is what we have in response.data
+          })
+      
+    },
     data() {
         return {
             newCard: {
@@ -40,7 +58,8 @@ export default {
                 question : "",
                 answer : "",
                 deck: "",
-            }
+            },
+            pickDecks: []
         }
     },
     methods: {
@@ -63,8 +82,12 @@ export default {
                 Answer : "",
                 Deck: "",
             };
-        }
-    }
+        },
+     
+
+  
+      }
+    
 }
 
 
