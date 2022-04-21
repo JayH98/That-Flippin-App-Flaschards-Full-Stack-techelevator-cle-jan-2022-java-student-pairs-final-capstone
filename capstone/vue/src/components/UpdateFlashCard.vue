@@ -35,7 +35,7 @@
         value="Cancel"
         v-on:click="this.$router.push({ path: '/' });"
       >
-        Cancel
+        Reset
       </button>
     </form>
 
