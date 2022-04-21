@@ -1,12 +1,16 @@
 <template>
 
 
-  <div class="flashcard" @dblclick="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
+  <div class="flashcard" @click.self="flipCard = !flipCard" v-bind:class="{'flipped': flipCard, 'markForReview': markForReview}">
     <div class="flashcard-front">
         <div class = 'box'>
       <section id='edit-flashcard-container'>
        <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button id="edit-button">Edit Flashcard</button></router-link>
  <div class = "edit-buttons">
+        <button v-show="(this.$route.name ===  'edit-deck' && flashcard.deck !== this.$route.params.deckName) || cardRemovedFromDeck" @click="addCardToDeck(flashcard.id)">Add to deck</button>
+        <button v-show="(this.$route.name === 'edit-deck' && flashcard.deck === this.$route.params.deckName) || cardAddedToDeck" @click="removeCardFromDeck(flashcard.id)">Remove from deck</button>
+        <div class = "cardAdded" v-show="cardAddedToDeck && !cardRemovedFromDeck">Card successfully added to deck!</div>
+        <div class = "cardRemoved" v-show="!cardAddedToDeck && cardRemovedFromDeck">Card successfully removed from deck!</div> 
         <!-- <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
         <button v-show="this.$route.name === 'edit-deck'" @click="removeCardFromDeck(flashcard.id)" v-if="flashcard.deck === this.$route.params.deckName">Remove from deck</button>  -->
  </div>
@@ -60,13 +64,18 @@ export default {
       flipCard: false,
       markForReview: false,
       addFlashCard: {},
+      cardAddedToDeck: false,
+      cardRemovedFromDeck: false,
     };
   },
   methods: {
-    removeCardFromDeck(id) {
-      FlashCardService.removeCardFromDeck(id).then((response) => {
+    removeCardFromDeck(cardId) {
+      FlashCardService.removeCardFromDeck(cardId).then((response) => {
         if (response.status == 200) {
           console.log("Yay. Card was removed to deck");
+          this.cardRemovedFromDeck = true;
+          this.cardAddedToDeck = false;
+          this.$emit('refreshFlashCardList')
         }
       })
     },
@@ -76,6 +85,9 @@ export default {
       FlashCardService.addCardToDeck(this.addFlashCard).then((response) => {
         if (response.status == 200) {
           console.log("Yay. Card was added to deck");
+          this.cardAddedToDeck = true;
+          this.cardRemovedFromDeck = false;
+          this.$emit('refreshFlashCardList');
         }
       })
     },
@@ -86,6 +98,7 @@ export default {
     }
   },
 
+  
 
 };
 </script>
@@ -102,7 +115,7 @@ export default {
   transition: 250ms;
   background-image: url('../assets/parchment.jpg');
   border-radius: 5px;
-  cursor: pointer;
+  cursor:pointer;
   box-shadow: 0 0 5px 2px rgba(4, 132, 236, 0.3);
   transform: perspective(1000px) rotateY(var(--rotate-y, 0))
   translateY(var(--translate-y, 0));
@@ -306,5 +319,18 @@ left: 5%;
 
 .test {
   color:oldlace;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-buttons .cardAdded {
+background-color: #00ADEE;
+}
+
+.edit-buttons .cardRemoved {
+  background-color: rgba(255, 108, 108, 0.746)
 }
 </style>

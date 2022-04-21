@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style>
+h1 {
+  color: #00ADEE;
+}
 #title{
  color: black;
 
