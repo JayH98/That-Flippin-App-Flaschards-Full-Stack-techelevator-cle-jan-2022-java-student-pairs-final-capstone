@@ -70,14 +70,14 @@ export default {
 transition:1.8s;
 background: radial-gradient(white, #71D96F);
 transform:skewX(-15deg);
-cursor:url('../assets/pointer.png'), pointer;
+cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 .edit:hover {
     transition: 1s;
     background: radial-gradient(white, rgba(0,212,255,1));
     transform:scale(1.15);
-    cursor:url('../assets/pointer.png'), pointer;
+    cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 #te-logo {

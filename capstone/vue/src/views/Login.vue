@@ -146,7 +146,7 @@ color: #00ADEE;
 
 #account-link:hover {
   color:black;
-  cursor:url('../assets/pointer.png'), pointer;
+  cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 
@@ -155,7 +155,7 @@ color: #00ADEE;
   left:30%;
   align-content: center;
   justify-content: center;
-  cursor:url('../assets/pointer.png'), pointer;
+  cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 
