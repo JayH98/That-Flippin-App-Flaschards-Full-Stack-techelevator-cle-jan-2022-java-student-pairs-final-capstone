@@ -24,10 +24,6 @@ export default {
   components: { DeckList},
   name: "home",
 
-  // Created methods section in case needed later
-  // methods:(){
-  // },
-
 };
 </script>
 
@@ -52,7 +48,6 @@ ul {
 .home {
   display: grid;
   align-items: center;
-  /* background-image: url('../assets/notecard.png'); */
   background-position: center;
   background-size:auto;
   

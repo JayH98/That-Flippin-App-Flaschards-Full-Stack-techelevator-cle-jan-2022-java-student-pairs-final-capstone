@@ -36,9 +36,6 @@ export default {
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    /* background: rgb(0,111,121); */
-    /* background: linear-gradient(90deg, rgba(0,111,121,1) 0%, rgba(0,157,183,1) 45%, rgba(0,212,255,1) 100%); */
-    /* background: linear-gradient(90deg, #71d96f 0%, rgba(0,212,255,1) 100%); */
     background-image: url('../assets/parchment.jpg');
     border:inset;
     border-radius: 25px;
@@ -71,16 +68,16 @@ export default {
 
 .study-button:hover {
 transition:1.8s;
-/* background: linear-gradient(90deg, rgba(0,212,255,1) 100%, #71d96f 0%, ); */
 background: radial-gradient(white, #71D96F);
 transform:skewX(-15deg);
-
+cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 .edit:hover {
     transition: 1s;
     background: radial-gradient(white, rgba(0,212,255,1));
     transform:scale(1.15);
+    cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 
 #te-logo {
@@ -90,13 +87,13 @@ transform:skewX(-15deg);
 }
 
 #deck-name{
-    font-family: cursive;
+    font-family:'Courier New', Courier, monospace;
     text-align: center;
 }
 
 #creator-box{
     font-size:large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Courier New', Courier, monospace;
 }
 
 

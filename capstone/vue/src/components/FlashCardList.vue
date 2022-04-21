@@ -39,12 +39,8 @@ export default {
             flashcards: []
         }
     },
-    methods: {
-        refreshFlashCardList() {
-            this.$emit('refreshFlashCardList');
-        }
-    }
-   
+
+  
 }
 
 </script>

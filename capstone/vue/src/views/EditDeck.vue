@@ -1,6 +1,8 @@
 <template>
   <div>
+    <section id="title">
     <h1>Edit Deck</h1>
+    </section>
     <update-deck v-bind:deckName="$route.params.deckName"/>
   </div>
 </template>
@@ -22,4 +24,9 @@ export default {
 h1 {
   color: #00ADEE;
 }
+#title{
+ color: black;
+
+}
+
 </style>

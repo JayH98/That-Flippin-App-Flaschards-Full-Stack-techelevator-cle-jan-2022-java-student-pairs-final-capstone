@@ -1,20 +1,20 @@
 <template>
   <div id="register" class="text-center">
-    <h1>Full Stack Flashcards</h1>
+    <h1 id="title">That Flippin' App!</h1>
     <form class="form-register" @submit.prevent="register" autocomplete="off">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 id="subtitle" class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <div id="form-fillout">
         <div id="username-box">
-          <label for="username" class="sr-only">Username:</label>
+          <label for="username" class="sr-only"></label>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <input
             type="text"
             id="username"
             class="form-control"
-            placeholder="Username"
+            placeholder="Create New Username"
             v-model="user.username"
             required
             autofocus
@@ -22,13 +22,13 @@
         </div>
         <br />
         <div id="password-box">
-          <label for="password" class="sr-only">Password:</label>
+          <label for="password" class="sr-only"></label>
           &nbsp;&nbsp;&nbsp;
           <input
             type="password"
             id="password"
             class="form-control"
-            placeholder="Password"
+            placeholder="Create New Password"
             v-model="user.password"
             required
           />&nbsp;
@@ -43,9 +43,9 @@
         </div>
         <br />
         <div id="accountExists-box">
-          <router-link :to="{ name: 'login' }">Have an account?</router-link>
+          <router-link id="have-account" to:="{ name: 'login' }">Have an account?</router-link>
           &nbsp;&nbsp;
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
+          <button id="create-account-btn"  type="submit">
             Create Account
           </button>
         </div>
@@ -54,20 +54,24 @@
     <div class="study-guy-container">
       <img id="study-guy-img" src="../assets/guy-studying.jpg" />
 
-      <div class="study-guy-text">
-        <h2>Elevate your studying</h2>
+      <div id="study-guy-text" class="study-guy-text">
+        <h2>Elevate your studying</h2> <br/>
         <p>
-          This is placeholder text. Later, I will put something more meaningful
-          here
+          <br/>
+          In minutes you could have a whole new study tool!  Study, and as you learn, Edit your
+          flashcards<br/>  so they work for you!
         </p>
       </div>
 
-      <div class="study-method">
+      <div id="study-method" class="study-method">
         <div>
           <h3>The age old study method with a Tech Elevator twist</h3>
-          <p>
-            Every new account comes with 35 flashcards premade by Tech Elevator
+          <p> 
+            <br/><br/>
+            Every new account comes with 35 flashcards pre-made by Tech Elevator
             alumni to help you study!
+            
+           
           </p>
         </div>
         <img
@@ -77,9 +81,10 @@
         />
       </div>
 
-      <div class="proven-science">
+      <div id="proven-science" class="proven-science">
         <div>
           <h3>A study method backed by science</h3>
+          <br/>
           <p>
             Flashcards have been proven to increase information retention and
             improve conceptual understanding
@@ -147,7 +152,7 @@ export default {
 
 <style>
 .form-register {
-  /* margin: 10%; */
+
   padding: 50px;
 }
 #form-fillout {
@@ -164,6 +169,13 @@ export default {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+   background-image: url('../assets/parchment.jpg');
+}
+
+#accountExists-box button:hover {
+  transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+  cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 #test-box {
   display: flex;
@@ -178,6 +190,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
 .study-method img,
@@ -202,6 +215,7 @@ export default {
 
 .study-guy-container {
   width: 100%;
+  
 }
 #study-guy-img {
   width: 100%;
@@ -213,12 +227,66 @@ export default {
   position: relative;
   width: 50%;
   bottom: 150px;
-  /* background-image: linear-gradient(to right, red , yellow); */
+  font-size:large;
+ 
 }
 
-h2,
-.study-guy-text p {
-  color: rgb(3, 221, 3);
+
+
+h2{ 
   font-weight: bold;
+color:black;
+
+
+}
+.study-guy-text{
+  color:black;
+ 
+
+  
+}
+
+h1{
+background-size:contain;
+width:fit-content;
+border-radius: 5px;
+}
+
+#create-account-button {
+ transition: .25s;
+  background: radial-gradient(#00ADEE, #71D96F);
+  cursor:url('../assets/pointer.png'), pointer;
+}
+
+#study-method {
+background-image: url('../assets/notecard.png');
+background-size:cover;
+width:fit-content
+
+}
+
+#proven-science{
+   background-image: url('../assets/notecard.png');
+   background-size:cover;
+   width:fit-content;
+}
+
+#study-guy-text{
+  background-image:url('../assets/notecard.png');
+background-size:co;
+width:fit-content;
+border-radius: 5px;
+}
+
+#title {
+  background-image:url('../assets/parchment.jpg');
+  width:fit-content;
+}
+
+#subtitle {
+  font-size:large;
+  background-image:url('../assets/parchment.jpg');
+  width:fit-content;
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>
