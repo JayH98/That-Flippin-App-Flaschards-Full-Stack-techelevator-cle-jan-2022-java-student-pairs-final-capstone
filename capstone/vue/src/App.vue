@@ -47,14 +47,14 @@ header {
   transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('./assets/pointer.png'), pointer;
+  cursor:url('./assets/pointer_tilted.png'), pointer;
 }
 
 .home-button:hover {
  transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('./assets/pointer.png'), pointer;
+  cursor:url('./assets/pointer_tilted.png'), pointer;
   
 }
 
@@ -62,14 +62,14 @@ header {
   transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, rgb(243, 81, 81));
-cursor:url('./assets/pointer.png'), pointer;
+cursor:url('./assets/pointer_tilted.png'), pointer;
 }
 
 .meet-us:hover{
 transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-cursor:url('./assets/pointer.png'), pointer;
+cursor:url('./assets/pointer_tilted.png'), pointer;
 }
 
 
@@ -110,7 +110,10 @@ object-fit: cover;
   height: 100%;
   width: 1200px;
   background-color: rgb(189, 189, 189);
+  cursor:url('./assets/pointer_tilted.png'), pointer;
 }
+
+
 
 
 </style>

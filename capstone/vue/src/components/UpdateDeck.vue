@@ -4,7 +4,7 @@
   <form v-on:submit.prevent autocomplete="off">
      
       <div class="form-element">
-        <label for="tag">Deck Name: </label>
+        <label for="tag"></label>
         <input id="tag" type="text" placeholder="Edit Deck Name Here" v-model="updatedDeck.deck" />
       </div>   
       
@@ -71,12 +71,14 @@ export default {
 input.cancelBtn {
   width: 10%;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 15px;
   color: #000000;
   background-color: #00afef;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  
+
 }
 
 
