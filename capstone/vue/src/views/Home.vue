@@ -7,19 +7,7 @@
    
     </div>
 
-    <section>
-
-      <!-- <button id="beginStudyBtn" type="button">Begin Study Session</button> -->    
-
-    </section>
-
-    <section>
-      
-      
-      <form> 
-        
-      </form>
-    </section>
+    
 
     <deck-list/>
     
@@ -46,14 +34,15 @@ export default {
 <style>
 
 body {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-  "ul ul"
-  "#home #home"
-  ; 
+  "header header"
+  "title title"
+  "deck deck"
+  ;  */
   background-image: url('../assets/Woodstain.jpg');
-
+  height: 100vh;
 }
 
 ul {
