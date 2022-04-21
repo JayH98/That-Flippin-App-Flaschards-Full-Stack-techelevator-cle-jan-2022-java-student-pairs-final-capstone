@@ -218,7 +218,7 @@ export default {
   
 }
 #study-guy-img {
-  width: 100%;
+  width: 60%;
   height: 400px;
   padding-left: 15px;
 }
