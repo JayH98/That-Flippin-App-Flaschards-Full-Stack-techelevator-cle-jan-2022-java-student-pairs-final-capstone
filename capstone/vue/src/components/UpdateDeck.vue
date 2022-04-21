@@ -8,13 +8,15 @@
         <input id="tag" type="text" placeholder="Edit Deck Name Here" v-model="updatedDeck.deck" />
       </div>   
       
-      <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck">Save Changes</button>
-      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="cancelEdit()">Cancel</button> 
-
-      <deck v-bind:deck="updatedDeck"/>
-      <flash-card-list v-bind:flashCardList = "allFlashCards" @refreshFlashCardList="getAllCards()"/>
-
+      <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck()">Save Changes</button>
+      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="cancelEdit()">Cancel</button>
+      
   </form>
+  <div class = "deckUpdated" v-show="deckUpdated">Deck name updated successfully!</div>
+  <div class = "deckUpdateFailed" v-show="deckUpdateFailed">We're sorry. An error occurred </div>
+  <deck v-bind:deck="updatedDeck"/>
+<flash-card-list v-bind:flashCardList = "allFlashCards" @refreshFlashCardList="getAllCards()"/>
+
 </div>   
 </template>
 
@@ -25,11 +27,12 @@ import FlashCardService from '../services/FlashCardService.js'
 import FlashCardList from './FlashCardList.vue';
 export default {
   components: { Deck, FlashCardList },
-    name: 'edit-deck',
+    name: 'update-deck',
     props: ["deckName"],
     data() {
         return {
-            showForm: false,
+            deckUpdated: false,
+            deckUpdateFailed: false,
             allFlashCards: [],
             updatedDeck: {
                 deck: "",
@@ -46,7 +49,17 @@ export default {
     },
     methods: {
         editDeck(){
-            this.$store.commit("EDIT_DECK", this.updatedCard);
+            DeckService.updateDeck(this.updatedDeck, this.$route.params.deckName).then((response) => {
+              if (response.status === 200) {
+                this.deckUpdated = true;
+                this.deckUpdateFailed = false;
+              }
+            })
+            .catch ((error) => {
+              this.deckUpdateFailed = true;
+              this.deckUpdated = false;
+              error.response.status
+            })
             this.resetForm;
         },
         resetForm(){
@@ -74,7 +87,31 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+
+form {
+  padding-bottom: 5px;
+}
+
+.deckUpdated {
+  background-color: #00ADEE;
+  width: 220px;
+  margin-left: 15px;
+
+}
+
+.deckUpdateFailed {
+  background-color: rgba(255, 108, 108, 0.746);
+  width: 220px;
+  margin-left: 15px;
+}
+
+</style>
+
+
+
+
+
   input.saveBtn,
 input.cancelBtn {
   width: 10%;

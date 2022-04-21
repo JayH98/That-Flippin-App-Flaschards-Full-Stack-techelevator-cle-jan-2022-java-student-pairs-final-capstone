@@ -8,8 +8,8 @@ export default {
   getAllDecks(username) {
     return axios.get(`/user/${username}/decks`);
   },
-  updateDeck(id, deck) {
-    return axios.put(`/flashcard/${id}`, deck);
+  updateDeck(deck, previousDeckName) {
+    return axios.put(`/deck/${previousDeckName}/editDeck`, deck);
   },
   getCardsInDeck(deckname) {
       return axios.get(`/flashcard/deck/${deckname}`)

@@ -129,6 +129,7 @@ color: #00ADEE;
   font-size: 80px;
   background-image: url('../assets/notecard.png');
   background-repeat: no-repeat;
+  background-size: cover;
   width: 60%;
   text-align: center;
 }

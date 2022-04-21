@@ -276,13 +276,13 @@ left: 5%;
 #deck {
   font-family:'Courier New', Courier, monospace;
   font-size: small;
- block-size:fit-content;
+  block-size:fit-content;
   width:fit-content;
   font-size: small;
-position: fixed;
-bottom: -120%;
-left: 15%;
-border:none; 
+  position: fixed;
+  bottom: -120%;
+  left: 15%;
+  border:none; 
 }
 
 #id {position: fixed;
