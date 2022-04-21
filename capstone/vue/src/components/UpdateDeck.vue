@@ -9,7 +9,7 @@
       </div>   
       
       <button class="saveBtn" type="submit" value="Save" v-on:click.prevent="editDeck">Save Changes</button>
-      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm">Cancel</button> 
+      <button class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="this.$router.push({ path: '/' });">Cancel</button> 
 
       <deck v-bind:deck="updatedDeck"/>
       <flash-card-list/>     
@@ -52,7 +52,11 @@ export default {
                 Question : "",
                 Answer : "",
             };
+        },
+        cancelEdit() {
+          this.$router.push({path: '/'})
         }
+
     },
    
 

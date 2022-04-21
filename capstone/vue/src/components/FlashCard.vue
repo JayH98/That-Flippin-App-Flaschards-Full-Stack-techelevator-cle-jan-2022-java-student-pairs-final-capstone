@@ -300,7 +300,7 @@ left: 5%;
 }
 
 .markForReview {
-  background-image: url('');
+  /* background-image: url(''); */
   background-color: #71D96F;
 }
 
