@@ -8,7 +8,6 @@
 
     <div class = "deck-buttons">
         <router-link v-bind:to="{ name: 'edit-deck', params: {deckName: deck.deck} }"> <button type="button" class = "edit">Edit Deck</button></router-link>
-        <!-- v-show="this.$store.state.user.username === deck.username" -->
         <router-link v-bind:to="{ name: 'card-deck', params: {deckName: deck.deck} }"> <button type="button" class = "study-button">Begin Study Session</button></router-link>
     </div>
       

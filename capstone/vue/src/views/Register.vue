@@ -217,7 +217,7 @@ export default {
   
 }
 #study-guy-img {
-  width: 60%;
+  width: 50%;
   height: 400px;
   padding-left: 15px;
 }
@@ -286,5 +286,6 @@ border-radius: 5px;
   background-image:url('../assets/parchment.jpg');
   width:fit-content;
   font-family: 'Courier New', Courier, monospace;
+  color:black;
 }
 </style>

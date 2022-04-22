@@ -7,8 +7,8 @@
       <section id='edit-flashcard-container'>
        <router-link v-bind:to="{name: 'edit-flashcard', params: { id: flashcard.id }}"><button id="edit-button">Edit Flashcard</button></router-link>
  <div class = "edit-buttons">
-        <button v-show="(this.$route.name ===  'edit-deck' && flashcard.deck !== this.$route.params.deckName) || cardRemovedFromDeck" @click="addCardToDeck(flashcard.id)">Add to deck</button>
-        <button v-show="(this.$route.name === 'edit-deck' && flashcard.deck === this.$route.params.deckName) || cardAddedToDeck" @click="removeCardFromDeck(flashcard.id)">Remove from deck</button>
+        <button id="add" v-show="(this.$route.name ===  'edit-deck' && flashcard.deck !== this.$route.params.deckName) || cardRemovedFromDeck" @click="addCardToDeck(flashcard.id)">Add to deck</button>
+        <button id="remove" v-show="(this.$route.name === 'edit-deck' && flashcard.deck === this.$route.params.deckName) || cardAddedToDeck" @click="removeCardFromDeck(flashcard.id)">Remove from deck</button>
         <div class = "cardAdded" v-show="cardAddedToDeck && !cardRemovedFromDeck">Card successfully added to deck!</div>
         <div class = "cardRemoved" v-show="!cardAddedToDeck && cardRemovedFromDeck">Card successfully removed from deck!</div> 
         <!-- <button v-show="this.$route.name ===  'edit-deck'" v-if="flashcard.deck !== this.$route.params.deckName" @click="addCardToDeck(flashcard.id)">Add to deck</button>
@@ -332,5 +332,13 @@ background-color: #00ff77;
 
 .edit-buttons .cardRemoved {
   background-color: rgba(255, 108, 108, 0.746);
+}
+
+#add{
+  border-radius: 15px;
+}
+
+#remove{
+  border-radius:15px;
 }
 </style>

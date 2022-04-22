@@ -120,7 +120,7 @@ export default {
 
 .h3 {
 display:flex;
-color: #00ADEE;
+color: black;
   justify-content: center;
   position:relative;
   top:200px;

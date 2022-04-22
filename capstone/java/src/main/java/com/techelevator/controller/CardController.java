@@ -44,7 +44,7 @@ public class CardController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/flashcard/createCard", method = RequestMethod.POST)
     public String createCard(@Valid @RequestBody Card card) {
-        return cardDao.createCard(card.getModule(), card.get Creator(), card.getTag(),
+        return cardDao.createCard(card.getModule(), card.getCreator(), card.getTag(),
                 card.getQuestion(), card.getAnswer(), card.getDeck());
     }
 

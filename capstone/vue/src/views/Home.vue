@@ -2,7 +2,7 @@
   <div class="home">
     
     <div id="title">
-    <h2>This Flippin' App <br/>
+    <h2 style="color:black">This Flippin' App <br/>
      Flashcards that T.E.A.C.H.<br/><span id="subtitle"> (Tech Elevator Acquiring Comprehension Helper)</span></h2>
    
     </div>
@@ -50,9 +50,10 @@ ul {
   align-items: center;
   background-position: center;
   background-size:auto;
-  
+}
 
-
+.h2 {
+  color:black;
 }
 
 h2, p, #beginStudy {
@@ -85,10 +86,10 @@ form {
   text-align: center;
   font-size: 2em;
   font-family:'Courier New', Courier, monospace;
-  
   background-image: url('../assets/notecard.png');
   background-size: cover;
   font-weight: bolder;
+  color:black;
 
   
   
@@ -96,6 +97,7 @@ form {
 
 #subtitle{
   font-size: .85em;
+  color:black;
 }
 
 
