@@ -14,7 +14,7 @@
 
 
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewDeck"/>
-      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />
+      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="cancelEdit()" />
     </form>
   </div>
 </template>
@@ -50,6 +50,9 @@ export default {
         username: ""
       };
     },
+    cancelEdit() {
+          this.$router.push({path: '/'})
+        }
   },
 };
 </script>

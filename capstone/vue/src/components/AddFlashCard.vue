@@ -30,7 +30,7 @@
 
 
       <input class="saveBtn" type="submit" value="Save" v-on:click.prevent="addNewCard"/>
-      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="resetForm" />      
+      <input class="cancelBtn" type="button" value="Cancel" v-on:click.prevent="cancelEdit()" />      
 
   </form>
 </div>   
@@ -83,6 +83,9 @@ export default {
                 Deck: "",
             };
         },
+        cancelEdit() {
+          this.$router.push({path: '/'})
+        }
      
 
   
