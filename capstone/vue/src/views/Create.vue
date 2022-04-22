@@ -1,10 +1,10 @@
 <template>
 <div class="home">
   <div id="create-deck">
-    <h1>Create Deck</h1>
+    <h1 style="color:black">Create Deck</h1>
     <add-new-deck />
   </div>
-    <div id="create-card"><h2> Create FlashCard </h2>
+    <div id="create-card"><h2 style="color:black"> Create FlashCard </h2>
     <add-flash-card />
     </div>
 </div>
@@ -39,6 +39,7 @@ name: "create-deck"
   background-repeat: no-repeat;
   align-content: center;
   width: 150%;
+  font-family: 'Courier New', Courier, monospace;
 
 }
 
@@ -49,10 +50,13 @@ name: "create-deck"
   background-repeat:no-repeat;
   align-content:center;
   width:150%;
+  font-family: 'Courier New', Courier, monospace;
+  
 }
 
 .h1{
   font-size: xx-large;
+  
 }
 
 .h2{

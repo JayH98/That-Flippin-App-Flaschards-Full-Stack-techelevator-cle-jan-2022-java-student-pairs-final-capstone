@@ -166,6 +166,8 @@ h2 {
   width: 250px;
   height: 80px;
   padding-top: 20px;
+  background-size: 100%;
+  color:black;
 }
 </style>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <section id="title">
-    <h1>Edit Deck</h1>
+    <h1 style="color:black">Edit Deck</h1>
     </section>
     <update-deck v-bind:deckName="$route.params.deckName"/>
   </div>

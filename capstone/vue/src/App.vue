@@ -82,11 +82,11 @@ transform: translateY(-10px);
 
 
 .meet-us {
-  background-color: #00ADEE;
+  
   border-radius: 5px;
   height: 40px;
   width: 90px;
-  
+  background-image: url('./assets/parchment.jpg');
 }
 
 #app {

@@ -2,7 +2,7 @@
 <template>
 <div>
     <div id="current-deck">
-    <h1>Current deck: {{deckName}}</h1>
+    <h1 style="color:black">Current deck: {{deckName}}</h1>
     </div>
 <nav class = "filter">
 
@@ -27,7 +27,7 @@
   <div class="flashcard-container" v-show="showReviewCards">
       <flash-card v-bind:flashcard="flashcard" v-for="flashcard in flashcardsForReview" v-bind:key="flashcard.id"/>
   </div>
-  <h2 v-show="studySessionComplete">Study session complete! You need to review {{flashcardsForReview.length}} out of {{filteredFlashCards.length}}</h2>
+  <h2 id="study-complete" v-show="studySessionComplete">Study session complete! You need to review <span style="color: #556268"> {{flashcardsForReview.length}} </span> out of {{filteredFlashCards.length}}</h2>
   <button class = "completeStudySessionBtn" @click="studySessionComplete = !studySessionComplete">{{studySessionComplete ? 'Study Deck Again' : 'Complete Study Session'}}</button>
 </div>
 </template>
@@ -155,5 +155,13 @@ h2 {
   transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
+}
+
+#study-complete{
+    background-image: url('../assets/parchment.jpg');
+    width:fit-content;
+    border-radius: 15px;
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
 }
 </style>

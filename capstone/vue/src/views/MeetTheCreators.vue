@@ -1,13 +1,13 @@
 <template>
   <div class="meet-us-title">
-    <h2 style="color:#00ADEE">Meet The Creative Team</h2>
+    <div id="title-box">
+    <h2 style="color:black" >Meet The Creative Team</h2>
     <div>
       <!-- Team # Octothorpe - Flash Cards -->
-      <p style="color:#999DA0">
-        We are the awesome Team # Octothorpe! Heed our
-        Flash Cards and become more knowledgeable!
+      <p style="font-size:x-large">
+        <strong>We are the awesome Team # Octothorpe! Please follow our LinkedIn profiles for more about us and our work!</strong>
       </p>
-      
+      </div>
       <ul id="all-bios">
 
        <a id="daniloPA" class="LinkedIn-img-link" href="https://www.linkedin.com/in/danilo-pivaral-alvarez-20a905170/" data-LinkedIn-hook-img="link">
@@ -67,8 +67,10 @@ export default {
 <style>
 
 h2#meet-us {
-  color: #00ADEE;
-  background: #71D96F;
+  background-image: url('../assets/parchment.jpg');
+  font-size: x-large;
+  
+  
 }
 
 ul {
@@ -77,6 +79,14 @@ ul {
 
 a {
 width: 150px;
+}
+
+#title-box {
+  background-image: url('../assets/parchment.jpg');
+  background-size:fit-content;
+  color:black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:xx-large
 }
 
 a#angelS, a#daniloPA, a#graysonG, a#jayH , a#kevinS  {
@@ -102,6 +112,9 @@ img {
   height: 400px;
   align-items: center; 
 }
+
+
+
 
 
 
