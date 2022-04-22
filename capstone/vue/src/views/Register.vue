@@ -175,7 +175,6 @@ export default {
 #accountExists-box button:hover {
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('../assets/pointer_tilted.png'), pointer;
 }
 #test-box {
   display: flex;
@@ -255,7 +254,6 @@ border-radius: 5px;
 #create-account-button {
  transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('../assets/pointer.png'), pointer;
 }
 
 #study-method {

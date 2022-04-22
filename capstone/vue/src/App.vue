@@ -55,14 +55,14 @@ header {
   transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('./assets/pointer_tilted.png'), pointer;
+  
 }
 
 .home-button:hover {
  transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-  cursor:url('./assets/pointer_tilted.png'), pointer;
+  
   
 }
 
@@ -70,14 +70,14 @@ header {
   transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, rgb(243, 81, 81));
-cursor:url('./assets/pointer_tilted.png'), pointer;
+
 }
 
 .meet-us:hover{
 transform: translateY(-10px);
   transition: .25s;
   background: radial-gradient(#00ADEE, #71D96F);
-cursor:url('./assets/pointer_tilted.png'), pointer;
+
 }
 
 
@@ -86,7 +86,7 @@ cursor:url('./assets/pointer_tilted.png'), pointer;
   border-radius: 5px;
   height: 40px;
   width: 90px;
-  background-image: url('./assets/parchment.jpg');
+  
 }
 
 #app {
@@ -120,7 +120,7 @@ object-fit: cover;
   height: 100%;
   width: 100%;
   background-color: rgb(189, 189, 189);
-  cursor:url('./assets/pointer_tilted.png'), pointer;
+ 
 }
 
 

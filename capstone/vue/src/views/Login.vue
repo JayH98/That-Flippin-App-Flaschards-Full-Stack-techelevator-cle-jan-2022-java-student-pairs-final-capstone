@@ -130,6 +130,8 @@ color: #00ADEE;
   background-image: url('../assets/notecard.png');
   width: 60%;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
  
 
@@ -141,12 +143,13 @@ color: #00ADEE;
   border-radius:5px; 
   color:#556268;
   text-decoration: none;
+ 
   
 }
 
 #account-link:hover {
   color:black;
-  cursor:url('../assets/pointer_tilted.png'), pointer;
+  
 }
 
 
@@ -155,7 +158,7 @@ color: #00ADEE;
   left:30%;
   align-content: center;
   justify-content: center;
-  cursor:url('../assets/pointer_tilted.png'), pointer;
+  
 }
 
 

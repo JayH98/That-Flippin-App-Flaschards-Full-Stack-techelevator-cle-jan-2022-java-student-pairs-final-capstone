@@ -77,7 +77,7 @@ input.cancelBtn {
   
   
   background: linear-gradient(to right,#00ADEE, #71D96F 40%);
-  cursor:url('../assets/pointer_tilted.png'), pointer;
+  
 }
 
 .cancelBtn:hover {
@@ -86,7 +86,7 @@ input.cancelBtn {
   background: linear-gradient(to left,#00ADEE,rgba(243,81,81) 40% );
  
 
-  cursor:url('../assets/pointer_tilted.png'), pointer;
+  
 }
 
 </style>
