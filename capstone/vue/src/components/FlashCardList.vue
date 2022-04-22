@@ -26,6 +26,11 @@ export default {
     //         Object.assign(flashcard, {markForReview: false})
     //     });
     // },
+    methods: {
+        refreshFlashCardList() {
+            this.$emit('refreshFlashCardList');
+        }
+    },
 
     data() {
         return {
