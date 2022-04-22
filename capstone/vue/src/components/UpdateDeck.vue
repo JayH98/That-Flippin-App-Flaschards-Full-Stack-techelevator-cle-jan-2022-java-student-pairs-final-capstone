@@ -111,6 +111,7 @@ export default {
                 Answer : "",
             };
         },
+        
         getAllCards() {
           FlashCardService.getAllCards(this.$store.state.user.username).then((response) => {
             this.allFlashCards = response.data;
@@ -118,6 +119,7 @@ export default {
 
         });
         },
+
         cancelEdit() {
           this.$router.push({path: '/'})
         }

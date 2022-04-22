@@ -84,7 +84,10 @@ a#angelS, a#daniloPA, a#graysonG, a#jayH , a#kevinS  {
   text-align: center;
   height: 200px;
   padding-bottom: 0px;
-  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 img {
