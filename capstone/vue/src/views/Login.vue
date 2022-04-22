@@ -132,6 +132,7 @@ color: #00ADEE;
   background-size: cover;
   width: 60%;
   text-align: center;
+  background-repeat: none;
 }
  
 

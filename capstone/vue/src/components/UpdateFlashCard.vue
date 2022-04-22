@@ -33,9 +33,9 @@
         class="cancelBtn"
         type="button"
         value="Cancel"
-        v-on:click.prevent="resetForm"
+        v-on:click="this.$router.push({ path: '/' });"
       >
-        Cancel
+        Reset
       </button>
     </form>
 
@@ -154,6 +154,9 @@ export default {
       this.updatedCard.Question = "";
       this.updatedCard.Answer = "";
     },
+    cancelEdit() {
+          this.$router.push({path: '/'})
+        }
   },
 };
 </script>
