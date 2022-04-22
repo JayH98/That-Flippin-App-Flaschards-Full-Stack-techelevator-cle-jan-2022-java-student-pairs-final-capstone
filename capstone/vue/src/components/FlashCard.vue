@@ -34,7 +34,7 @@
     <div class="flashcard-back">
         <div class = 'box'>
           <section>
-            <button id="review-button" @click='changeReviewStatus(flashcard)'>Mark For Review</button>
+            <button id="review-button" @click='changeReviewStatus(flashcard)' v-show="this.$route.name === 'card-deck'">Mark For Review</button>
           </section>
 
       <div id="answer-block">
@@ -327,10 +327,10 @@ left: 5%;
 }
 
 .edit-buttons .cardAdded {
-background-color: #00ADEE;
+background-color: #00ff77;
 }
 
 .edit-buttons .cardRemoved {
-  background-color: rgba(255, 108, 108, 0.746)
+  background-color: rgba(255, 108, 108, 0.746);
 }
 </style>

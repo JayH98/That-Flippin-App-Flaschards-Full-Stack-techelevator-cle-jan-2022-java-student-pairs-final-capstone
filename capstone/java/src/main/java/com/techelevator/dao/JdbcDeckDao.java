@@ -86,7 +86,7 @@ public class JdbcDeckDao implements DeckDao {
                 "SET deck = ? " +
                 "WHERE deck = ?;";
 
-        jdbcTemplate.update(cardUpdateSql, newDeckName, newDeckName);
+        jdbcTemplate.update(cardUpdateSql, newDeckName, previousDeckName);
 
     }
 
