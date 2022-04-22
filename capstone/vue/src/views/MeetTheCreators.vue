@@ -103,10 +103,9 @@ img {
   align-items: center; 
 }
 
-.body:hover{
-cursor:url('../assets/pointer_tilted.png'), pointer;
 
-}
+
+
 
 </style>
 
