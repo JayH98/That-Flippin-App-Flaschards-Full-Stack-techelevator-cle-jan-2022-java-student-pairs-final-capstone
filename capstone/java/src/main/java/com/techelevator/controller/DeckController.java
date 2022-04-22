@@ -30,10 +30,10 @@ public class DeckController {
         return deckDao.findDeckByDeckName(deckName);
     }
 
-
-    @RequestMapping(path = "/deck/editDeck", method = RequestMethod.POST)
-    public Deck editDeck(@Valid @RequestBody Deck deck) {
-        return deckDao.editDeck(deck.getUsername(), deck.getDeck());
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/deck/{previousDeckName}/editDeck", method = RequestMethod.PUT)
+    public Deck editDeck(@Valid @RequestBody Deck deck, @PathVariable String previousDeckName) {
+        return deckDao.editDeck(deck, previousDeckName);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

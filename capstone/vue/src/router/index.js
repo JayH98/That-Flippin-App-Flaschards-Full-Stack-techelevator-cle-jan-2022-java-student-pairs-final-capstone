@@ -65,7 +65,7 @@ const router = new Router({
       name: "create-deck",
       component: Create,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -73,7 +73,7 @@ const router = new Router({
       name: "edit-flashcard",
       component: EditFlashCard,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -81,7 +81,7 @@ const router = new Router({
       name: "card-deck",
       component: CardDeck,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -89,13 +89,16 @@ const router = new Router({
       name: "edit-deck",
       component: EditDeck,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
       path: "/meet-us",
       name: "meet-us",
       component: MeetUs,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: "/marked-review/:markedReview",

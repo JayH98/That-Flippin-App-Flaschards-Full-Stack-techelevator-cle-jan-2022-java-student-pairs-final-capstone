@@ -65,6 +65,7 @@ export default {
                 module: '',
                 tag: '',
                 creator: '',
+                question: '',
                 deck: ''
                  
             },
